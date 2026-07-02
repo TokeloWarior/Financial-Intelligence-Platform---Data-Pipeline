@@ -1,0 +1,175 @@
+# ===============================
+# 🔒 GENERAL
+# ===============================
+*.log
+*.tmp
+*.bak
+*.swp
+*.DS_Store
+Thumbs.db
+
+# ===============================
+# 🐍 PYTHON
+# ===============================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Python tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Jupyter notebooks (optional)
+.ipynb_checkpoints/
+
+# ===============================
+# 📦 PIP / POETRY / UV
+# ===============================
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ===============================
+# 🧠 MACHINE LEARNING
+# ===============================
+mlruns/
+.mlflow/
+models/
+artifacts/
+*.pkl
+*.joblib
+
+# ===============================
+# 🗄️ DATABASE / POSTGRES
+# ===============================
+*.sql
+*.dump
+*.backup
+
+# Local DB files (if using SQLite for dev)
+*.sqlite3
+*.db
+
+# ===============================
+# 🧱 FASTAPI / BACKEND
+# ===============================
+.env
+.env.*
+!.env.example
+
+# API docs cache
+.openapi.json
+
+# ===============================
+# ⚛️ FRONTEND (React + Vite)
+# ===============================
+node_modules/
+dist/
+build/
+.vite/
+
+# Vite env files
+.env.local
+.env.development.local
+.env.production.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ===============================
+# 🐳 DOCKER
+# ===============================
+docker-compose.override.yml
+*.pid
+
+# ===============================
+# 🧪 PREFECT (PIPELINE ORCHESTRATION)
+# ===============================
+.prefect/
+.prefectignore
+
+# ===============================
+# 📊 DATA / PIPELINE OUTPUTS
+# ===============================
+# Raw / processed datasets (DO NOT COMMIT)
+data/raw/
+data/clean/
+data/gold/
+data/features/
+
+# Pipeline outputs
+pipeline_outputs/
+rejected_records/
+data_quality_issues/
+logs/
+run_logs/
+
+# ===============================
+# 📂 PROJECT-SPECIFIC (YOUR ARCHITECTURE)
+# ===============================
+# Sensitive or generated artifacts
+pipeline/artifacts/
+pipeline/cache/
+fip/cache/
+fip/reports/
+
+# ===============================
+# 🔐 SECRETS / CREDENTIALS
+# ===============================
+*.pem
+*.key
+*.crt
+credentials.json
+service-account.json
+
+# ===============================
+# 🧑‍💻 IDE / EDITORS
+# ===============================
+.vscode/
+.idea/
+*.iml
+
+# ===============================
+# 🧪 TEST OUTPUTS
+# ===============================
+pytest-report.xml
+coverage.xml
+
+# ===============================
+# 🧾 ENVIRONMENT / LOCAL DEV
+# ===============================
+*.local
+.envrc
+
+# ===============================
+# 📦 OS / SYSTEM
+# ===============================
+.DS_Store
+ehthumbs.db
+
+# ===============================
+# 📡 EXTRAS (OPTIONAL BUT USEFUL)
+# ===============================
+# Profiling
+.prof
+*.prof
+
+# Temporary files
+tmp/
+temp/

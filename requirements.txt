@@ -1,0 +1,11 @@
+pandas              # data cleaning and transformation
+numpy               # numerical calculations
+sqlalchemy          # database connection and SQL toolkit
+psycopg[binary]     # PostgreSQL driver for Python
+alembic             # database migrations later
+python-dotenv       # load .env variables
+prefect             # pipeline orchestration later
+pydantic            # validation models later
+pytest              # testing
+ruff                # linting
+black               # code formatting
