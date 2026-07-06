@@ -1,4 +1,3 @@
-docker compose up -d
 # Financial & Mobility Intelligence Platform
 
 This repository is a public portfolio project that demonstrates data engineering, analytics, and software development skills through a layered customer-data pipeline.
