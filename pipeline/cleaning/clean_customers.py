@@ -279,7 +279,7 @@ def insert_clean_customer(raw_customer: dict) -> int:
             is_active = EXCLUDED.is_active,
             source_system = EXCLUDED.source_system,
             last_seen_batch_id = EXCLUDED.last_seen_batch_id,
-            updated_at = NOW();
+            updated_at = NOW()
         RETURNING customer_id;
         """
     )
