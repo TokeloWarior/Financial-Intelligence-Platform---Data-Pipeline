@@ -157,31 +157,43 @@ Run the pipeline in this order when you want to exercise the full flow:
 python -m pipeline.ingestion.generate_customers
 ```
 
-2. Confirm the database connection
+2. Generate synthetic account data
+
+```bash
+python -m pipeline.ingestion.generate_accounts
+```
+
+3. Confirm the database connection
 
 ```bash
 python -m pipeline.utils.db
 ```
 
-3. Ingest raw customer records
+4. Ingest raw customer records
 
 ```bash
 python -m pipeline.ingestion.ingest_raw_customers
 ```
 
-4. Clean and validate customer records
+5. Ingest raw account records
+
+```bash
+python -m pipeline.ingestion.ingest_raw_accounts
+```
+
+6. Clean and validate customer records
 
 ```bash
 python -m pipeline.cleaning.clean_customers
 ```
 
-5. Run the customer data-quality checks
+7. Run the customer data-quality checks
 
 ```bash
 python -m pipeline.validation.customer_data_quality
 ```
 
-6. Run the validator smoke test if you want a quick rule check
+8. Run the validator smoke test if you want a quick rule check
 
 ```bash
 python -m pipeline.validation.customer_validators
