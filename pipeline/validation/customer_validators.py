@@ -6,77 +6,10 @@ from datetime import date, datetime
 from typing import Any
 
 
-SOURCE_CUSTOMER_ID_PATTERN = re.compile(r"^CUST-\d{6}$")
+SOURCE_CUSTOMER_ID_PATTERN = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._:/\-]{0,127}$")
 
 MINIMUM_CUSTOMER_AGE = 18
 MAXIMUM_CUSTOMER_AGE = 95
-
-
-REGION_CITY_MAP = {
-    "Gauteng": {
-        "Johannesburg",
-        "Pretoria",
-        "Soweto",
-        "Midrand",
-        "Centurion",
-    },
-    "Western Cape": {
-        "Cape Town",
-        "Stellenbosch",
-        "George",
-        "Paarl",
-        "Bellville",
-    },
-    "KwaZulu-Natal": {
-        "Durban",
-        "Pietermaritzburg",
-        "Richards Bay",
-        "Newcastle",
-        "Umhlanga",
-    },
-    "Eastern Cape": {
-        "Gqeberha",
-        "East London",
-        "Mthatha",
-        "Queenstown",
-        "Grahamstown",
-    },
-    "Free State": {
-        "Bloemfontein",
-        "Welkom",
-        "Bethlehem",
-        "Sasolburg",
-        "Kroonstad",
-    },
-    "Limpopo": {
-        "Polokwane",
-        "Tzaneen",
-        "Makhado",
-        "Thohoyandou",
-        "Lephalale",
-    },
-    "Mpumalanga": {
-        "Mbombela",
-        "Witbank",
-        "Secunda",
-        "Middelburg",
-        "Ermelo",
-    },
-    "North West": {
-        "Rustenburg",
-        "Mahikeng",
-        "Klerksdorp",
-        "Potchefstroom",
-        "Brits",
-    },
-    "Northern Cape": {
-        "Kimberley",
-        "Upington",
-        "Springbok",
-        "De Aar",
-        "Kuruman",
-    },
-}
 
 
 VALID_CUSTOMER_TYPES = {
@@ -129,6 +62,8 @@ VALID_RISK_RATINGS = {
     "medium",
     "high",
 }
+IDENTITY_DOCUMENT_PATTERN = re.compile(r"^[A-Za-z0-9][A-Za-z0-9\-]{4,31}$")
+PHONE_NUMBER_PATTERN = re.compile(r"^\+[1-9]\d{7,14}$")
 
 
 @dataclass(frozen=True)
@@ -253,6 +188,38 @@ def add_issue(
     )
 
 
+def is_name_like_value(value: str | None) -> bool:
+    """
+    Return True when a value looks like a human-readable name or place name.
+
+    This stays country-agnostic by allowing Unicode letters, spaces, apostrophes,
+    hyphens, and periods.
+    """
+
+    if is_blank(value):
+        return False
+
+    trimmed_value = value.strip()
+
+    if not trimmed_value[0].isalpha() or not trimmed_value[-1].isalpha():
+        return False
+
+    allowed_characters = {" ", "'", "-", "."}
+
+    return all(char.isalpha() or char in allowed_characters for char in trimmed_value)
+
+
+def is_valid_identity_document(value: str | None) -> bool:
+    """
+    Return True when a document identifier has a generic, source-agnostic shape.
+    """
+
+    if is_blank(value):
+        return False
+
+    return IDENTITY_DOCUMENT_PATTERN.fullmatch(value.strip()) is not None
+
+
 def validate_source_customer_id(
     raw_customer: dict,
     duplicate_source_customer_ids: set[str] | None,
@@ -287,7 +254,7 @@ def validate_source_customer_id(
         add_issue(
             issues,
             "CUSTOMER_ID_INVALID_FORMAT",
-            "source_customer_id must match format CUST-000001.",
+            "source_customer_id must be a non-empty source identifier with no spaces.",
             f"Invalid source_customer_id format: {source_customer_id!r}.",
         )
 
@@ -400,9 +367,156 @@ def validate_gender(raw_customer: dict, issues: list[ValidationIssue]) -> None:
         )
 
 
+def validate_name_field(
+    raw_customer: dict,
+    field_name: str,
+    issues: list[ValidationIssue],
+) -> None:
+    """
+    Validate a required profile name field.
+    """
+
+    value = value_as_string(raw_customer.get(field_name))
+
+    if is_blank(value):
+        add_issue(
+            issues,
+            f"CUSTOMER_{field_name.upper()}_MISSING",
+            f"{field_name} is required.",
+            f"Missing {field_name}.",
+        )
+        return
+
+    trimmed_value = value.strip()
+
+    if trimmed_value != value:
+        add_issue(
+            issues,
+            f"CUSTOMER_{field_name.upper()}_WHITESPACE",
+            f"{field_name} must not contain leading or trailing whitespace.",
+            f"{field_name} has leading or trailing whitespace: {value!r}.",
+        )
+
+    if not is_name_like_value(trimmed_value):
+        add_issue(
+            issues,
+            f"CUSTOMER_{field_name.upper()}_INVALID",
+            f"{field_name} must contain only letters, spaces, apostrophes, hyphens, or periods.",
+            f"Invalid {field_name}: {value!r}.",
+        )
+
+
+def validate_country_of_birth(raw_customer: dict, issues: list[ValidationIssue]) -> None:
+    """
+    Validate country_of_birth.
+    """
+
+    country_of_birth = value_as_string(raw_customer.get("country_of_birth"))
+
+    if is_blank(country_of_birth):
+        add_issue(
+            issues,
+            "CUSTOMER_COUNTRY_OF_BIRTH_MISSING",
+            "country_of_birth is required.",
+            "Missing country_of_birth.",
+        )
+        return
+
+    if not is_name_like_value(country_of_birth):
+        add_issue(
+            issues,
+            "CUSTOMER_COUNTRY_OF_BIRTH_INVALID",
+            "country_of_birth must be a readable country name.",
+            f"Invalid country_of_birth: {country_of_birth!r}.",
+        )
+
+
+def validate_primary_phone_number(raw_customer: dict, issues: list[ValidationIssue]) -> None:
+    """
+    Validate primary_phone_number.
+    """
+
+    primary_phone_number = value_as_string(raw_customer.get("primary_phone_number"))
+
+    if is_blank(primary_phone_number):
+        add_issue(
+            issues,
+            "CUSTOMER_PRIMARY_PHONE_NUMBER_MISSING",
+            "primary_phone_number is required.",
+            "Missing primary_phone_number.",
+        )
+        return
+
+    trimmed_phone = primary_phone_number.strip()
+
+    if PHONE_NUMBER_PATTERN.fullmatch(trimmed_phone) is None:
+        add_issue(
+            issues,
+            "CUSTOMER_PRIMARY_PHONE_NUMBER_INVALID",
+            "primary_phone_number must match international E.164 format.",
+            f"Invalid primary_phone_number: {primary_phone_number!r}.",
+        )
+
+
+def validate_secondary_phone_number(raw_customer: dict, issues: list[ValidationIssue]) -> None:
+    """
+    Validate secondary_phone_number when provided.
+    """
+
+    secondary_phone_number = value_as_string(raw_customer.get("secondary_phone_number"))
+
+    if is_blank(secondary_phone_number):
+        return
+
+    trimmed_phone = secondary_phone_number.strip()
+
+    if PHONE_NUMBER_PATTERN.fullmatch(trimmed_phone) is None:
+        add_issue(
+            issues,
+            "CUSTOMER_SECONDARY_PHONE_NUMBER_INVALID",
+            "secondary_phone_number must match international E.164 format when provided.",
+            f"Invalid secondary_phone_number: {secondary_phone_number!r}.",
+        )
+
+
+def validate_identity_documents(raw_customer: dict, issues: list[ValidationIssue]) -> None:
+    """
+    Validate id_number and passport_number using source-agnostic document rules.
+    """
+
+    id_number = value_as_string(raw_customer.get("id_number"))
+    passport_number = value_as_string(raw_customer.get("passport_number"))
+    trimmed_id_number = None if is_blank(id_number) else id_number.strip()
+    trimmed_passport_number = None if is_blank(passport_number) else passport_number.strip()
+
+    if trimmed_id_number is None and trimmed_passport_number is None:
+        add_issue(
+            issues,
+            "CUSTOMER_IDENTITY_DOCUMENT_MISSING",
+            "Either id_number or passport_number is required.",
+            "Missing both id_number and passport_number.",
+        )
+
+    if trimmed_id_number is not None and not is_valid_identity_document(trimmed_id_number):
+        add_issue(
+            issues,
+            "CUSTOMER_ID_NUMBER_INVALID",
+            "id_number must be a readable alphanumeric identifier.",
+            f"Invalid id_number: {id_number!r}.",
+        )
+
+    if trimmed_passport_number is not None and not is_valid_identity_document(trimmed_passport_number):
+        add_issue(
+            issues,
+            "CUSTOMER_PASSPORT_NUMBER_INVALID",
+            "passport_number must be a readable alphanumeric identifier.",
+            f"Invalid passport_number: {passport_number!r}.",
+        )
+
+
 def validate_region_and_city(raw_customer: dict, issues: list[ValidationIssue]) -> None:
     """
-    Validate region and city.
+    Validate region and city as generic place names.
     """
 
     region = value_as_string(raw_customer.get("region"))
@@ -417,13 +531,11 @@ def validate_region_and_city(raw_customer: dict, issues: list[ValidationIssue]) 
         )
         return
 
-    region_trimmed = region.strip()
-
-    if region_trimmed not in REGION_CITY_MAP:
+    if not is_name_like_value(region):
         add_issue(
             issues,
             "CUSTOMER_REGION_INVALID",
-            "region must be one of the allowed South African provinces.",
+            "region must be a readable place name.",
             f"Invalid region: {region!r}.",
         )
         return
@@ -437,14 +549,12 @@ def validate_region_and_city(raw_customer: dict, issues: list[ValidationIssue]) 
         )
         return
 
-    city_trimmed = city.strip()
-
-    if city_trimmed not in REGION_CITY_MAP[region_trimmed]:
+    if not is_name_like_value(city):
         add_issue(
             issues,
-            "CUSTOMER_CITY_REGION_MISMATCH",
-            "city must belong to the supplied region.",
-            f"City {city_trimmed!r} does not belong to region {region_trimmed!r}.",
+            "CUSTOMER_CITY_INVALID",
+            "city must be a readable place name.",
+            f"Invalid city: {city!r}.",
         )
 
 
@@ -657,6 +767,12 @@ def validate_raw_customer(
     )
 
     validate_customer_type(raw_customer, issues)
+    validate_name_field(raw_customer, "first_name", issues)
+    validate_name_field(raw_customer, "last_name", issues)
+    validate_country_of_birth(raw_customer, issues)
+    validate_identity_documents(raw_customer, issues)
+    validate_primary_phone_number(raw_customer, issues)
+    validate_secondary_phone_number(raw_customer, issues)
     validate_date_of_birth(raw_customer, issues)
     validate_gender(raw_customer, issues)
     validate_region_and_city(raw_customer, issues)
@@ -688,10 +804,17 @@ def run_smoke_test() -> None:
     valid_customer = {
         "source_customer_id": "CUST-999001",
         "customer_type": "individual",
+        "first_name": "Lerato",
+        "last_name": "Mokoena",
+        "id_number": "",
+        "passport_number": "X1234567",
+        "country_of_birth": "Côte d'Ivoire",
+        "primary_phone_number": "+14155552671",
+        "secondary_phone_number": "",
         "date_of_birth": date(1990, 1, 1),
         "gender": "female",
-        "region": "Gauteng",
-        "city": "Johannesburg",
+        "region": "Greater Accra",
+        "city": "Accra",
         "employment_status": "employed",
         "income_band": "20000-39999",
         "customer_status": "active",
@@ -707,6 +830,13 @@ def run_smoke_test() -> None:
     invalid_customer = {
         "source_customer_id": " BAD-ID ",
         "customer_type": "vip_person",
+        "first_name": "",
+        "last_name": "12345",
+        "id_number": "ABC",
+        "passport_number": "passport",
+        "country_of_birth": "123Land",
+        "primary_phone_number": "12345",
+        "secondary_phone_number": "not-a-phone",
         "date_of_birth": None,
         "gender": "robot",
         "region": "Atlantis",

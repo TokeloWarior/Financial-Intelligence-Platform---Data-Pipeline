@@ -1,301 +1,301 @@
 source_customer_id,customer_type,first_name,last_name,id_number,passport_number,country_of_birth,primary_phone_number,secondary_phone_number,date_of_birth,gender,region,city,employment_status,income_band,customer_status,onboarding_date,kyc_status,risk_rating
-CUST-000001,individual,Karabo,Pillay,,P00000001,Botswana,+27821000001,,1961-06-12,female,Free State,Welkom,employed,0-4999,active,1981-09-08,verified,medium
-CUST-000002,individual,Mpho,Maseko,7101270002002,,South Africa,+27821000002,,1971-01-27,other,Northern Cape,Kuruman,employed,5000-9999,active,1999-07-05,verified,medium
-CUST-000003,individual,Neo,Naidoo,8905160003003,,South Africa,+27821000003,,1989-05-16,other,Free State,Welkom,employed,80000+,active,2015-01-01,verified,low
-CUST-000004,individual,Karabo,Dlamini,,P00000004,Zimbabwe,+27821000004,,1992-09-03,female,Western Cape,Paarl,employed,80000+,active,2022-09-12,verified,medium
-CUST-000005,individual,Anele,Naidoo,7111260005005,,South Africa,+27821000005,,1971-11-26,other,Free State,Bloemfontein,self_employed,80000+,suspended,2024-07-30,failed,medium
-CUST-000006,individual,Palesa,Mabena,7505300006006,,South Africa,+27821000006,,1975-05-30,male,Western Cape,Bellville,retired,10000-19999,active,2024-11-21,verified,low
-CUST-000007,individual,Sipho,Mabena,5606220007007,,South Africa,+27821000007,,1956-06-22,unknown,Gauteng,Soweto,unemployed,80000+,active,1995-01-08,pending,high
-CUST-000008,individual,Kabelo,Dlamini,9208150008008,,South Africa,+27821000008,,1992-08-15,male,Free State,Welkom,student,20000-39999,active,2013-10-28,verified,low
-CUST-000009,individual,Karabo,Botha,5908120009009,,South Africa,+27821000009,,1959-08-12,other,Western Cape,Stellenbosch,student,0-4999,active,1981-11-02,verified,low
-CUST-000010,individual,Ayanda,Mthembu,6109250010010,,South Africa,+27821000010,,1961-09-25,male,Limpopo,Polokwane,student,0-4999,active,2003-09-02,verified,low
-CUST-000011,individual,Karabo,Naidoo,,P00000011,Eswatini,+27821000011,,2007-07-22,unknown,Northern Cape,Kuruman,employed,0-4999,active,2025-12-21,verified,low
-CUST-000012,individual,Lindiwe,Van Wyk,8401090012012,,South Africa,+27821000012,,1984-01-09,male,Eastern Cape,Gqeberha,self_employed,80000+,active,2015-10-26,verified,low
-CUST-000013,individual,Sibusiso,Molefe,,P00000013,Lesotho,+27821000013,,1994-02-05,unknown,KwaZulu-Natal,Richards Bay,retired,80000+,active,2024-06-04,verified,high
-CUST-000014,individual,Karabo,Dlamini,8412160014014,,South Africa,+27821000014,,1984-12-16,female,Northern Cape,De Aar,employed,80000+,active,2022-08-10,verified,low
-CUST-000015,individual,Sipho,Van Wyk,0801280015015,,South Africa,+27821000015,,2008-01-28,male,Eastern Cape,Gqeberha,retired,40000-79999,suspended,2026-02-12,failed,low
-CUST-000016,individual,Naledi,Botha,0302250016016,,South Africa,+27821000016,,2003-02-25,female,Eastern Cape,Queenstown,retired,80000+,inactive,2023-10-21,pending,low
-CUST-000017,individual,Naledi,Khumalo,6004140017017,,South Africa,+27821000017,,1960-04-14,other,Mpumalanga,Secunda,unemployed,5000-9999,inactive,1983-09-21,pending,low
-CUST-000018,individual,Anele,Pillay,,P00000018,Eswatini,+27821000018,,1958-03-22,unknown,Northern Cape,Kimberley,unemployed,5000-9999,active,2015-12-23,expired,high
-CUST-000019,individual,Nomsa,Pillay,8706090019019,,South Africa,+27821000019,,1987-06-09,unknown,Gauteng,Pretoria,self_employed,5000-9999,active,2025-09-04,expired,medium
-CUST-000020,individual,Ayanda,Mahlangu,7801280020020,,South Africa,+27821000020,,1978-01-28,male,Gauteng,Centurion,employed,40000-79999,inactive,2005-11-02,not_started,low
-CUST-000021,individual,Karabo,Maseko,,P00000021,Lesotho,+27821000021,,1958-08-24,female,Western Cape,Bellville,student,0-4999,active,1993-04-26,verified,low
-CUST-000022,individual,Anele,Mabena,8901250022022,,South Africa,+27821000022,,1989-01-25,other,Northern Cape,Springbok,unemployed,10000-19999,suspended,2021-10-23,pending,high
-CUST-000023,individual,Anele,Naidoo,5712190023023,,South Africa,+27821000023,,1957-12-19,female,North West,Brits,self_employed,10000-19999,closed,1976-10-19,expired,low
-CUST-000024,individual,Zanele,Mahlangu,7701090024024,,South Africa,+27821000024,,1977-01-09,other,North West,Brits,retired,0-4999,inactive,2002-02-05,verified,high
-CUST-000025,individual,Sipho,Mabena,6307040025025,,South Africa,+27821000025,,1963-07-04,other,Western Cape,Cape Town,student,20000-39999,inactive,2005-03-26,pending,low
-CUST-000026,individual,Anele,Nkosi,7312260026026,,South Africa,+27821000026,,1973-12-26,unknown,Western Cape,Paarl,student,80000+,inactive,1994-04-06,not_started,low
-CUST-000027,individual,Karabo,Van Wyk,8910290027027,,South Africa,+27821000027,,1989-10-29,male,Gauteng,Johannesburg,unemployed,5000-9999,active,2020-05-27,verified,high
-CUST-000028,individual,Karabo,Nkosi,5503180028028,,South Africa,+27821000028,,1955-03-18,male,Limpopo,Polokwane,self_employed,5000-9999,suspended,2000-11-12,pending,medium
-CUST-000029,individual,Nomsa,Khumalo,6705050029029,,South Africa,+27821000029,,1967-05-05,female,Mpumalanga,Mbombela,unemployed,0-4999,active,2024-11-17,verified,medium
-CUST-000030,individual,Naledi,Naidoo,9309070030030,,South Africa,+27821000030,,1993-09-07,other,Eastern Cape,Queenstown,employed,10000-19999,active,2016-09-02,verified,medium
-CUST-000031,individual,Thabo,Ndlovu,8212170031031,,South Africa,+27821000031,,1982-12-17,unknown,Mpumalanga,Ermelo,self-employed,80000+,active,2023-10-24,pending,medium
-CUST-000032,individual,Ayanda,Mthembu,7908070032032,,South Africa,+27821000032,,1979-08-07,male,Northern Cape,Kimberley,self-employed,20000-39999,active,2017-03-04,verified,low
-CUST-000033,individual,Sibusiso,Molefe,5709250033033,,South Africa,+27821000033,,1957-09-25,male,Limpopo,Polokwane,self_employed,20000-39999,inactive,2005-05-09,pending,low
-CUST-000034,individual,Mpho,Botha,8506210034034,,South Africa,+27821000034,,1985-06-21,unknown,Free State,Sasolburg,retired,5000-9999,active,2011-04-11,not_started,low
-CUST-000035,individual,Zanele,Molefe,9704260035035,,South Africa,+27821000035,,1997-04-26,male,KwaZulu-Natal,Durban,self_employed,5000-9999,active,2020-08-15,verified,medium
-CUST-000036,individual,Sibusiso,Nkosi,,P00000036,Zimbabwe,+27821000036,,1953-08-25,unknown,Eastern Cape,Queenstown,unemployed,20000-39999,active,1975-10-17,verified,low
-CUST-000037,individual,Thabo,Van Wyk,7305060037037,,South Africa,+27821000037,,1973-05-06,male,Gauteng,Johannesburg,employed,20000-39999,inactive,1997-12-17,pending,medium
-CUST-000038,individual,Neo,Van Wyk,6306030038038,,South Africa,+27821000038,,1963-06-03,unknown,Northern Cape,Kuruman,self_employed,80000+,active,2023-02-08,failed,high
-CUST-000039,individual,Nomsa,Botha,9401160039039,,South Africa,+27821000039,,1994-01-16,female,Free State,Welkom,retired,10000-19999,inactive,2022-02-18,pending,medium
-CUST-000040,individual,Sibusiso,Dlamini,7206290040040,,South Africa,+27821000040,,1972-06-29,female,Limpopo,Makhado,unemployed,20000-39999,suspended,2002-09-05,not_started,medium
-CUST-000041,individual,Neo,Mthembu,8102210041041,,South Africa,+27821000041,,1981-02-21,unknown,North West,Potchefstroom,unemployed,0-4999,active,2023-06-25,verified,low
-CUST-000042,individual,Sipho,Molefe,,P00000042,Botswana,+27821000042,,1983-01-06,unknown,Mpumalanga,Middelburg,unemployed,0-4999,active,2014-05-30,verified,medium
-CUST-000043,individual,Karabo,Maseko,8605060043043,,South Africa,+27821000043,,1986-05-06,female,Mpumalanga,Witbank,employed,80000+,inactive,2011-11-19,expired,high
-CUST-000044,individual,Nomsa,Mthembu,8911280044044,,South Africa,+27821000044,,1989-11-28,unknown,North West,Mahikeng,self-employed,0-4999,active,2010-12-13,verified,low
-CUST-000045,individual,Lindiwe,Mokoena,9308260045045,,South Africa,+27821000045,,1993-08-26,male,Northern Cape,Kimberley,self_employed,0-4999,closed,2012-01-31,verified,medium
-CUST-000046,individual,Lindiwe,Naidoo,0703140046046,,South Africa,+27821000046,,2007-03-14,male,Eastern Cape,East London,student,40000-79999,active,2025-05-31,verified,high
-CUST-000047,individual,Naledi,Nkosi,,P00000047,Botswana,+27821000047,,1961-09-25,male,Free State,Bloemfontein,employed,40000-79999,active,1994-06-04,verified,low
-CUST-000048,individual,Kabelo,Van Wyk,,P00000048,Namibia,+27821000048,,2007-09-24,unknown,Western Cape,George,retired,10000-19999,suspended,2026-01-26,verified,medium
-CUST-000049,individual,Sibusiso,Khumalo,,P00000049,Eswatini,+27821000049,,1957-08-23,unknown,Limpopo,Polokwane,self_employed,80000+,inactive,2021-01-12,failed,medium
-CUST-000050,individual,Kabelo,Mahlangu,9804070050050,,South Africa,+27821000050,,1998-04-07,male,Free State,Kroonstad,employed,10000-19999,inactive,2023-07-24,verified,low
-CUST-000051,individual,Mpho,Dlamini,,P00000051,Zimbabwe,+27821000051,,1991-11-25,other,North West,Brits,self-employed,10000-19999,active,2015-05-15,verified,low
-CUST-000052,individual,Ayanda,Mthembu,7607180052052,,South Africa,+27821000052,,1976-07-18,male,Free State,Kroonstad,retired,20000-39999,active,2021-04-14,verified,low
-CUST-000053,individual,Mpho,Van Wyk,9506290053053,,South Africa,+27821000053,,1995-06-29,other,Gauteng,Johannesburg,unemployed,80000+,active,2023-07-18,verified,low
-CUST-000054,individual,Sibusiso,Van Wyk,0011010054054,,South Africa,+27821000054,,2000-11-01,male,Limpopo,Thohoyandou,self_employed,5000-9999,active,2022-07-17,verified,low
-CUST-000055,individual,Nomsa,Mokoena,9411240055055,,South Africa,+27821000055,,1994-11-24,male,Northern Cape,Kuruman,self-employed,0-4999,active,2019-02-06,verified,low
-CUST-000056,individual,Mpho,Botha,5605070056056,,South Africa,+27821000056,,1956-05-07,unknown,Free State,Welkom,self-employed,5000-9999,active,2023-12-28,verified,low
-CUST-000057,individual,Anele,Khumalo,5601250057057,,South Africa,+27821000057,,1956-01-25,other,North West,Rustenburg,employed,5000-9999,inactive,1996-09-19,verified,low
-CUST-000058,individual,Nomsa,Maseko,6201310058058,,South Africa,+27821000058,,1962-01-31,female,Eastern Cape,Grahamstown,student,80000+,active,2017-06-02,verified,low
-CUST-000059,individual,Naledi,Botha,6005110059059,,South Africa,+27821000059,,1960-05-11,unknown,Eastern Cape,Mthatha,self-employed,0-4999,active,1996-12-30,verified,low
-CUST-000060,individual,Naledi,Ndlovu,7203230060060,,South Africa,+27821000060,,1972-03-23,male,Free State,Sasolburg,retired,5000-9999,active,2003-02-23,verified,low
-CUST-000061,individual,Mpho,Ndlovu,7504160061061,,South Africa,+27821000061,,1975-04-16,unknown,Western Cape,Cape Town,retired,10000-19999,active,1999-09-02,verified,medium
-CUST-000062,individual,Karabo,Molefe,8707270062062,,South Africa,+27821000062,,1987-07-27,female,Northern Cape,Kuruman,employed,5000-9999,active,2011-09-04,pending,low
-CUST-000063,individual,Palesa,Molefe,0301230063063,,South Africa,+27821000063,,2003-01-23,male,Gauteng,Soweto,student,20000-39999,active,2024-05-09,verified,low
-CUST-000064,individual,Naledi,Nkosi,,P00000064,Zimbabwe,+27821000064,,2008-05-28,unknown,Western Cape,Paarl,self-employed,80000+,active,2026-06-12,verified,medium
-CUST-000065,individual,Neo,Van Wyk,,P00000065,Namibia,+27821000065,,1987-05-21,female,Northern Cape,Kimberley,retired,40000-79999,active,2023-08-19,verified,low
-CUST-000066,individual,Sipho,Molefe,9211260066066,,South Africa,+27821000066,,1992-11-26,male,Gauteng,Pretoria,self-employed,20000-39999,active,2020-03-03,verified,low
-CUST-000067,individual,Lerato,Dlamini,9412110067067,,South Africa,+27821000067,,1994-12-11,female,Gauteng,Centurion,unemployed,0-4999,inactive,2015-09-01,verified,low
-CUST-000068,individual,Ayanda,Khumalo,6504090068068,,South Africa,+27821000068,,1965-04-09,unknown,Free State,Kroonstad,self_employed,40000-79999,inactive,2005-08-16,verified,low
-CUST-000069,individual,Neo,Mokoena,9701200069069,,South Africa,+27821000069,,1997-01-20,other,Western Cape,George,retired,10000-19999,inactive,2018-02-11,failed,medium
-CUST-000070,individual,Mpho,Naidoo,0402110070070,,South Africa,+27821000070,,2004-02-11,male,North West,Mahikeng,retired,5000-9999,active,2025-05-13,verified,low
-CUST-000071,individual,Zanele,Mthembu,0210030071071,,South Africa,+27821000071,,2002-10-03,male,Eastern Cape,Queenstown,unemployed,0-4999,active,2025-01-18,verified,medium
-CUST-000072,individual,Naledi,Mahlangu,6210130072072,,South Africa,+27821000072,,1962-10-13,male,Limpopo,Polokwane,employed,20000-39999,suspended,2025-11-05,verified,high
-CUST-000073,individual,Zanele,Nkosi,7503270073073,,South Africa,+27821000073,,1975-03-27,unknown,Mpumalanga,Mbombela,student,0-4999,suspended,2008-06-02,failed,high
-CUST-000074,individual,Mpho,Khumalo,0611070074074,,South Africa,+27821000074,,2006-11-07,other,Eastern Cape,Mthatha,employed,0-4999,closed,2025-01-16,verified,low
-CUST-000075,individual,Anele,Khumalo,8007230075075,,South Africa,+27821000075,,1980-07-23,female,Free State,Bethlehem,student,20000-39999,active,2001-01-27,verified,low
-CUST-000076,individual,Palesa,Mthembu,0701200076076,,South Africa,+27821000076,,2007-01-20,unknown,North West,Brits,self-employed,80000+,active,2025-09-23,verified,low
-CUST-000077,individual,Mpho,Mahlangu,,P00000077,Eswatini,+27821000077,,2000-06-29,other,Western Cape,Paarl,self_employed,20000-39999,suspended,2020-04-06,expired,medium
-CUST-000078,individual,Nomsa,Mokoena,9410220078078,,South Africa,+27821000078,,1994-10-22,female,Eastern Cape,Queenstown,student,80000+,active,2015-03-14,verified,high
-CUST-000079,individual,Zanele,Ndlovu,9601080079079,,South Africa,+27821000079,,1996-01-08,female,Eastern Cape,Grahamstown,self-employed,20000-39999,inactive,2020-06-09,pending,low
-CUST-000080,individual,Lindiwe,Van Wyk,5406140080080,,South Africa,+27821000080,,1954-06-14,other,Limpopo,Tzaneen,student,40000-79999,active,2024-06-12,verified,medium
-CUST-000081,individual,Lerato,Khumalo,7511280081081,,South Africa,+27821000081,,1975-11-28,male,Free State,Sasolburg,retired,80000+,closed,2001-04-15,verified,medium
-CUST-000082,individual,Zanele,Nkosi,8702100082082,,South Africa,+27821000082,,1987-02-10,other,Northern Cape,Springbok,student,20000-39999,active,2024-01-30,verified,low
-CUST-000083,individual,Zanele,Ndlovu,,P00000083,Botswana,+27821000083,,1984-10-13,unknown,Eastern Cape,Queenstown,retired,10000-19999,active,2007-08-23,verified,low
-CUST-000084,individual,Naledi,Botha,8802020084084,,South Africa,+27821000084,,1988-02-02,other,KwaZulu-Natal,Durban,retired,80000+,suspended,2008-09-14,pending,medium
-CUST-000085,individual,Thabo,Nkosi,,P00000085,Lesotho,+27821000085,,1999-12-03,other,KwaZulu-Natal,Newcastle,self_employed,20000-39999,active,2022-08-15,verified,medium
-CUST-000086,individual,Naledi,Molefe,9105090086086,,South Africa,+27821000086,,1991-05-09,male,Limpopo,Polokwane,employed,20000-39999,closed,2014-08-25,verified,high
-CUST-000087,individual,Neo,Mthembu,5909060087087,,South Africa,+27821000087,,1959-09-06,male,Gauteng,Johannesburg,student,5000-9999,inactive,1996-09-16,pending,low
-CUST-000088,individual,Lindiwe,Khumalo,7205110088088,,South Africa,+27821000088,,1972-05-11,female,KwaZulu-Natal,Umhlanga,retired,0-4999,active,2005-02-04,verified,low
-CUST-000089,individual,Ayanda,Ndlovu,6304130089089,,South Africa,+27821000089,,1963-04-13,female,Limpopo,Tzaneen,unemployed,20000-39999,active,1982-08-12,not_started,low
-CUST-000090,individual,Mpho,Mabena,8312090090090,,South Africa,+27821000090,,1983-12-09,female,Western Cape,Paarl,employed,20000-39999,active,2024-12-16,verified,low
-CUST-000091,individual,Lerato,Khumalo,8706280091091,,South Africa,+27821000091,,1987-06-28,other,Western Cape,Paarl,student,80000+,inactive,2015-01-19,verified,medium
-CUST-000092,individual,Lindiwe,Nkosi,0312220092092,,South Africa,+27821000092,,2003-12-22,female,Limpopo,Thohoyandou,retired,80000+,closed,2025-01-18,verified,low
-CUST-000093,individual,Kabelo,Pillay,0012020093093,,South Africa,+27821000093,,2000-12-02,other,Mpumalanga,Middelburg,retired,10000-19999,suspended,2021-04-30,verified,high
-CUST-000094,individual,Lindiwe,Khumalo,8501140094094,,South Africa,+27821000094,,1985-01-14,female,North West,Rustenburg,student,40000-79999,active,2009-11-18,pending,low
-CUST-000095,individual,Nomsa,Maseko,,P00000095,Zimbabwe,+27821000095,,2001-11-06,other,Western Cape,Paarl,self-employed,0-4999,active,2023-07-18,verified,medium
-CUST-000096,individual,Lerato,Mthembu,0304220096096,,South Africa,+27821000096,,2003-04-22,other,Eastern Cape,East London,student,5000-9999,active,2024-02-25,verified,low
-CUST-000097,individual,Sibusiso,Mthembu,8912150097097,,South Africa,+27821000097,,1989-12-15,other,Northern Cape,Kimberley,self-employed,10000-19999,active,2020-07-14,verified,medium
-CUST-000098,individual,Sibusiso,Van Wyk,,P00000098,Namibia,+27821000098,,1952-01-03,male,KwaZulu-Natal,Umhlanga,unemployed,20000-39999,active,1986-04-13,pending,medium
-CUST-000099,individual,Anele,Khumalo,9202270099099,,South Africa,+27821000099,,1992-02-27,female,KwaZulu-Natal,Richards Bay,retired,0-4999,active,2017-10-20,verified,high
-CUST-000100,individual,Naledi,Ndlovu,7511140100000,,South Africa,+27821000100,,1975-11-14,other,Mpumalanga,Middelburg,retired,80000+,active,2013-09-29,verified,low
-CUST-000101,individual,Sipho,Mthembu,0409010101001,,South Africa,+27821000101,,2004-09-01,male,Northern Cape,Springbok,self-employed,10000-19999,active,2025-05-24,verified,low
-CUST-000102,individual,Lerato,Pillay,8011220102002,,South Africa,+27821000102,,1980-11-22,female,Gauteng,Midrand,unemployed,0-4999,inactive,2004-04-09,pending,low
-CUST-000103,individual,Thabo,Naidoo,9209140103003,,South Africa,+27821000103,,1992-09-14,male,Limpopo,Lephalale,student,20000-39999,active,2012-06-12,verified,medium
-CUST-000104,individual,Sibusiso,Naidoo,8312030104004,,South Africa,+27821000104,,1983-12-03,male,Mpumalanga,Mbombela,self-employed,5000-9999,active,2005-11-15,verified,low
-CUST-000105,individual,Sipho,Ndlovu,5804230105005,,South Africa,+27821000105,,1958-04-23,male,Western Cape,Bellville,self-employed,5000-9999,active,2022-02-08,verified,low
-CUST-000106,individual,Zanele,Maseko,6701090106006,,South Africa,+27821000106,,1967-01-09,other,KwaZulu-Natal,Durban,retired,10000-19999,active,2012-01-17,verified,low
-CUST-000107,individual,Nomsa,Botha,6412310107007,,South Africa,+27821000107,,1964-12-31,unknown,Western Cape,Paarl,employed,0-4999,active,2002-09-22,verified,low
-CUST-000108,individual,Mpho,Mthembu,8407150108008,,South Africa,+27821000108,,1984-07-15,male,Western Cape,Cape Town,self-employed,40000-79999,active,2015-05-31,verified,low
-CUST-000109,individual,Ayanda,Mabena,,P00000109,Namibia,+27821000109,,1994-02-16,male,KwaZulu-Natal,Durban,employed,5000-9999,active,2023-05-16,verified,medium
-CUST-000110,individual,Zanele,Maseko,9009240110010,,South Africa,+27821000110,,1990-09-24,female,Northern Cape,Kuruman,retired,80000+,active,2018-08-02,verified,high
-CUST-000111,individual,Kabelo,Ndlovu,,P00000111,Zimbabwe,+27821000111,,1981-06-24,male,Limpopo,Polokwane,self-employed,10000-19999,active,2002-06-07,verified,low
-CUST-000112,individual,Zanele,Mabena,8608150112012,,South Africa,+27821000112,,1986-08-15,unknown,Western Cape,George,student,10000-19999,active,2007-07-07,verified,low
-CUST-000113,individual,Anele,Ndlovu,5302030113013,,South Africa,+27821000113,,1953-02-03,other,Free State,Welkom,employed,40000-79999,closed,2003-08-15,verified,medium
-CUST-000114,individual,Anele,Khumalo,9911190114014,,South Africa,+27821000114,,1999-11-19,male,Northern Cape,Kimberley,retired,20000-39999,active,2026-03-02,verified,medium
-CUST-000115,individual,Ayanda,Dlamini,5505180115015,,South Africa,+27821000115,,1955-05-18,other,Limpopo,Tzaneen,unemployed,5000-9999,closed,2010-03-28,verified,medium
-CUST-000116,individual,Lindiwe,Maseko,8406160116016,,South Africa,+27821000116,,1984-06-16,male,North West,Klerksdorp,self-employed,0-4999,inactive,2022-03-21,verified,low
-CUST-000117,individual,Nomsa,Botha,9407280117017,,South Africa,+27821000117,,1994-07-28,male,Northern Cape,Kimberley,unemployed,0-4999,inactive,2020-11-23,verified,low
-CUST-000118,individual,Lerato,Naidoo,7105180118018,,South Africa,+27821000118,,1971-05-18,male,North West,Klerksdorp,employed,10000-19999,suspended,2026-01-04,verified,medium
-CUST-000119,individual,Mpho,Maseko,6005060119019,,South Africa,+27821000119,,1960-05-06,female,KwaZulu-Natal,Pietermaritzburg,employed,0-4999,active,2008-06-03,verified,low
-CUST-000120,individual,Nomsa,Ndlovu,7406020120020,,South Africa,+27821000120,,1974-06-02,female,KwaZulu-Natal,Umhlanga,self_employed,20000-39999,suspended,2002-02-03,verified,medium
-CUST-000121,individual,Sibusiso,Khumalo,0705020121021,,South Africa,+27821000121,,2007-05-02,other,Western Cape,Cape Town,unemployed,0-4999,inactive,2025-12-22,verified,low
-CUST-000122,individual,Ayanda,Van Wyk,,P00000122,Namibia,+27821000122,,2006-08-13,female,Eastern Cape,Grahamstown,unemployed,20000-39999,active,2025-08-09,verified,low
-CUST-000123,individual,Lindiwe,Maseko,5505130123023,,South Africa,+27821000123,,1955-05-13,other,Limpopo,Makhado,self_employed,0-4999,inactive,2008-01-27,verified,low
-CUST-000124,individual,Lindiwe,Khumalo,8301240124024,,South Africa,+27821000124,,1983-01-24,female,Limpopo,Tzaneen,retired,20000-39999,inactive,2025-07-22,verified,high
-CUST-000125,individual,Neo,Van Wyk,5410100125025,,South Africa,+27821000125,,1954-10-10,unknown,Eastern Cape,Gqeberha,self-employed,0-4999,inactive,1999-02-06,failed,medium
-CUST-000126,individual,Sibusiso,Botha,6808080126026,,South Africa,+27821000126,,1968-08-08,unknown,Limpopo,Polokwane,self-employed,5000-9999,suspended,1999-06-08,pending,medium
-CUST-000127,individual,Ayanda,Molefe,9512220127027,,South Africa,+27821000127,,1995-12-22,other,Limpopo,Lephalale,employed,0-4999,active,2025-02-17,pending,low
-CUST-000128,individual,Sibusiso,Mahlangu,8011160128028,,South Africa,+27821000128,,1980-11-16,other,Free State,Sasolburg,student,20000-39999,active,2012-02-19,verified,medium
-CUST-000129,individual,Thabo,Khumalo,7602020129029,,South Africa,+27821000129,,1976-02-02,unknown,Gauteng,Johannesburg,employed,5000-9999,active,2022-10-10,verified,low
-CUST-000130,individual,Kabelo,Botha,5706280130030,,South Africa,+27821000130,,1957-06-28,female,Limpopo,Makhado,student,5000-9999,active,1996-08-29,verified,medium
-CUST-000131,individual,Ayanda,Pillay,9812160131031,,South Africa,+27821000131,,1998-12-16,female,Mpumalanga,Secunda,self-employed,10000-19999,active,2021-01-27,verified,low
-CUST-000132,individual,Lerato,Mthembu,9106300132032,,South Africa,+27821000132,,1991-06-30,other,Free State,Sasolburg,retired,10000-19999,active,2014-04-22,verified,low
-CUST-000133,individual,Lindiwe,Naidoo,,P00000133,Lesotho,+27821000133,,1957-04-13,male,Northern Cape,Springbok,employed,5000-9999,suspended,2024-08-15,failed,high
-CUST-000134,individual,Karabo,Ndlovu,,P00000134,Namibia,+27821000134,,1963-12-01,female,North West,Rustenburg,self-employed,20000-39999,active,1992-07-14,verified,low
-CUST-000135,individual,Mpho,Mabena,9405260135035,,South Africa,+27821000135,,1994-05-26,other,Mpumalanga,Middelburg,self_employed,40000-79999,inactive,2024-03-10,not_started,high
-CUST-000136,individual,Anele,Khumalo,0403100136036,,South Africa,+27821000136,,2004-03-10,other,KwaZulu-Natal,Newcastle,retired,5000-9999,active,2023-03-17,verified,medium
-CUST-000137,individual,Karabo,Van Wyk,8207020137037,,South Africa,+27821000137,,1982-07-02,female,Free State,Bloemfontein,student,80000+,active,2023-10-11,verified,low
-CUST-000138,individual,Neo,Mahlangu,6608020138038,,South Africa,+27821000138,,1966-08-02,female,KwaZulu-Natal,Pietermaritzburg,employed,0-4999,active,2011-02-18,verified,medium
-CUST-000139,individual,Zanele,Molefe,0303150139039,,South Africa,+27821000139,,2003-03-15,unknown,Eastern Cape,Grahamstown,self_employed,80000+,active,2022-09-08,verified,low
-CUST-000140,individual,Karabo,Khumalo,8711210140040,,South Africa,+27821000140,,1987-11-21,other,North West,Rustenburg,retired,10000-19999,active,2012-07-23,verified,low
-CUST-000141,individual,Sipho,Khumalo,8206110141041,,South Africa,+27821000141,,1982-06-11,female,KwaZulu-Natal,Richards Bay,employed,10000-19999,active,2018-04-30,verified,low
-CUST-000142,individual,Mpho,Van Wyk,8512020142042,,South Africa,+27821000142,,1985-12-02,unknown,Eastern Cape,East London,unemployed,10000-19999,inactive,2022-09-03,expired,high
-CUST-000143,individual,Nomsa,Botha,9601290143043,,South Africa,+27821000143,,1996-01-29,unknown,Western Cape,Paarl,self-employed,40000-79999,active,2014-08-06,failed,medium
-CUST-000144,individual,Thabo,Maseko,5203100144044,,South Africa,+27821000144,,1952-03-10,male,Mpumalanga,Witbank,self-employed,40000-79999,suspended,1979-10-31,verified,high
-CUST-000145,individual,Anele,Ndlovu,7705070145045,,South Africa,+27821000145,,1977-05-07,unknown,Mpumalanga,Ermelo,self-employed,10000-19999,active,1998-08-23,verified,medium
-CUST-000146,individual,Lindiwe,Botha,0107030146046,,South Africa,+27821000146,,2001-07-03,unknown,KwaZulu-Natal,Pietermaritzburg,self_employed,40000-79999,active,2023-08-08,verified,low
-CUST-000147,individual,Ayanda,Mahlangu,9709150147047,,South Africa,+27821000147,,1997-09-15,unknown,Limpopo,Lephalale,retired,40000-79999,active,2017-04-09,verified,medium
-CUST-000148,individual,Karabo,Botha,7805090148048,,South Africa,+27821000148,,1978-05-09,other,Gauteng,Soweto,retired,40000-79999,active,2017-08-27,verified,low
-CUST-000149,individual,Anele,Mahlangu,0304120149049,,South Africa,+27821000149,,2003-04-12,male,Gauteng,Centurion,employed,40000-79999,active,2022-07-22,verified,medium
-CUST-000150,individual,Neo,Mahlangu,6104260150050,,South Africa,+27821000150,,1961-04-26,female,Gauteng,Midrand,retired,5000-9999,active,1996-06-06,verified,medium
-CUST-000151,individual,Palesa,Van Wyk,,P00000151,Eswatini,+27821000151,,1997-12-28,other,Northern Cape,Springbok,student,10000-19999,closed,2018-04-25,verified,low
-CUST-000152,individual,Lindiwe,Molefe,,P00000152,Lesotho,+27821000152,,1975-03-05,male,North West,Mahikeng,retired,80000+,closed,2020-07-16,verified,low
-CUST-000153,individual,Palesa,Pillay,9504300153053,,South Africa,+27821000153,,1995-04-30,other,North West,Klerksdorp,self_employed,10000-19999,active,2020-06-09,verified,medium
-CUST-000154,individual,Palesa,Van Wyk,5503260154054,,South Africa,+27821000154,,1955-03-26,other,Western Cape,George,self_employed,0-4999,suspended,1999-01-14,verified,high
-CUST-000155,individual,Naledi,Naidoo,0609100155055,,South Africa,+27821000155,,2006-09-10,unknown,Eastern Cape,East London,employed,80000+,active,2026-05-03,verified,low
-CUST-000156,individual,Lindiwe,Molefe,6310160156056,,South Africa,+27821000156,,1963-10-16,other,Northern Cape,Upington,self-employed,80000+,active,1982-01-08,verified,medium
-CUST-000157,individual,Palesa,Mahlangu,,P00000157,Lesotho,+27821000157,,1956-10-06,male,Eastern Cape,Grahamstown,employed,20000-39999,inactive,1982-10-15,failed,low
-CUST-000158,individual,Mpho,Mabena,,P00000158,Namibia,+27821000158,,1995-11-25,unknown,Free State,Bloemfontein,self_employed,40000-79999,active,2018-01-29,verified,low
-CUST-000159,individual,Sibusiso,Naidoo,9306120159059,,South Africa,+27821000159,,1993-06-12,other,Eastern Cape,Gqeberha,student,80000+,active,2017-07-25,verified,medium
-CUST-000160,individual,Mpho,Naidoo,6810140160060,,South Africa,+27821000160,,1968-10-14,male,Mpumalanga,Middelburg,employed,10000-19999,active,1994-08-28,pending,medium
-CUST-000161,individual,Sibusiso,Dlamini,8511130161061,,South Africa,+27821000161,,1985-11-13,female,North West,Klerksdorp,retired,0-4999,closed,2014-06-06,verified,medium
-CUST-000162,individual,Zanele,Molefe,9303180162062,,South Africa,+27821000162,,1993-03-18,other,KwaZulu-Natal,Newcastle,student,5000-9999,active,2018-02-02,verified,medium
-CUST-000163,individual,Lindiwe,Van Wyk,7102120163063,,South Africa,+27821000163,,1971-02-12,male,North West,Mahikeng,self_employed,80000+,active,1995-02-09,expired,medium
-CUST-000164,individual,Karabo,Van Wyk,0411280164064,,South Africa,+27821000164,,2004-11-28,male,Northern Cape,De Aar,self_employed,10000-19999,active,2023-05-14,verified,high
-CUST-000165,individual,Mpho,Khumalo,9802200165065,,South Africa,+27821000165,,1998-02-20,unknown,Western Cape,Stellenbosch,unemployed,40000-79999,inactive,2021-02-02,verified,medium
-CUST-000166,individual,Thabo,Pillay,5608200166066,,South Africa,+27821000166,,1956-08-20,other,North West,Klerksdorp,retired,0-4999,inactive,2024-10-06,verified,medium
-CUST-000167,individual,Kabelo,Pillay,0001030167067,,South Africa,+27821000167,,2000-01-03,unknown,Western Cape,Paarl,unemployed,20000-39999,active,2018-09-06,verified,medium
-CUST-000168,individual,Neo,Mokoena,5808280168068,,South Africa,+27821000168,,1958-08-28,female,KwaZulu-Natal,Richards Bay,self-employed,20000-39999,active,2025-01-14,expired,medium
-CUST-000169,individual,Thabo,Mthembu,0004200169069,,South Africa,+27821000169,,2000-04-20,unknown,Northern Cape,De Aar,student,0-4999,inactive,2023-01-21,pending,low
-CUST-000170,individual,Sibusiso,Mokoena,,P00000170,Zimbabwe,+27821000170,,1973-01-18,unknown,Western Cape,Cape Town,unemployed,5000-9999,active,2000-04-16,verified,medium
-CUST-000171,individual,Karabo,Maseko,9911180171071,,South Africa,+27821000171,,1999-11-18,other,Gauteng,Pretoria,self_employed,10000-19999,active,2020-04-25,verified,medium
-CUST-000172,individual,Zanele,Mabena,6404230172072,,South Africa,+27821000172,,1964-04-23,unknown,Northern Cape,Upington,student,20000-39999,active,2011-12-03,verified,low
-CUST-000173,individual,Sipho,Mahlangu,5508310173073,,South Africa,+27821000173,,1955-08-31,male,Mpumalanga,Ermelo,self-employed,80000+,active,2004-07-24,verified,low
-CUST-000174,individual,Nomsa,Dlamini,6405290174074,,South Africa,+27821000174,,1964-05-29,other,North West,Rustenburg,retired,0-4999,active,2018-07-20,failed,high
-CUST-000175,individual,Neo,Ndlovu,9110230175075,,South Africa,+27821000175,,1991-10-23,male,Western Cape,Bellville,student,80000+,inactive,2018-02-17,pending,low
-CUST-000176,individual,Sibusiso,Ndlovu,0108050176076,,South Africa,+27821000176,,2001-08-05,unknown,North West,Mahikeng,self_employed,80000+,suspended,2022-01-09,pending,high
-CUST-000177,individual,Nomsa,Molefe,0509060177077,,South Africa,+27821000177,,2005-09-06,other,Eastern Cape,Queenstown,student,20000-39999,suspended,2025-08-26,verified,high
-CUST-000178,individual,Sibusiso,Khumalo,9304070178078,,South Africa,+27821000178,,1993-04-07,female,North West,Klerksdorp,self-employed,40000-79999,suspended,2013-06-22,verified,medium
-CUST-000179,individual,Ayanda,Mabena,0311080179079,,South Africa,+27821000179,,2003-11-08,other,Mpumalanga,Secunda,self-employed,20000-39999,active,2025-02-06,verified,low
-CUST-000180,individual,Ayanda,Mokoena,,P00000180,Botswana,+27821000180,,1995-06-21,female,KwaZulu-Natal,Richards Bay,retired,0-4999,active,2023-10-22,verified,low
-CUST-000181,individual,Karabo,Mabena,5201120181081,,South Africa,+27821000181,,1952-01-12,unknown,KwaZulu-Natal,Pietermaritzburg,retired,20000-39999,active,2007-01-11,verified,low
-CUST-000182,individual,Thabo,Van Wyk,5211130182082,,South Africa,+27821000182,,1952-11-13,unknown,Northern Cape,Kuruman,self_employed,0-4999,active,1971-06-17,not_started,medium
-CUST-000183,individual,Lerato,Naidoo,6002060183083,,South Africa,+27821000183,,1960-02-06,unknown,KwaZulu-Natal,Pietermaritzburg,unemployed,40000-79999,active,2025-02-22,verified,medium
-CUST-000184,individual,Lerato,Pillay,,P00000184,Zimbabwe,+27821000184,,1973-04-11,unknown,Eastern Cape,Mthatha,unemployed,40000-79999,active,2022-07-20,verified,medium
-CUST-000185,individual,Palesa,Van Wyk,9402280185085,,South Africa,+27821000185,,1994-02-28,female,Gauteng,Pretoria,self_employed,5000-9999,active,2013-06-01,verified,medium
-CUST-000186,individual,Anele,Mahlangu,0204220186086,,South Africa,+27821000186,,2002-04-22,other,Free State,Bloemfontein,employed,5000-9999,suspended,2025-08-21,verified,medium
-CUST-000187,individual,Naledi,Mthembu,0402140187087,,South Africa,+27821000187,,2004-02-14,male,Mpumalanga,Mbombela,retired,80000+,active,2022-12-06,verified,low
-CUST-000188,individual,Lindiwe,Naidoo,5806290188088,,South Africa,+27821000188,,1958-06-29,female,Limpopo,Polokwane,retired,10000-19999,active,2021-06-02,verified,low
-CUST-000189,individual,Lerato,Mthembu,9111170189089,,South Africa,+27821000189,,1991-11-17,other,Eastern Cape,Mthatha,self_employed,80000+,active,2020-11-18,verified,low
-CUST-000190,individual,Lerato,Ndlovu,5801190190090,,South Africa,+27821000190,,1958-01-19,female,Free State,Welkom,self-employed,20000-39999,active,1983-05-30,verified,low
-CUST-000191,individual,Thabo,Ndlovu,8309300191091,,South Africa,+27821000191,,1983-09-30,other,Western Cape,Stellenbosch,student,0-4999,active,2013-11-05,verified,low
-CUST-000192,individual,Karabo,Van Wyk,0501040192092,,South Africa,+27821000192,,2005-01-04,male,Limpopo,Thohoyandou,retired,20000-39999,active,2026-05-12,verified,medium
-CUST-000193,individual,Mpho,Mthembu,6608310193093,,South Africa,+27821000193,,1966-08-31,female,Free State,Bethlehem,self-employed,10000-19999,active,1990-11-22,verified,low
-CUST-000194,individual,Kabelo,Mahlangu,7307310194094,,South Africa,+27821000194,,1973-07-31,unknown,North West,Brits,self-employed,20000-39999,active,2023-12-01,verified,low
-CUST-000195,individual,Kabelo,Molefe,8106270195095,,South Africa,+27821000195,,1981-06-27,unknown,KwaZulu-Natal,Richards Bay,student,5000-9999,active,2018-10-20,verified,low
-CUST-000196,individual,Zanele,Mthembu,,P00000196,Mozambique,+27821000196,,1980-09-10,female,Free State,Sasolburg,retired,20000-39999,active,2015-07-24,verified,low
-CUST-000197,individual,Sipho,Molefe,7004070197097,,South Africa,+27821000197,,1970-04-07,male,Free State,Bloemfontein,retired,20000-39999,inactive,2007-12-07,verified,low
-CUST-000198,individual,Ayanda,Mokoena,,P00000198,Lesotho,+27821000198,,1985-04-12,other,North West,Brits,retired,40000-79999,active,2006-08-05,verified,low
-CUST-000199,individual,Karabo,Mabena,0409240199099,,South Africa,+27821000199,,2004-09-24,unknown,Western Cape,Cape Town,self-employed,20000-39999,inactive,2026-04-22,verified,low
-CUST-000200,individual,Mpho,Naidoo,6012170200000,,South Africa,+27821000200,,1960-12-17,unknown,Western Cape,George,unemployed,80000+,active,1979-11-27,verified,low
-CUST-000201,individual,Lerato,Mahlangu,0404050201001,,South Africa,+27821000201,,2004-04-05,male,Northern Cape,Upington,self-employed,10000-19999,active,2026-02-17,pending,low
-CUST-000202,individual,Lerato,Molefe,8203270202002,,South Africa,+27821000202,,1982-03-27,female,Eastern Cape,Grahamstown,retired,0-4999,active,2020-08-29,verified,low
-CUST-000203,individual,Ayanda,Pillay,5306260203003,,South Africa,+27821000203,,1953-06-26,unknown,Western Cape,Stellenbosch,self_employed,20000-39999,suspended,2002-04-05,verified,high
-CUST-000204,individual,Naledi,Mokoena,0712150204004,,South Africa,+27821000204,,2007-12-15,male,KwaZulu-Natal,Newcastle,self_employed,10000-19999,active,2026-01-31,verified,medium
-CUST-000205,individual,Ayanda,Mabena,5701260205005,,South Africa,+27821000205,,1957-01-26,other,Northern Cape,Upington,student,20000-39999,active,1984-03-13,verified,low
-CUST-000206,individual,Palesa,Maseko,0604200206006,,South Africa,+27821000206,,2006-04-20,female,Western Cape,George,retired,5000-9999,active,2025-05-26,verified,low
-CUST-000207,individual,Karabo,Pillay,7907220207007,,South Africa,+27821000207,,1979-07-22,unknown,Eastern Cape,Mthatha,self_employed,20000-39999,active,2002-11-04,verified,low
-CUST-000208,individual,Neo,Naidoo,9909010208008,,South Africa,+27821000208,,1999-09-01,female,KwaZulu-Natal,Umhlanga,unemployed,5000-9999,active,2025-06-11,verified,low
-CUST-000209,individual,Mpho,Khumalo,6812170209009,,South Africa,+27821000209,,1968-12-17,female,Mpumalanga,Ermelo,student,0-4999,active,2023-07-12,verified,medium
-CUST-000210,individual,Ayanda,Van Wyk,7103300210010,,South Africa,+27821000210,,1971-03-30,female,Gauteng,Soweto,student,0-4999,active,2002-05-06,verified,medium
-CUST-000211,individual,Lerato,Nkosi,7506290211011,,South Africa,+27821000211,,1975-06-29,male,Limpopo,Lephalale,self-employed,0-4999,inactive,2017-11-08,not_started,medium
-CUST-000212,individual,Neo,Nkosi,9110210212012,,South Africa,+27821000212,,1991-10-21,unknown,Limpopo,Polokwane,self_employed,40000-79999,active,2015-09-12,expired,high
-CUST-000213,individual,Kabelo,Nkosi,6312130213013,,South Africa,+27821000213,,1963-12-13,other,Eastern Cape,East London,self-employed,40000-79999,inactive,2017-02-25,verified,low
-CUST-000214,individual,Sibusiso,Mahlangu,,P00000214,Mozambique,+27821000214,,1975-06-11,male,Western Cape,Stellenbosch,self_employed,5000-9999,closed,2016-07-08,verified,high
-CUST-000215,individual,Zanele,Mthembu,8005090215015,,South Africa,+27821000215,,1980-05-09,female,Mpumalanga,Middelburg,unemployed,40000-79999,active,2009-06-15,verified,medium
-CUST-000216,individual,Sibusiso,Botha,7606010216016,,South Africa,+27821000216,,1976-06-01,other,Limpopo,Thohoyandou,employed,40000-79999,closed,2025-07-30,verified,low
-CUST-000217,individual,Karabo,Mahlangu,8702200217017,,South Africa,+27821000217,,1987-02-20,unknown,Mpumalanga,Witbank,self-employed,80000+,active,2010-01-09,verified,low
-CUST-000218,individual,Sipho,Nkosi,5510200218018,,South Africa,+27821000218,,1955-10-20,male,Western Cape,Paarl,retired,10000-19999,active,1977-12-03,verified,low
-CUST-000219,individual,Thabo,Pillay,,P00000219,Botswana,+27821000219,,1965-09-20,other,Free State,Bloemfontein,retired,80000+,active,2022-12-10,verified,low
-CUST-000220,individual,Thabo,Mokoena,7206180220020,,South Africa,+27821000220,,1972-06-18,other,Western Cape,Cape Town,employed,20000-39999,active,2009-09-18,verified,low
-CUST-000221,individual,Anele,Pillay,6304260221021,,South Africa,+27821000221,,1963-04-26,male,Western Cape,Stellenbosch,retired,80000+,active,2024-03-04,verified,low
-CUST-000222,individual,Palesa,Pillay,6404100222022,,South Africa,+27821000222,,1964-04-10,unknown,Northern Cape,Kuruman,self_employed,0-4999,active,1985-05-04,verified,low
-CUST-000223,individual,Nomsa,Mabena,6006210223023,,South Africa,+27821000223,,1960-06-21,female,Western Cape,Bellville,self_employed,40000-79999,inactive,1991-01-11,verified,low
-CUST-000224,individual,Lindiwe,Mthembu,0505170224024,,South Africa,+27821000224,,2005-05-17,male,Gauteng,Soweto,unemployed,20000-39999,active,2024-12-20,verified,low
-CUST-000225,individual,Anele,Pillay,6107280225025,,South Africa,+27821000225,,1961-07-28,unknown,North West,Brits,self-employed,40000-79999,active,2001-03-13,verified,low
-CUST-000226,individual,Lindiwe,Pillay,6612160226026,,South Africa,+27821000226,,1966-12-16,other,North West,Rustenburg,retired,80000+,active,2019-03-04,pending,low
-CUST-000227,individual,Lerato,Van Wyk,9605290227027,,South Africa,+27821000227,,1996-05-29,male,Mpumalanga,Middelburg,self_employed,40000-79999,active,2023-09-22,verified,medium
-CUST-000228,individual,Palesa,Pillay,8010080228028,,South Africa,+27821000228,,1980-10-08,female,Western Cape,George,unemployed,40000-79999,active,2016-04-17,verified,medium
-CUST-000229,individual,Ayanda,Van Wyk,0601290229029,,South Africa,+27821000229,,2006-01-29,other,Free State,Welkom,self_employed,10000-19999,active,2024-03-25,verified,medium
-CUST-000230,individual,Mpho,Botha,6211050230030,,South Africa,+27821000230,,1962-11-05,other,Western Cape,Cape Town,employed,20000-39999,active,2004-12-15,verified,low
-CUST-000231,individual,Sibusiso,Van Wyk,0204250231031,,South Africa,+27821000231,,2002-04-25,female,Limpopo,Tzaneen,employed,0-4999,active,2022-03-09,verified,low
-CUST-000232,individual,Sipho,Naidoo,,P00000232,Zimbabwe,+27821000232,,1973-05-25,male,North West,Klerksdorp,unemployed,80000+,active,1993-06-16,verified,high
-CUST-000233,individual,Naledi,Ndlovu,8002280233033,,South Africa,+27821000233,,1980-02-28,unknown,Western Cape,Bellville,self-employed,10000-19999,active,2010-04-30,verified,high
-CUST-000234,individual,Mpho,Naidoo,8010260234034,,South Africa,+27821000234,,1980-10-26,unknown,Northern Cape,De Aar,self_employed,80000+,active,2002-09-10,verified,low
-CUST-000235,individual,Kabelo,Mokoena,0006280235035,,South Africa,+27821000235,,2000-06-28,unknown,KwaZulu-Natal,Durban,retired,80000+,suspended,2021-03-28,not_started,high
-CUST-000236,individual,Sibusiso,Molefe,,P00000236,Namibia,+27821000236,,1979-01-17,female,Eastern Cape,Grahamstown,employed,5000-9999,closed,2001-09-16,verified,high
-CUST-000237,individual,Lerato,Maseko,9802010237037,,South Africa,+27821000237,,1998-02-01,female,Limpopo,Thohoyandou,unemployed,80000+,closed,2020-09-18,pending,low
-CUST-000238,individual,Kabelo,Botha,6303090238038,,South Africa,+27821000238,,1963-03-09,other,Free State,Bethlehem,self_employed,0-4999,suspended,2002-06-05,expired,medium
-CUST-000239,individual,Lindiwe,Dlamini,6908230239039,,South Africa,+27821000239,,1969-08-23,unknown,Western Cape,Stellenbosch,self-employed,20000-39999,active,1993-09-30,verified,low
-CUST-000240,individual,Neo,Mahlangu,7503260240040,,South Africa,+27821000240,,1975-03-26,other,Western Cape,Stellenbosch,self_employed,0-4999,inactive,1998-08-11,pending,medium
-CUST-000241,individual,Neo,Botha,7309220241041,,South Africa,+27821000241,,1973-09-22,male,Mpumalanga,Ermelo,employed,20000-39999,active,2007-09-06,verified,medium
-CUST-000242,individual,Kabelo,Mabena,6008070242042,,South Africa,+27821000242,,1960-08-07,female,Western Cape,Cape Town,student,40000-79999,active,1991-02-20,verified,low
-CUST-000243,individual,Lerato,Mokoena,7409050243043,,South Africa,+27821000243,,1974-09-05,unknown,Gauteng,Johannesburg,employed,5000-9999,active,1996-01-16,verified,medium
-CUST-000244,individual,Nomsa,Molefe,0212110244044,,South Africa,+27821000244,,2002-12-11,unknown,Mpumalanga,Middelburg,self_employed,0-4999,active,2023-05-17,verified,low
-CUST-000245,individual,Anele,Pillay,0607210245045,,South Africa,+27821000245,,2006-07-21,male,Eastern Cape,Mthatha,retired,40000-79999,active,2026-04-16,verified,low
-CUST-000246,individual,Kabelo,Maseko,7310230246046,,South Africa,+27821000246,,1973-10-23,other,Northern Cape,Kimberley,unemployed,10000-19999,closed,2020-02-07,verified,low
-CUST-000247,individual,Ayanda,Naidoo,6708040247047,,South Africa,+27821000247,,1967-08-04,male,Limpopo,Lephalale,self_employed,0-4999,active,1986-10-05,verified,medium
-CUST-000248,individual,Karabo,Mahlangu,7309100248048,,South Africa,+27821000248,,1973-09-10,unknown,Eastern Cape,Mthatha,self-employed,5000-9999,active,2021-02-26,verified,medium
-CUST-000249,individual,Karabo,Dlamini,,P00000249,Lesotho,+27821000249,,1967-04-04,unknown,Limpopo,Makhado,student,10000-19999,suspended,1995-11-13,not_started,high
-CUST-000250,individual,Palesa,Maseko,6703170250050,,South Africa,+27821000250,,1967-03-17,male,Gauteng,Johannesburg,self_employed,10000-19999,active,2007-03-17,verified,low
-CUST-000251,individual,Lerato,Naidoo,6705190251051,,South Africa,+27821000251,,1967-05-19,unknown,Limpopo,Polokwane,student,0-4999,active,2021-05-16,verified,high
-CUST-000252,individual,Zanele,Naidoo,8108260252052,,South Africa,+27821000252,,1981-08-26,male,Limpopo,Tzaneen,retired,40000-79999,closed,2013-03-09,verified,low
-CUST-000253,individual,Sibusiso,Mokoena,0607080253053,,South Africa,+27821000253,,2006-07-08,unknown,Eastern Cape,Grahamstown,student,0-4999,inactive,2025-07-08,verified,medium
-CUST-000254,individual,Sipho,Naidoo,6710170254054,,South Africa,+27821000254,,1967-10-17,other,Limpopo,Lephalale,self_employed,80000+,active,2012-10-24,verified,high
-CUST-000255,individual,Sibusiso,Mokoena,5906020255055,,South Africa,+27821000255,,1959-06-02,female,North West,Rustenburg,unemployed,20000-39999,active,2007-07-16,verified,low
-CUST-000256,individual,Anele,Botha,8902080256056,,South Africa,+27821000256,,1989-02-08,female,Mpumalanga,Middelburg,employed,10000-19999,suspended,2010-11-01,verified,medium
-CUST-000257,individual,Kabelo,Maseko,5304040257057,,South Africa,+27821000257,,1953-04-04,unknown,Free State,Bloemfontein,retired,0-4999,active,1999-11-06,verified,low
-CUST-000258,individual,Naledi,Nkosi,9002250258058,,South Africa,+27821000258,,1990-02-25,other,KwaZulu-Natal,Umhlanga,retired,10000-19999,suspended,2022-10-23,pending,medium
-CUST-000259,individual,Naledi,Ndlovu,7802200259059,,South Africa,+27821000259,,1978-02-20,other,Western Cape,Cape Town,retired,80000+,active,2006-10-16,verified,low
-CUST-000260,individual,Nomsa,Mthembu,0504210260060,,South Africa,+27821000260,,2005-04-21,unknown,Eastern Cape,Gqeberha,unemployed,20000-39999,active,2025-12-29,verified,low
-CUST-000261,individual,Mpho,Botha,7503260261061,,South Africa,+27821000261,,1975-03-26,other,Northern Cape,De Aar,self_employed,10000-19999,active,1997-04-27,verified,low
-CUST-000262,individual,Ayanda,Mokoena,,P00000262,Namibia,+27821000262,,2002-01-29,unknown,KwaZulu-Natal,Durban,student,20000-39999,active,2020-10-07,verified,low
-CUST-000263,individual,Ayanda,Maseko,,P00000263,Botswana,+27821000263,,1999-07-02,male,North West,Brits,employed,20000-39999,suspended,2025-03-16,verified,low
-CUST-000264,individual,Neo,Maseko,6612190264064,,South Africa,+27821000264,,1966-12-19,other,Eastern Cape,East London,self-employed,80000+,active,1992-06-18,verified,high
-CUST-000265,individual,Lindiwe,Nkosi,5706200265065,,South Africa,+27821000265,,1957-06-20,unknown,Mpumalanga,Ermelo,employed,20000-39999,active,1983-04-10,verified,low
-CUST-000266,individual,Palesa,Pillay,6411180266066,,South Africa,+27821000266,,1964-11-18,other,Western Cape,Cape Town,unemployed,80000+,active,1989-07-12,verified,low
-CUST-000267,individual,Thabo,Pillay,9501080267067,,South Africa,+27821000267,,1995-01-08,other,North West,Rustenburg,retired,5000-9999,active,2025-11-07,verified,medium
-CUST-000268,individual,Neo,Nkosi,5511180268068,,South Africa,+27821000268,,1955-11-18,female,Free State,Bethlehem,self_employed,5000-9999,active,2016-07-06,verified,low
-CUST-000269,individual,Sibusiso,Botha,7806010269069,,South Africa,+27821000269,,1978-06-01,other,Limpopo,Makhado,employed,40000-79999,inactive,2016-04-16,verified,low
-CUST-000270,individual,Sipho,Mahlangu,6509200270070,,South Africa,+27821000270,,1965-09-20,male,Free State,Kroonstad,employed,5000-9999,active,1986-08-30,verified,low
-,individual,Zanele,Mokoena,5406040271071,,South Africa,+27821000271,,1954-06-04,male,Gauteng,Soweto,self-employed,20000-39999,inactive,2013-05-16,pending,medium
-CUST-000272,vip_person,Nomsa,Mokoena,,P00000272,Botswana,+27821000272,,2004-10-01,unknown,KwaZulu-Natal,Newcastle,employed,5000-9999,active,2025-04-01,verified,low
-CUST-000273,individual,Mpho,Khumalo,0210180273073,,South Africa,+27821000273,,2026-07-17,male,Eastern Cape,East London,student,0-4999,active,2023-03-14,verified,low
-CUST-000274,individual,Nomsa,Mabena,7107140274074,,South Africa,+27821000274,,2011-06-17,unknown,Free State,Bethlehem,student,0-4999,active,2000-11-08,verified,low
-CUST-000275,individual,Kabelo,Molefe,5202120275075,,South Africa,+27821000275,,1952-02-12,other,Atlantis,Poseidon City,self-employed,10000-19999,active,2016-01-03,verified,low
-CUST-000276,individual,Zanele,Naidoo,7804060276076,,South Africa,+27821000276,,1978-04-06,male,,Umhlanga,retired,0-4999,inactive,2004-09-17,failed,high
-CUST-000277,individual,Kabelo,Nkosi,,P00000277,Mozambique,+27821000277,,1996-01-29,male,Free State,Sasolburg,retired,999999-1000000,active,2020-09-15,verified,low
-CUST-000278,individual,Mpho,Khumalo,9402190278078,,South Africa,+27821000278,,1994-02-19,other,Northern Cape,Springbok,retired,40000-79999,paused,2020-03-04,failed,high
-CUST-000279,individual,Kabelo,Molefe,6711180279079,,South Africa,+27821000279,,1967-11-18,other,Limpopo,Polokwane,unemployed,0-4999,active,2016-05-15,approved,medium
-CUST-000280,individual,Naledi,Mokoena,9309020280080,,South Africa,+27821000280,,1993-09-02,male,Western Cape,Paarl,self_employed,5000-9999,suspended,2012-11-14,verified,extreme
-CUST-000281,individual,Kabelo,Mabena,8203140281081,,South Africa,+27821000281,,1982-03-14,female,North West,Mahikeng,employed,20000-39999,active,2026-09-15,verified,medium
-CUST-000282,individual,Zanele,Pillay,7512300282082,,South Africa,+27821000282,,2001-06-17,unknown,KwaZulu-Natal,Umhlanga,unemployed,20000-39999,inactive,2016-06-17,verified,medium
-CUST-000283,individual,Thabo,Mabena,8511050283083,,South Africa,+27821000283,,,female,Gauteng,Centurion,retired,80000+,active,2004-01-20,verified,low
-CUST-000284,individual,Nomsa,Molefe,7310120284084,,South Africa,+27821000284,,1973-10-12,unknown,Limpopo,Makhado,retired,40000-79999,,2001-12-05,verified,low
-INVALID-ID-001,individual,Lindiwe,Dlamini,,P00000285,Botswana,+27821000285,,2004-12-16,male,Limpopo,Thohoyandou,unemployed,0-4999,suspended,2025-11-23,expired,medium
-CUST-000001,individual,Naledi,Mabena,7112130286086,,South Africa,+27821000286,,1971-12-13,other,KwaZulu-Natal,Pietermaritzburg,student,40000-79999,inactive,2000-01-05,verified,low
-CUST-000287,individual,Mpho,Nkosi,5510260287087,,South Africa,+27821000287,,1955-10-26,male,Western Cape,Cape Town,gig_worker,80000+,active,1978-02-13,verified,low
-CUST-000288,individual,Naledi,Mahlangu,0801030288088,,South Africa,+27821000288,,2008-01-03,robot,Free State,Sasolburg,student,80000+,active,2026-01-05,verified,low
-CUST-000289,individual,Kabelo,Nkosi,0611150289089,,South Africa,+27821000289,,2006-11-15,unknown,Free State,,self-employed,5000-9999,inactive,2025-03-15,verified,medium
-CUST-000290,individual,Palesa,Ndlovu,5412290290090,,South Africa,+27821000290,,not-a-date,unknown,North West,Mahikeng,self_employed,0-4999,active,2022-03-03,verified,low
-CUST-000291,individual,Lerato,Mahlangu,9705130291091,,South Africa,+27821000291,,1997-05-13,male,Western Cape,George,employed,10000-19999,active,not-a-date,verified,high
-CUST-ABCDEF,individual,Kabelo,Naidoo,,P00000292,Zimbabwe,+27821000292,,1983-10-10,unknown,Mpumalanga,Mbombela,student,10000-19999,active,2015-10-20,verified,low
-CUST-000293,individual,Lindiwe,Pillay,5910180293093,,South Africa,+27821000293,,1959-10-18,male,Limpopo,Tzaneen,employed,,active,2011-03-24,verified,low
-CUST-000294,individual,Lindiwe,Naidoo,5609190294094,,South Africa,+27821000294,,1956-09-19,female,Western Cape,Paarl,retired,80000+,suspended,1989-01-06,,high
-CUST-000295,individual,Sibusiso,Mahlangu,6303070295095,,South Africa,+27821000295,,1963-03-07,male,North West,Rustenburg,retired,10000-19999,suspended,2024-07-08,verified,
-CUST-000296,individual,,Mahlangu,9801100296096,,South Africa,+27821000296,,1998-01-10,female,Western Cape,Paarl,employed,80000+,active,2021-11-21,verified,low
-CUST-000297,individual,Thabo,,6507150297097,,South Africa,+27821000297,,1965-07-15,male,North West,Potchefstroom,student,80000+,suspended,2006-03-19,not_started,medium
-CUST-000298,individual,Kabelo,Ndlovu,,,Zimbabwe,+27821000298,,1985-06-05,unknown,Eastern Cape,Gqeberha,retired,80000+,active,2021-07-07,verified,low
-CUST-000299,individual,Palesa,Van Wyk,5301190299099,,South Africa,12345,,1953-01-19,male,Mpumalanga,Middelburg,retired,80000+,active,1980-04-04,verified,medium
-CUST-000300,individual,Sibusiso,Mabena,9205210300000,,,+27821000300,,1992-05-21,other,Limpopo,Polokwane,retired,20000-39999,inactive,2018-01-11,failed,medium
+CUST-000001,individual,Karabo,Pillay,,P00000001,Botswana,+27821000001,,1961-07-01,female,Free State,Welkom,employed,0-4999,active,1981-09-27,verified,medium
+CUST-000002,individual,Mpho,Maseko,7102150002002,,South Africa,+27821000002,,1971-02-15,other,Northern Cape,Kuruman,employed,5000-9999,active,1999-07-24,verified,medium
+CUST-000003,individual,Neo,Naidoo,8906040003003,,South Africa,+27821000003,,1989-06-04,other,Free State,Welkom,employed,80000+,active,2015-01-20,verified,low
+CUST-000004,individual,Karabo,Dlamini,,P00000004,Zimbabwe,+27821000004,,1992-09-22,female,Western Cape,Paarl,employed,80000+,active,2022-10-01,verified,medium
+CUST-000005,individual,Anele,Naidoo,7112150005005,,South Africa,+27821000005,,1971-12-15,other,Free State,Bloemfontein,self_employed,80000+,suspended,2024-08-18,failed,medium
+CUST-000006,individual,Palesa,Mabena,7506180006006,,South Africa,+27821000006,,1975-06-18,male,Western Cape,Bellville,retired,10000-19999,active,2024-12-10,verified,low
+CUST-000007,individual,Sipho,Mabena,5607110007007,,South Africa,+27821000007,,1956-07-11,unknown,Gauteng,Soweto,unemployed,80000+,active,1995-01-27,pending,high
+CUST-000008,individual,Kabelo,Dlamini,9209030008008,,South Africa,+27821000008,,1992-09-03,male,Free State,Welkom,student,20000-39999,active,2013-11-16,verified,low
+CUST-000009,individual,Karabo,Botha,5908310009009,,South Africa,+27821000009,,1959-08-31,other,Western Cape,Stellenbosch,student,0-4999,active,1981-11-21,verified,low
+CUST-000010,individual,Ayanda,Mthembu,6110140010010,,South Africa,+27821000010,,1961-10-14,male,Limpopo,Polokwane,student,0-4999,active,2003-09-21,verified,low
+CUST-000011,individual,Karabo,Naidoo,,P00000011,Eswatini,+27821000011,,2007-08-10,unknown,Northern Cape,Kuruman,employed,0-4999,active,2026-01-09,verified,low
+CUST-000012,individual,Lindiwe,Van Wyk,8401280012012,,South Africa,+27821000012,,1984-01-28,male,Eastern Cape,Gqeberha,self_employed,80000+,active,2015-11-14,verified,low
+CUST-000013,individual,Sibusiso,Molefe,,P00000013,Lesotho,+27821000013,,1994-02-24,unknown,KwaZulu-Natal,Richards Bay,retired,80000+,active,2024-06-23,verified,high
+CUST-000014,individual,Karabo,Dlamini,8501040014014,,South Africa,+27821000014,,1985-01-04,female,Northern Cape,De Aar,employed,80000+,active,2022-08-29,verified,low
+CUST-000015,individual,Sipho,Van Wyk,0802160015015,,South Africa,+27821000015,,2008-02-16,male,Eastern Cape,Gqeberha,retired,40000-79999,suspended,2026-03-03,failed,low
+CUST-000016,individual,Naledi,Botha,0303160016016,,South Africa,+27821000016,,2003-03-16,female,Eastern Cape,Queenstown,retired,80000+,inactive,2023-11-09,pending,low
+CUST-000017,individual,Naledi,Khumalo,6005030017017,,South Africa,+27821000017,,1960-05-03,other,Mpumalanga,Secunda,unemployed,5000-9999,inactive,1983-10-10,pending,low
+CUST-000018,individual,Anele,Pillay,,P00000018,Eswatini,+27821000018,,1958-04-10,unknown,Northern Cape,Kimberley,unemployed,5000-9999,active,2016-01-11,expired,high
+CUST-000019,individual,Nomsa,Pillay,8706280019019,,South Africa,+27821000019,,1987-06-28,unknown,Gauteng,Pretoria,self_employed,5000-9999,active,2025-09-23,expired,medium
+CUST-000020,individual,Ayanda,Mahlangu,7802160020020,,South Africa,+27821000020,,1978-02-16,male,Gauteng,Centurion,employed,40000-79999,inactive,2005-11-21,not_started,low
+CUST-000021,individual,Karabo,Maseko,,P00000021,Lesotho,+27821000021,,1958-09-12,female,Western Cape,Bellville,student,0-4999,active,1993-05-15,verified,low
+CUST-000022,individual,Anele,Mabena,8902130022022,,South Africa,+27821000022,,1989-02-13,other,Northern Cape,Springbok,unemployed,10000-19999,suspended,2021-11-11,pending,high
+CUST-000023,individual,Anele,Naidoo,5801070023023,,South Africa,+27821000023,,1958-01-07,female,North West,Brits,self_employed,10000-19999,closed,1976-11-07,expired,low
+CUST-000024,individual,Zanele,Mahlangu,7701280024024,,South Africa,+27821000024,,1977-01-28,other,North West,Brits,retired,0-4999,inactive,2002-02-24,verified,high
+CUST-000025,individual,Sipho,Mabena,6307230025025,,South Africa,+27821000025,,1963-07-23,other,Western Cape,Cape Town,student,20000-39999,inactive,2005-04-14,pending,low
+CUST-000026,individual,Anele,Nkosi,7401140026026,,South Africa,+27821000026,,1974-01-14,unknown,Western Cape,Paarl,student,80000+,inactive,1994-04-25,not_started,low
+CUST-000027,individual,Karabo,Van Wyk,8911170027027,,South Africa,+27821000027,,1989-11-17,male,Gauteng,Johannesburg,unemployed,5000-9999,active,2020-06-15,verified,high
+CUST-000028,individual,Karabo,Nkosi,5504060028028,,South Africa,+27821000028,,1955-04-06,male,Limpopo,Polokwane,self_employed,5000-9999,suspended,2000-12-01,pending,medium
+CUST-000029,individual,Nomsa,Khumalo,6705240029029,,South Africa,+27821000029,,1967-05-24,female,Mpumalanga,Mbombela,unemployed,0-4999,active,2024-12-06,verified,medium
+CUST-000030,individual,Naledi,Naidoo,9309260030030,,South Africa,+27821000030,,1993-09-26,other,Eastern Cape,Queenstown,employed,10000-19999,active,2016-09-21,verified,medium
+CUST-000031,individual,Thabo,Ndlovu,8301050031031,,South Africa,+27821000031,,1983-01-05,unknown,Mpumalanga,Ermelo,self-employed,80000+,active,2023-11-12,pending,medium
+CUST-000032,individual,Ayanda,Mthembu,7908260032032,,South Africa,+27821000032,,1979-08-26,male,Northern Cape,Kimberley,self-employed,20000-39999,active,2017-03-23,verified,low
+CUST-000033,individual,Sibusiso,Molefe,5710140033033,,South Africa,+27821000033,,1957-10-14,male,Limpopo,Polokwane,self_employed,20000-39999,inactive,2005-05-28,pending,low
+CUST-000034,individual,Mpho,Botha,8507100034034,,South Africa,+27821000034,,1985-07-10,unknown,Free State,Sasolburg,retired,5000-9999,active,2011-04-30,not_started,low
+CUST-000035,individual,Zanele,Molefe,9705150035035,,South Africa,+27821000035,,1997-05-15,male,KwaZulu-Natal,Durban,self_employed,5000-9999,active,2020-09-03,verified,medium
+CUST-000036,individual,Sibusiso,Nkosi,,P00000036,Zimbabwe,+27821000036,,1953-09-13,unknown,Eastern Cape,Queenstown,unemployed,20000-39999,active,1975-11-05,verified,low
+CUST-000037,individual,Thabo,Van Wyk,7305250037037,,South Africa,+27821000037,,1973-05-25,male,Gauteng,Johannesburg,employed,20000-39999,inactive,1998-01-05,pending,medium
+CUST-000038,individual,Neo,Van Wyk,6306220038038,,South Africa,+27821000038,,1963-06-22,unknown,Northern Cape,Kuruman,self_employed,80000+,active,2023-02-27,failed,high
+CUST-000039,individual,Nomsa,Botha,9402040039039,,South Africa,+27821000039,,1994-02-04,female,Free State,Welkom,retired,10000-19999,inactive,2022-03-09,pending,medium
+CUST-000040,individual,Sibusiso,Dlamini,7207180040040,,South Africa,+27821000040,,1972-07-18,female,Limpopo,Makhado,unemployed,20000-39999,suspended,2002-09-24,not_started,medium
+CUST-000041,individual,Neo,Mthembu,8103120041041,,South Africa,+27821000041,,1981-03-12,unknown,North West,Potchefstroom,unemployed,0-4999,active,2023-07-14,verified,low
+CUST-000042,individual,Sipho,Molefe,,P00000042,Botswana,+27821000042,,1983-01-25,unknown,Mpumalanga,Middelburg,unemployed,0-4999,active,2014-06-18,verified,medium
+CUST-000043,individual,Karabo,Maseko,8605250043043,,South Africa,+27821000043,,1986-05-25,female,Mpumalanga,Witbank,employed,80000+,inactive,2011-12-08,expired,high
+CUST-000044,individual,Nomsa,Mthembu,8912170044044,,South Africa,+27821000044,,1989-12-17,unknown,North West,Mahikeng,self-employed,0-4999,active,2011-01-01,verified,low
+CUST-000045,individual,Lindiwe,Mokoena,9309140045045,,South Africa,+27821000045,,1993-09-14,male,Northern Cape,Kimberley,self_employed,0-4999,closed,2012-02-19,verified,medium
+CUST-000046,individual,Lindiwe,Naidoo,0704020046046,,South Africa,+27821000046,,2007-04-02,male,Eastern Cape,East London,student,40000-79999,active,2025-06-19,verified,high
+CUST-000047,individual,Naledi,Nkosi,,P00000047,Botswana,+27821000047,,1961-10-14,male,Free State,Bloemfontein,employed,40000-79999,active,1994-06-23,verified,low
+CUST-000048,individual,Kabelo,Van Wyk,,P00000048,Namibia,+27821000048,,2007-10-13,unknown,Western Cape,George,retired,10000-19999,suspended,2026-02-14,verified,medium
+CUST-000049,individual,Sibusiso,Khumalo,,P00000049,Eswatini,+27821000049,,1957-09-11,unknown,Limpopo,Polokwane,self_employed,80000+,inactive,2021-01-31,failed,medium
+CUST-000050,individual,Kabelo,Mahlangu,9804260050050,,South Africa,+27821000050,,1998-04-26,male,Free State,Kroonstad,employed,10000-19999,inactive,2023-08-12,verified,low
+CUST-000051,individual,Mpho,Dlamini,,P00000051,Zimbabwe,+27821000051,,1991-12-14,other,North West,Brits,self-employed,10000-19999,active,2015-06-03,verified,low
+CUST-000052,individual,Ayanda,Mthembu,7608060052052,,South Africa,+27821000052,,1976-08-06,male,Free State,Kroonstad,retired,20000-39999,active,2021-05-03,verified,low
+CUST-000053,individual,Mpho,Van Wyk,9507180053053,,South Africa,+27821000053,,1995-07-18,other,Gauteng,Johannesburg,unemployed,80000+,active,2023-08-06,verified,low
+CUST-000054,individual,Sibusiso,Van Wyk,0011200054054,,South Africa,+27821000054,,2000-11-20,male,Limpopo,Thohoyandou,self_employed,5000-9999,active,2022-08-05,verified,low
+CUST-000055,individual,Nomsa,Mokoena,9412130055055,,South Africa,+27821000055,,1994-12-13,male,Northern Cape,Kuruman,self-employed,0-4999,active,2019-02-25,verified,low
+CUST-000056,individual,Mpho,Botha,5605260056056,,South Africa,+27821000056,,1956-05-26,unknown,Free State,Welkom,self-employed,5000-9999,active,2024-01-16,verified,low
+CUST-000057,individual,Anele,Khumalo,5602130057057,,South Africa,+27821000057,,1956-02-13,other,North West,Rustenburg,employed,5000-9999,inactive,1996-10-08,verified,low
+CUST-000058,individual,Nomsa,Maseko,6202190058058,,South Africa,+27821000058,,1962-02-19,female,Eastern Cape,Grahamstown,student,80000+,active,2017-06-21,verified,low
+CUST-000059,individual,Naledi,Botha,6005300059059,,South Africa,+27821000059,,1960-05-30,unknown,Eastern Cape,Mthatha,self-employed,0-4999,active,1997-01-18,verified,low
+CUST-000060,individual,Naledi,Ndlovu,7204110060060,,South Africa,+27821000060,,1972-04-11,male,Free State,Sasolburg,retired,5000-9999,active,2003-03-14,verified,low
+CUST-000061,individual,Mpho,Ndlovu,7505050061061,,South Africa,+27821000061,,1975-05-05,unknown,Western Cape,Cape Town,retired,10000-19999,active,1999-09-21,verified,medium
+CUST-000062,individual,Karabo,Molefe,8708150062062,,South Africa,+27821000062,,1987-08-15,female,Northern Cape,Kuruman,employed,5000-9999,active,2011-09-23,pending,low
+CUST-000063,individual,Palesa,Molefe,0302110063063,,South Africa,+27821000063,,2003-02-11,male,Gauteng,Soweto,student,20000-39999,active,2024-05-28,verified,low
+CUST-000064,individual,Naledi,Nkosi,,P00000064,Zimbabwe,+27821000064,,2008-06-16,unknown,Western Cape,Paarl,self-employed,80000+,active,2026-07-01,verified,medium
+CUST-000065,individual,Neo,Van Wyk,,P00000065,Namibia,+27821000065,,1987-06-09,female,Northern Cape,Kimberley,retired,40000-79999,active,2023-09-07,verified,low
+CUST-000066,individual,Sipho,Molefe,9212150066066,,South Africa,+27821000066,,1992-12-15,male,Gauteng,Pretoria,self-employed,20000-39999,active,2020-03-22,verified,low
+CUST-000067,individual,Lerato,Dlamini,9412300067067,,South Africa,+27821000067,,1994-12-30,female,Gauteng,Centurion,unemployed,0-4999,inactive,2015-09-20,verified,low
+CUST-000068,individual,Ayanda,Khumalo,6504280068068,,South Africa,+27821000068,,1965-04-28,unknown,Free State,Kroonstad,self_employed,40000-79999,inactive,2005-09-04,verified,low
+CUST-000069,individual,Neo,Mokoena,9702080069069,,South Africa,+27821000069,,1997-02-08,other,Western Cape,George,retired,10000-19999,inactive,2018-03-02,failed,medium
+CUST-000070,individual,Mpho,Naidoo,0403010070070,,South Africa,+27821000070,,2004-03-01,male,North West,Mahikeng,retired,5000-9999,active,2025-05-31,verified,low
+CUST-000071,individual,Zanele,Mthembu,0210220071071,,South Africa,+27821000071,,2002-10-22,male,Eastern Cape,Queenstown,unemployed,0-4999,active,2025-02-06,verified,medium
+CUST-000072,individual,Naledi,Mahlangu,6211010072072,,South Africa,+27821000072,,1962-11-01,male,Limpopo,Polokwane,employed,20000-39999,suspended,2025-11-24,verified,high
+CUST-000073,individual,Zanele,Nkosi,7504150073073,,South Africa,+27821000073,,1975-04-15,unknown,Mpumalanga,Mbombela,student,0-4999,suspended,2008-06-21,failed,high
+CUST-000074,individual,Mpho,Khumalo,0611260074074,,South Africa,+27821000074,,2006-11-26,other,Eastern Cape,Mthatha,employed,0-4999,closed,2025-02-04,verified,low
+CUST-000075,individual,Anele,Khumalo,8008110075075,,South Africa,+27821000075,,1980-08-11,female,Free State,Bethlehem,student,20000-39999,active,2001-02-15,verified,low
+CUST-000076,individual,Palesa,Mthembu,0702080076076,,South Africa,+27821000076,,2007-02-08,unknown,North West,Brits,self-employed,80000+,active,2025-10-12,verified,low
+CUST-000077,individual,Mpho,Mahlangu,,P00000077,Eswatini,+27821000077,,2000-07-18,other,Western Cape,Paarl,self_employed,20000-39999,suspended,2020-04-25,expired,medium
+CUST-000078,individual,Nomsa,Mokoena,9411100078078,,South Africa,+27821000078,,1994-11-10,female,Eastern Cape,Queenstown,student,80000+,active,2015-04-02,verified,high
+CUST-000079,individual,Zanele,Ndlovu,9601270079079,,South Africa,+27821000079,,1996-01-27,female,Eastern Cape,Grahamstown,self-employed,20000-39999,inactive,2020-06-28,pending,low
+CUST-000080,individual,Lindiwe,Van Wyk,5407030080080,,South Africa,+27821000080,,1954-07-03,other,Limpopo,Tzaneen,student,40000-79999,active,2024-07-01,verified,medium
+CUST-000081,individual,Lerato,Khumalo,7512170081081,,South Africa,+27821000081,,1975-12-17,male,Free State,Sasolburg,retired,80000+,closed,2001-05-04,verified,medium
+CUST-000082,individual,Zanele,Nkosi,8703010082082,,South Africa,+27821000082,,1987-03-01,other,Northern Cape,Springbok,student,20000-39999,active,2024-02-18,verified,low
+CUST-000083,individual,Zanele,Ndlovu,,P00000083,Botswana,+27821000083,,1984-11-01,unknown,Eastern Cape,Queenstown,retired,10000-19999,active,2007-09-11,verified,low
+CUST-000084,individual,Naledi,Botha,8802210084084,,South Africa,+27821000084,,1988-02-21,other,KwaZulu-Natal,Durban,retired,80000+,suspended,2008-10-03,pending,medium
+CUST-000085,individual,Thabo,Nkosi,,P00000085,Lesotho,+27821000085,,1999-12-22,other,KwaZulu-Natal,Newcastle,self_employed,20000-39999,active,2022-09-03,verified,medium
+CUST-000086,individual,Naledi,Molefe,9105280086086,,South Africa,+27821000086,,1991-05-28,male,Limpopo,Polokwane,employed,20000-39999,closed,2014-09-13,verified,high
+CUST-000087,individual,Neo,Mthembu,5909250087087,,South Africa,+27821000087,,1959-09-25,male,Gauteng,Johannesburg,student,5000-9999,inactive,1996-10-05,pending,low
+CUST-000088,individual,Lindiwe,Khumalo,7205300088088,,South Africa,+27821000088,,1972-05-30,female,KwaZulu-Natal,Umhlanga,retired,0-4999,active,2005-02-23,verified,low
+CUST-000089,individual,Ayanda,Ndlovu,6305020089089,,South Africa,+27821000089,,1963-05-02,female,Limpopo,Tzaneen,unemployed,20000-39999,active,1982-08-31,not_started,low
+CUST-000090,individual,Mpho,Mabena,8312280090090,,South Africa,+27821000090,,1983-12-28,female,Western Cape,Paarl,employed,20000-39999,active,2025-01-04,verified,low
+CUST-000091,individual,Lerato,Khumalo,8707170091091,,South Africa,+27821000091,,1987-07-17,other,Western Cape,Paarl,student,80000+,inactive,2015-02-07,verified,medium
+CUST-000092,individual,Lindiwe,Nkosi,0401100092092,,South Africa,+27821000092,,2004-01-10,female,Limpopo,Thohoyandou,retired,80000+,closed,2025-02-06,verified,low
+CUST-000093,individual,Kabelo,Pillay,0012210093093,,South Africa,+27821000093,,2000-12-21,other,Mpumalanga,Middelburg,retired,10000-19999,suspended,2021-05-19,verified,high
+CUST-000094,individual,Lindiwe,Khumalo,8502020094094,,South Africa,+27821000094,,1985-02-02,female,North West,Rustenburg,student,40000-79999,active,2009-12-07,pending,low
+CUST-000095,individual,Nomsa,Maseko,,P00000095,Zimbabwe,+27821000095,,2001-11-25,other,Western Cape,Paarl,self-employed,0-4999,active,2023-08-06,verified,medium
+CUST-000096,individual,Lerato,Mthembu,0305110096096,,South Africa,+27821000096,,2003-05-11,other,Eastern Cape,East London,student,5000-9999,active,2024-03-15,verified,low
+CUST-000097,individual,Sibusiso,Mthembu,9001030097097,,South Africa,+27821000097,,1990-01-03,other,Northern Cape,Kimberley,self-employed,10000-19999,active,2020-08-02,verified,medium
+CUST-000098,individual,Sibusiso,Van Wyk,,P00000098,Namibia,+27821000098,,1952-01-22,male,KwaZulu-Natal,Umhlanga,unemployed,20000-39999,active,1986-05-02,pending,medium
+CUST-000099,individual,Anele,Khumalo,9203170099099,,South Africa,+27821000099,,1992-03-17,female,KwaZulu-Natal,Richards Bay,retired,0-4999,active,2017-11-07,verified,high
+CUST-000100,individual,Naledi,Ndlovu,7512030100000,,South Africa,+27821000100,,1975-12-03,other,Mpumalanga,Middelburg,retired,80000+,active,2013-10-18,verified,low
+CUST-000101,individual,Sipho,Mthembu,0409200101001,,South Africa,+27821000101,,2004-09-20,male,Northern Cape,Springbok,self-employed,10000-19999,active,2025-06-12,verified,low
+CUST-000102,individual,Lerato,Pillay,8012110102002,,South Africa,+27821000102,,1980-12-11,female,Gauteng,Midrand,unemployed,0-4999,inactive,2004-04-28,pending,low
+CUST-000103,individual,Thabo,Naidoo,9210030103003,,South Africa,+27821000103,,1992-10-03,male,Limpopo,Lephalale,student,20000-39999,active,2012-07-01,verified,medium
+CUST-000104,individual,Sibusiso,Naidoo,8312220104004,,South Africa,+27821000104,,1983-12-22,male,Mpumalanga,Mbombela,self-employed,5000-9999,active,2005-12-04,verified,low
+CUST-000105,individual,Sipho,Ndlovu,5805120105005,,South Africa,+27821000105,,1958-05-12,male,Western Cape,Bellville,self-employed,5000-9999,active,2022-02-27,verified,low
+CUST-000106,individual,Zanele,Maseko,6701280106006,,South Africa,+27821000106,,1967-01-28,other,KwaZulu-Natal,Durban,retired,10000-19999,active,2012-02-05,verified,low
+CUST-000107,individual,Nomsa,Botha,6501190107007,,South Africa,+27821000107,,1965-01-19,unknown,Western Cape,Paarl,employed,0-4999,active,2002-10-11,verified,low
+CUST-000108,individual,Mpho,Mthembu,8408030108008,,South Africa,+27821000108,,1984-08-03,male,Western Cape,Cape Town,self-employed,40000-79999,active,2015-06-19,verified,low
+CUST-000109,individual,Ayanda,Mabena,,P00000109,Namibia,+27821000109,,1994-03-07,male,KwaZulu-Natal,Durban,employed,5000-9999,active,2023-06-05,verified,medium
+CUST-000110,individual,Zanele,Maseko,9010130110010,,South Africa,+27821000110,,1990-10-13,female,Northern Cape,Kuruman,retired,80000+,active,2018-08-21,verified,high
+CUST-000111,individual,Kabelo,Ndlovu,,P00000111,Zimbabwe,+27821000111,,1981-07-13,male,Limpopo,Polokwane,self-employed,10000-19999,active,2002-06-26,verified,low
+CUST-000112,individual,Zanele,Mabena,8609030112012,,South Africa,+27821000112,,1986-09-03,unknown,Western Cape,George,student,10000-19999,active,2007-07-26,verified,low
+CUST-000113,individual,Anele,Ndlovu,5302220113013,,South Africa,+27821000113,,1953-02-22,other,Free State,Welkom,employed,40000-79999,closed,2003-09-03,verified,medium
+CUST-000114,individual,Anele,Khumalo,9912080114014,,South Africa,+27821000114,,1999-12-08,male,Northern Cape,Kimberley,retired,20000-39999,active,2026-03-21,verified,medium
+CUST-000115,individual,Ayanda,Dlamini,5506060115015,,South Africa,+27821000115,,1955-06-06,other,Limpopo,Tzaneen,unemployed,5000-9999,closed,2010-04-16,verified,medium
+CUST-000116,individual,Lindiwe,Maseko,8407050116016,,South Africa,+27821000116,,1984-07-05,male,North West,Klerksdorp,self-employed,0-4999,inactive,2022-04-09,verified,low
+CUST-000117,individual,Nomsa,Botha,9408160117017,,South Africa,+27821000117,,1994-08-16,male,Northern Cape,Kimberley,unemployed,0-4999,inactive,2020-12-12,verified,low
+CUST-000118,individual,Lerato,Naidoo,7106060118018,,South Africa,+27821000118,,1971-06-06,male,North West,Klerksdorp,employed,10000-19999,suspended,2026-01-23,verified,medium
+CUST-000119,individual,Mpho,Maseko,6005250119019,,South Africa,+27821000119,,1960-05-25,female,KwaZulu-Natal,Pietermaritzburg,employed,0-4999,active,2008-06-22,verified,low
+CUST-000120,individual,Nomsa,Ndlovu,7406210120020,,South Africa,+27821000120,,1974-06-21,female,KwaZulu-Natal,Umhlanga,self_employed,20000-39999,suspended,2002-02-22,verified,medium
+CUST-000121,individual,Sibusiso,Khumalo,0705210121021,,South Africa,+27821000121,,2007-05-21,other,Western Cape,Cape Town,unemployed,0-4999,inactive,2026-01-10,verified,low
+CUST-000122,individual,Ayanda,Van Wyk,,P00000122,Namibia,+27821000122,,2006-09-01,female,Eastern Cape,Grahamstown,unemployed,20000-39999,active,2025-08-28,verified,low
+CUST-000123,individual,Lindiwe,Maseko,5506010123023,,South Africa,+27821000123,,1955-06-01,other,Limpopo,Makhado,self_employed,0-4999,inactive,2008-02-15,verified,low
+CUST-000124,individual,Lindiwe,Khumalo,8302120124024,,South Africa,+27821000124,,1983-02-12,female,Limpopo,Tzaneen,retired,20000-39999,inactive,2025-08-10,verified,high
+CUST-000125,individual,Neo,Van Wyk,5410290125025,,South Africa,+27821000125,,1954-10-29,unknown,Eastern Cape,Gqeberha,self-employed,0-4999,inactive,1999-02-25,failed,medium
+CUST-000126,individual,Sibusiso,Botha,6808270126026,,South Africa,+27821000126,,1968-08-27,unknown,Limpopo,Polokwane,self-employed,5000-9999,suspended,1999-06-27,pending,medium
+CUST-000127,individual,Ayanda,Molefe,9601100127027,,South Africa,+27821000127,,1996-01-10,other,Limpopo,Lephalale,employed,0-4999,active,2025-03-08,pending,low
+CUST-000128,individual,Sibusiso,Mahlangu,8012050128028,,South Africa,+27821000128,,1980-12-05,other,Free State,Sasolburg,student,20000-39999,active,2012-03-09,verified,medium
+CUST-000129,individual,Thabo,Khumalo,7602210129029,,South Africa,+27821000129,,1976-02-21,unknown,Gauteng,Johannesburg,employed,5000-9999,active,2022-10-29,verified,low
+CUST-000130,individual,Kabelo,Botha,5707170130030,,South Africa,+27821000130,,1957-07-17,female,Limpopo,Makhado,student,5000-9999,active,1996-09-17,verified,medium
+CUST-000131,individual,Ayanda,Pillay,9901040131031,,South Africa,+27821000131,,1999-01-04,female,Mpumalanga,Secunda,self-employed,10000-19999,active,2021-02-15,verified,low
+CUST-000132,individual,Lerato,Mthembu,9107190132032,,South Africa,+27821000132,,1991-07-19,other,Free State,Sasolburg,retired,10000-19999,active,2014-05-11,verified,low
+CUST-000133,individual,Lindiwe,Naidoo,,P00000133,Lesotho,+27821000133,,1957-05-02,male,Northern Cape,Springbok,employed,5000-9999,suspended,2024-09-03,failed,high
+CUST-000134,individual,Karabo,Ndlovu,,P00000134,Namibia,+27821000134,,1963-12-20,female,North West,Rustenburg,self-employed,20000-39999,active,1992-08-02,verified,low
+CUST-000135,individual,Mpho,Mabena,9406140135035,,South Africa,+27821000135,,1994-06-14,other,Mpumalanga,Middelburg,self_employed,40000-79999,inactive,2024-03-29,not_started,high
+CUST-000136,individual,Anele,Khumalo,0403290136036,,South Africa,+27821000136,,2004-03-29,other,KwaZulu-Natal,Newcastle,retired,5000-9999,active,2023-04-05,verified,medium
+CUST-000137,individual,Karabo,Van Wyk,8207210137037,,South Africa,+27821000137,,1982-07-21,female,Free State,Bloemfontein,student,80000+,active,2023-10-30,verified,low
+CUST-000138,individual,Neo,Mahlangu,6608210138038,,South Africa,+27821000138,,1966-08-21,female,KwaZulu-Natal,Pietermaritzburg,employed,0-4999,active,2011-03-09,verified,medium
+CUST-000139,individual,Zanele,Molefe,0304030139039,,South Africa,+27821000139,,2003-04-03,unknown,Eastern Cape,Grahamstown,self_employed,80000+,active,2022-09-27,verified,low
+CUST-000140,individual,Karabo,Khumalo,8712100140040,,South Africa,+27821000140,,1987-12-10,other,North West,Rustenburg,retired,10000-19999,active,2012-08-11,verified,low
+CUST-000141,individual,Sipho,Khumalo,8206300141041,,South Africa,+27821000141,,1982-06-30,female,KwaZulu-Natal,Richards Bay,employed,10000-19999,active,2018-05-19,verified,low
+CUST-000142,individual,Mpho,Van Wyk,8512210142042,,South Africa,+27821000142,,1985-12-21,unknown,Eastern Cape,East London,unemployed,10000-19999,inactive,2022-09-22,expired,high
+CUST-000143,individual,Nomsa,Botha,9602170143043,,South Africa,+27821000143,,1996-02-17,unknown,Western Cape,Paarl,self-employed,40000-79999,active,2014-08-25,failed,medium
+CUST-000144,individual,Thabo,Maseko,5203290144044,,South Africa,+27821000144,,1952-03-29,male,Mpumalanga,Witbank,self-employed,40000-79999,suspended,1979-11-19,verified,high
+CUST-000145,individual,Anele,Ndlovu,7705260145045,,South Africa,+27821000145,,1977-05-26,unknown,Mpumalanga,Ermelo,self-employed,10000-19999,active,1998-09-11,verified,medium
+CUST-000146,individual,Lindiwe,Botha,0107220146046,,South Africa,+27821000146,,2001-07-22,unknown,KwaZulu-Natal,Pietermaritzburg,self_employed,40000-79999,active,2023-08-27,verified,low
+CUST-000147,individual,Ayanda,Mahlangu,9710040147047,,South Africa,+27821000147,,1997-10-04,unknown,Limpopo,Lephalale,retired,40000-79999,active,2017-04-28,verified,medium
+CUST-000148,individual,Karabo,Botha,7805280148048,,South Africa,+27821000148,,1978-05-28,other,Gauteng,Soweto,retired,40000-79999,active,2017-09-15,verified,low
+CUST-000149,individual,Anele,Mahlangu,0305010149049,,South Africa,+27821000149,,2003-05-01,male,Gauteng,Centurion,employed,40000-79999,active,2022-08-10,verified,medium
+CUST-000150,individual,Neo,Mahlangu,6105150150050,,South Africa,+27821000150,,1961-05-15,female,Gauteng,Midrand,retired,5000-9999,active,1996-06-25,verified,medium
+CUST-000151,individual,Palesa,Van Wyk,,P00000151,Eswatini,+27821000151,,1998-01-16,other,Northern Cape,Springbok,student,10000-19999,closed,2018-05-14,verified,low
+CUST-000152,individual,Lindiwe,Molefe,,P00000152,Lesotho,+27821000152,,1975-03-24,male,North West,Mahikeng,retired,80000+,closed,2020-08-04,verified,low
+CUST-000153,individual,Palesa,Pillay,9505190153053,,South Africa,+27821000153,,1995-05-19,other,North West,Klerksdorp,self_employed,10000-19999,active,2020-06-28,verified,medium
+CUST-000154,individual,Palesa,Van Wyk,5504140154054,,South Africa,+27821000154,,1955-04-14,other,Western Cape,George,self_employed,0-4999,suspended,1999-02-02,verified,high
+CUST-000155,individual,Naledi,Naidoo,0609290155055,,South Africa,+27821000155,,2006-09-29,unknown,Eastern Cape,East London,employed,80000+,active,2026-05-22,verified,low
+CUST-000156,individual,Lindiwe,Molefe,6311040156056,,South Africa,+27821000156,,1963-11-04,other,Northern Cape,Upington,self-employed,80000+,active,1982-01-27,verified,medium
+CUST-000157,individual,Palesa,Mahlangu,,P00000157,Lesotho,+27821000157,,1956-10-25,male,Eastern Cape,Grahamstown,employed,20000-39999,inactive,1982-11-03,failed,low
+CUST-000158,individual,Mpho,Mabena,,P00000158,Namibia,+27821000158,,1995-12-14,unknown,Free State,Bloemfontein,self_employed,40000-79999,active,2018-02-17,verified,low
+CUST-000159,individual,Sibusiso,Naidoo,9307010159059,,South Africa,+27821000159,,1993-07-01,other,Eastern Cape,Gqeberha,student,80000+,active,2017-08-13,verified,medium
+CUST-000160,individual,Mpho,Naidoo,6811020160060,,South Africa,+27821000160,,1968-11-02,male,Mpumalanga,Middelburg,employed,10000-19999,active,1994-09-16,pending,medium
+CUST-000161,individual,Sibusiso,Dlamini,8512020161061,,South Africa,+27821000161,,1985-12-02,female,North West,Klerksdorp,retired,0-4999,closed,2014-06-25,verified,medium
+CUST-000162,individual,Zanele,Molefe,9304060162062,,South Africa,+27821000162,,1993-04-06,other,KwaZulu-Natal,Newcastle,student,5000-9999,active,2018-02-21,verified,medium
+CUST-000163,individual,Lindiwe,Van Wyk,7103030163063,,South Africa,+27821000163,,1971-03-03,male,North West,Mahikeng,self_employed,80000+,active,1995-02-28,expired,medium
+CUST-000164,individual,Karabo,Van Wyk,0412170164064,,South Africa,+27821000164,,2004-12-17,male,Northern Cape,De Aar,self_employed,10000-19999,active,2023-06-02,verified,high
+CUST-000165,individual,Mpho,Khumalo,9803110165065,,South Africa,+27821000165,,1998-03-11,unknown,Western Cape,Stellenbosch,unemployed,40000-79999,inactive,2021-02-22,verified,medium
+CUST-000166,individual,Thabo,Pillay,5609080166066,,South Africa,+27821000166,,1956-09-08,other,North West,Klerksdorp,retired,0-4999,inactive,2024-10-25,verified,medium
+CUST-000167,individual,Kabelo,Pillay,0001220167067,,South Africa,+27821000167,,2000-01-22,unknown,Western Cape,Paarl,unemployed,20000-39999,active,2018-09-25,verified,medium
+CUST-000168,individual,Neo,Mokoena,5809160168068,,South Africa,+27821000168,,1958-09-16,female,KwaZulu-Natal,Richards Bay,self-employed,20000-39999,active,2025-02-02,expired,medium
+CUST-000169,individual,Thabo,Mthembu,0005090169069,,South Africa,+27821000169,,2000-05-09,unknown,Northern Cape,De Aar,student,0-4999,inactive,2023-02-09,pending,low
+CUST-000170,individual,Sibusiso,Mokoena,,P00000170,Zimbabwe,+27821000170,,1973-02-06,unknown,Western Cape,Cape Town,unemployed,5000-9999,active,2000-05-05,verified,medium
+CUST-000171,individual,Karabo,Maseko,9912070171071,,South Africa,+27821000171,,1999-12-07,other,Gauteng,Pretoria,self_employed,10000-19999,active,2020-05-14,verified,medium
+CUST-000172,individual,Zanele,Mabena,6405120172072,,South Africa,+27821000172,,1964-05-12,unknown,Northern Cape,Upington,student,20000-39999,active,2011-12-22,verified,low
+CUST-000173,individual,Sipho,Mahlangu,5509190173073,,South Africa,+27821000173,,1955-09-19,male,Mpumalanga,Ermelo,self-employed,80000+,active,2004-08-12,verified,low
+CUST-000174,individual,Nomsa,Dlamini,6406170174074,,South Africa,+27821000174,,1964-06-17,other,North West,Rustenburg,retired,0-4999,active,2018-08-08,failed,high
+CUST-000175,individual,Neo,Ndlovu,9111110175075,,South Africa,+27821000175,,1991-11-11,male,Western Cape,Bellville,student,80000+,inactive,2018-03-08,pending,low
+CUST-000176,individual,Sibusiso,Ndlovu,0108240176076,,South Africa,+27821000176,,2001-08-24,unknown,North West,Mahikeng,self_employed,80000+,suspended,2022-01-28,pending,high
+CUST-000177,individual,Nomsa,Molefe,0509250177077,,South Africa,+27821000177,,2005-09-25,other,Eastern Cape,Queenstown,student,20000-39999,suspended,2025-09-14,verified,high
+CUST-000178,individual,Sibusiso,Khumalo,9304260178078,,South Africa,+27821000178,,1993-04-26,female,North West,Klerksdorp,self-employed,40000-79999,suspended,2013-07-11,verified,medium
+CUST-000179,individual,Ayanda,Mabena,0311270179079,,South Africa,+27821000179,,2003-11-27,other,Mpumalanga,Secunda,self-employed,20000-39999,active,2025-02-25,verified,low
+CUST-000180,individual,Ayanda,Mokoena,,P00000180,Botswana,+27821000180,,1995-07-10,female,KwaZulu-Natal,Richards Bay,retired,0-4999,active,2023-11-10,verified,low
+CUST-000181,individual,Karabo,Mabena,5201310181081,,South Africa,+27821000181,,1952-01-31,unknown,KwaZulu-Natal,Pietermaritzburg,retired,20000-39999,active,2007-01-30,verified,low
+CUST-000182,individual,Thabo,Van Wyk,5212020182082,,South Africa,+27821000182,,1952-12-02,unknown,Northern Cape,Kuruman,self_employed,0-4999,active,1971-07-06,not_started,medium
+CUST-000183,individual,Lerato,Naidoo,6002250183083,,South Africa,+27821000183,,1960-02-25,unknown,KwaZulu-Natal,Pietermaritzburg,unemployed,40000-79999,active,2025-03-13,verified,medium
+CUST-000184,individual,Lerato,Pillay,,P00000184,Zimbabwe,+27821000184,,1973-04-30,unknown,Eastern Cape,Mthatha,unemployed,40000-79999,active,2022-08-08,verified,medium
+CUST-000185,individual,Palesa,Van Wyk,9403190185085,,South Africa,+27821000185,,1994-03-19,female,Gauteng,Pretoria,self_employed,5000-9999,active,2013-06-21,verified,medium
+CUST-000186,individual,Anele,Mahlangu,0205110186086,,South Africa,+27821000186,,2002-05-11,other,Free State,Bloemfontein,employed,5000-9999,suspended,2025-09-09,verified,medium
+CUST-000187,individual,Naledi,Mthembu,0403040187087,,South Africa,+27821000187,,2004-03-04,male,Mpumalanga,Mbombela,retired,80000+,active,2022-12-24,verified,low
+CUST-000188,individual,Lindiwe,Naidoo,5807180188088,,South Africa,+27821000188,,1958-07-18,female,Limpopo,Polokwane,retired,10000-19999,active,2021-06-21,verified,low
+CUST-000189,individual,Lerato,Mthembu,9112060189089,,South Africa,+27821000189,,1991-12-06,other,Eastern Cape,Mthatha,self_employed,80000+,active,2020-12-07,verified,low
+CUST-000190,individual,Lerato,Ndlovu,5802070190090,,South Africa,+27821000190,,1958-02-07,female,Free State,Welkom,self-employed,20000-39999,active,1983-06-18,verified,low
+CUST-000191,individual,Thabo,Ndlovu,8310190191091,,South Africa,+27821000191,,1983-10-19,other,Western Cape,Stellenbosch,student,0-4999,active,2013-11-24,verified,low
+CUST-000192,individual,Karabo,Van Wyk,0501230192092,,South Africa,+27821000192,,2005-01-23,male,Limpopo,Thohoyandou,retired,20000-39999,active,2026-05-31,verified,medium
+CUST-000193,individual,Mpho,Mthembu,6609190193093,,South Africa,+27821000193,,1966-09-19,female,Free State,Bethlehem,self-employed,10000-19999,active,1990-12-11,verified,low
+CUST-000194,individual,Kabelo,Mahlangu,7308190194094,,South Africa,+27821000194,,1973-08-19,unknown,North West,Brits,self-employed,20000-39999,active,2023-12-20,verified,low
+CUST-000195,individual,Kabelo,Molefe,8107160195095,,South Africa,+27821000195,,1981-07-16,unknown,KwaZulu-Natal,Richards Bay,student,5000-9999,active,2018-11-08,verified,low
+CUST-000196,individual,Zanele,Mthembu,,P00000196,Mozambique,+27821000196,,1980-09-29,female,Free State,Sasolburg,retired,20000-39999,active,2015-08-12,verified,low
+CUST-000197,individual,Sipho,Molefe,7004260197097,,South Africa,+27821000197,,1970-04-26,male,Free State,Bloemfontein,retired,20000-39999,inactive,2007-12-26,verified,low
+CUST-000198,individual,Ayanda,Mokoena,,P00000198,Lesotho,+27821000198,,1985-05-01,other,North West,Brits,retired,40000-79999,active,2006-08-24,verified,low
+CUST-000199,individual,Karabo,Mabena,0410130199099,,South Africa,+27821000199,,2004-10-13,unknown,Western Cape,Cape Town,self-employed,20000-39999,inactive,2026-05-11,verified,low
+CUST-000200,individual,Mpho,Naidoo,6101050200000,,South Africa,+27821000200,,1961-01-05,unknown,Western Cape,George,unemployed,80000+,active,1979-12-16,verified,low
+CUST-000201,individual,Lerato,Mahlangu,0404240201001,,South Africa,+27821000201,,2004-04-24,male,Northern Cape,Upington,self-employed,10000-19999,active,2026-03-08,pending,low
+CUST-000202,individual,Lerato,Molefe,8204150202002,,South Africa,+27821000202,,1982-04-15,female,Eastern Cape,Grahamstown,retired,0-4999,active,2020-09-17,verified,low
+CUST-000203,individual,Ayanda,Pillay,5307150203003,,South Africa,+27821000203,,1953-07-15,unknown,Western Cape,Stellenbosch,self_employed,20000-39999,suspended,2002-04-24,verified,high
+CUST-000204,individual,Naledi,Mokoena,0801030204004,,South Africa,+27821000204,,2008-01-03,male,KwaZulu-Natal,Newcastle,self_employed,10000-19999,active,2026-02-19,verified,medium
+CUST-000205,individual,Ayanda,Mabena,5702140205005,,South Africa,+27821000205,,1957-02-14,other,Northern Cape,Upington,student,20000-39999,active,1984-04-01,verified,low
+CUST-000206,individual,Palesa,Maseko,0605090206006,,South Africa,+27821000206,,2006-05-09,female,Western Cape,George,retired,5000-9999,active,2025-06-14,verified,low
+CUST-000207,individual,Karabo,Pillay,7908100207007,,South Africa,+27821000207,,1979-08-10,unknown,Eastern Cape,Mthatha,self_employed,20000-39999,active,2002-11-23,verified,low
+CUST-000208,individual,Neo,Naidoo,9909200208008,,South Africa,+27821000208,,1999-09-20,female,KwaZulu-Natal,Umhlanga,unemployed,5000-9999,active,2025-06-30,verified,low
+CUST-000209,individual,Mpho,Khumalo,6901050209009,,South Africa,+27821000209,,1969-01-05,female,Mpumalanga,Ermelo,student,0-4999,active,2023-07-31,verified,medium
+CUST-000210,individual,Ayanda,Van Wyk,7104180210010,,South Africa,+27821000210,,1971-04-18,female,Gauteng,Soweto,student,0-4999,active,2002-05-25,verified,medium
+CUST-000211,individual,Lerato,Nkosi,7507180211011,,South Africa,+27821000211,,1975-07-18,male,Limpopo,Lephalale,self-employed,0-4999,inactive,2017-11-27,not_started,medium
+CUST-000212,individual,Neo,Nkosi,9111090212012,,South Africa,+27821000212,,1991-11-09,unknown,Limpopo,Polokwane,self_employed,40000-79999,active,2015-10-01,expired,high
+CUST-000213,individual,Kabelo,Nkosi,6401010213013,,South Africa,+27821000213,,1964-01-01,other,Eastern Cape,East London,self-employed,40000-79999,inactive,2017-03-16,verified,low
+CUST-000214,individual,Sibusiso,Mahlangu,,P00000214,Mozambique,+27821000214,,1975-06-30,male,Western Cape,Stellenbosch,self_employed,5000-9999,closed,2016-07-27,verified,high
+CUST-000215,individual,Zanele,Mthembu,8005280215015,,South Africa,+27821000215,,1980-05-28,female,Mpumalanga,Middelburg,unemployed,40000-79999,active,2009-07-04,verified,medium
+CUST-000216,individual,Sibusiso,Botha,7606200216016,,South Africa,+27821000216,,1976-06-20,other,Limpopo,Thohoyandou,employed,40000-79999,closed,2025-08-18,verified,low
+CUST-000217,individual,Karabo,Mahlangu,8703110217017,,South Africa,+27821000217,,1987-03-11,unknown,Mpumalanga,Witbank,self-employed,80000+,active,2010-01-28,verified,low
+CUST-000218,individual,Sipho,Nkosi,5511080218018,,South Africa,+27821000218,,1955-11-08,male,Western Cape,Paarl,retired,10000-19999,active,1977-12-22,verified,low
+CUST-000219,individual,Thabo,Pillay,,P00000219,Botswana,+27821000219,,1965-10-09,other,Free State,Bloemfontein,retired,80000+,active,2022-12-29,verified,low
+CUST-000220,individual,Thabo,Mokoena,7207070220020,,South Africa,+27821000220,,1972-07-07,other,Western Cape,Cape Town,employed,20000-39999,active,2009-10-07,verified,low
+CUST-000221,individual,Anele,Pillay,6305150221021,,South Africa,+27821000221,,1963-05-15,male,Western Cape,Stellenbosch,retired,80000+,active,2024-03-23,verified,low
+CUST-000222,individual,Palesa,Pillay,6404290222022,,South Africa,+27821000222,,1964-04-29,unknown,Northern Cape,Kuruman,self_employed,0-4999,active,1985-05-23,verified,low
+CUST-000223,individual,Nomsa,Mabena,6007100223023,,South Africa,+27821000223,,1960-07-10,female,Western Cape,Bellville,self_employed,40000-79999,inactive,1991-01-30,verified,low
+CUST-000224,individual,Lindiwe,Mthembu,0506050224024,,South Africa,+27821000224,,2005-06-05,male,Gauteng,Soweto,unemployed,20000-39999,active,2025-01-08,verified,low
+CUST-000225,individual,Anele,Pillay,6108160225025,,South Africa,+27821000225,,1961-08-16,unknown,North West,Brits,self-employed,40000-79999,active,2001-04-01,verified,low
+CUST-000226,individual,Lindiwe,Pillay,6701040226026,,South Africa,+27821000226,,1967-01-04,other,North West,Rustenburg,retired,80000+,active,2019-03-23,pending,low
+CUST-000227,individual,Lerato,Van Wyk,9606170227027,,South Africa,+27821000227,,1996-06-17,male,Mpumalanga,Middelburg,self_employed,40000-79999,active,2023-10-11,verified,medium
+CUST-000228,individual,Palesa,Pillay,8010270228028,,South Africa,+27821000228,,1980-10-27,female,Western Cape,George,unemployed,40000-79999,active,2016-05-06,verified,medium
+CUST-000229,individual,Ayanda,Van Wyk,0602170229029,,South Africa,+27821000229,,2006-02-17,other,Free State,Welkom,self_employed,10000-19999,active,2024-04-13,verified,medium
+CUST-000230,individual,Mpho,Botha,6211240230030,,South Africa,+27821000230,,1962-11-24,other,Western Cape,Cape Town,employed,20000-39999,active,2005-01-03,verified,low
+CUST-000231,individual,Sibusiso,Van Wyk,0205140231031,,South Africa,+27821000231,,2002-05-14,female,Limpopo,Tzaneen,employed,0-4999,active,2022-03-28,verified,low
+CUST-000232,individual,Sipho,Naidoo,,P00000232,Zimbabwe,+27821000232,,1973-06-13,male,North West,Klerksdorp,unemployed,80000+,active,1993-07-05,verified,high
+CUST-000233,individual,Naledi,Ndlovu,8003180233033,,South Africa,+27821000233,,1980-03-18,unknown,Western Cape,Bellville,self-employed,10000-19999,active,2010-05-18,verified,high
+CUST-000234,individual,Mpho,Naidoo,8011140234034,,South Africa,+27821000234,,1980-11-14,unknown,Northern Cape,De Aar,self_employed,80000+,active,2002-09-29,verified,low
+CUST-000235,individual,Kabelo,Mokoena,0007170235035,,South Africa,+27821000235,,2000-07-17,unknown,KwaZulu-Natal,Durban,retired,80000+,suspended,2021-04-16,not_started,high
+CUST-000236,individual,Sibusiso,Molefe,,P00000236,Namibia,+27821000236,,1979-02-05,female,Eastern Cape,Grahamstown,employed,5000-9999,closed,2001-10-05,verified,high
+CUST-000237,individual,Lerato,Maseko,9802200237037,,South Africa,+27821000237,,1998-02-20,female,Limpopo,Thohoyandou,unemployed,80000+,closed,2020-10-07,pending,low
+CUST-000238,individual,Kabelo,Botha,6303280238038,,South Africa,+27821000238,,1963-03-28,other,Free State,Bethlehem,self_employed,0-4999,suspended,2002-06-24,expired,medium
+CUST-000239,individual,Lindiwe,Dlamini,6909110239039,,South Africa,+27821000239,,1969-09-11,unknown,Western Cape,Stellenbosch,self-employed,20000-39999,active,1993-10-19,verified,low
+CUST-000240,individual,Neo,Mahlangu,7504140240040,,South Africa,+27821000240,,1975-04-14,other,Western Cape,Stellenbosch,self_employed,0-4999,inactive,1998-08-30,pending,medium
+CUST-000241,individual,Neo,Botha,7310110241041,,South Africa,+27821000241,,1973-10-11,male,Mpumalanga,Ermelo,employed,20000-39999,active,2007-09-25,verified,medium
+CUST-000242,individual,Kabelo,Mabena,6008260242042,,South Africa,+27821000242,,1960-08-26,female,Western Cape,Cape Town,student,40000-79999,active,1991-03-11,verified,low
+CUST-000243,individual,Lerato,Mokoena,7409240243043,,South Africa,+27821000243,,1974-09-24,unknown,Gauteng,Johannesburg,employed,5000-9999,active,1996-02-04,verified,medium
+CUST-000244,individual,Nomsa,Molefe,0212300244044,,South Africa,+27821000244,,2002-12-30,unknown,Mpumalanga,Middelburg,self_employed,0-4999,active,2023-06-05,verified,low
+CUST-000245,individual,Anele,Pillay,0608090245045,,South Africa,+27821000245,,2006-08-09,male,Eastern Cape,Mthatha,retired,40000-79999,active,2026-05-05,verified,low
+CUST-000246,individual,Kabelo,Maseko,7311110246046,,South Africa,+27821000246,,1973-11-11,other,Northern Cape,Kimberley,unemployed,10000-19999,closed,2020-02-26,verified,low
+CUST-000247,individual,Ayanda,Naidoo,6708230247047,,South Africa,+27821000247,,1967-08-23,male,Limpopo,Lephalale,self_employed,0-4999,active,1986-10-24,verified,medium
+CUST-000248,individual,Karabo,Mahlangu,7309290248048,,South Africa,+27821000248,,1973-09-29,unknown,Eastern Cape,Mthatha,self-employed,5000-9999,active,2021-03-17,verified,medium
+CUST-000249,individual,Karabo,Dlamini,,P00000249,Lesotho,+27821000249,,1967-04-23,unknown,Limpopo,Makhado,student,10000-19999,suspended,1995-12-02,not_started,high
+CUST-000250,individual,Palesa,Maseko,6704050250050,,South Africa,+27821000250,,1967-04-05,male,Gauteng,Johannesburg,self_employed,10000-19999,active,2007-04-05,verified,low
+CUST-000251,individual,Lerato,Naidoo,6706070251051,,South Africa,+27821000251,,1967-06-07,unknown,Limpopo,Polokwane,student,0-4999,active,2021-06-04,verified,high
+CUST-000252,individual,Zanele,Naidoo,8109140252052,,South Africa,+27821000252,,1981-09-14,male,Limpopo,Tzaneen,retired,40000-79999,closed,2013-03-28,verified,low
+CUST-000253,individual,Sibusiso,Mokoena,0607270253053,,South Africa,+27821000253,,2006-07-27,unknown,Eastern Cape,Grahamstown,student,0-4999,inactive,2025-07-27,verified,medium
+CUST-000254,individual,Sipho,Naidoo,6711050254054,,South Africa,+27821000254,,1967-11-05,other,Limpopo,Lephalale,self_employed,80000+,active,2012-11-12,verified,high
+CUST-000255,individual,Sibusiso,Mokoena,5906210255055,,South Africa,+27821000255,,1959-06-21,female,North West,Rustenburg,unemployed,20000-39999,active,2007-08-04,verified,low
+CUST-000256,individual,Anele,Botha,8902270256056,,South Africa,+27821000256,,1989-02-27,female,Mpumalanga,Middelburg,employed,10000-19999,suspended,2010-11-20,verified,medium
+CUST-000257,individual,Kabelo,Maseko,5304230257057,,South Africa,+27821000257,,1953-04-23,unknown,Free State,Bloemfontein,retired,0-4999,active,1999-11-25,verified,low
+CUST-000258,individual,Naledi,Nkosi,9003160258058,,South Africa,+27821000258,,1990-03-16,other,KwaZulu-Natal,Umhlanga,retired,10000-19999,suspended,2022-11-12,pending,medium
+CUST-000259,individual,Naledi,Ndlovu,7803110259059,,South Africa,+27821000259,,1978-03-11,other,Western Cape,Cape Town,retired,80000+,active,2006-11-05,verified,low
+CUST-000260,individual,Nomsa,Mthembu,0505100260060,,South Africa,+27821000260,,2005-05-10,unknown,Eastern Cape,Gqeberha,unemployed,20000-39999,active,2026-01-17,verified,low
+CUST-000261,individual,Mpho,Botha,7504140261061,,South Africa,+27821000261,,1975-04-14,other,Northern Cape,De Aar,self_employed,10000-19999,active,1997-05-16,verified,low
+CUST-000262,individual,Ayanda,Mokoena,,P00000262,Namibia,+27821000262,,2002-02-17,unknown,KwaZulu-Natal,Durban,student,20000-39999,active,2020-10-26,verified,low
+CUST-000263,individual,Ayanda,Maseko,,P00000263,Botswana,+27821000263,,1999-07-21,male,North West,Brits,employed,20000-39999,suspended,2025-04-04,verified,low
+CUST-000264,individual,Neo,Maseko,6701070264064,,South Africa,+27821000264,,1967-01-07,other,Eastern Cape,East London,self-employed,80000+,active,1992-07-07,verified,high
+CUST-000265,individual,Lindiwe,Nkosi,5707090265065,,South Africa,+27821000265,,1957-07-09,unknown,Mpumalanga,Ermelo,employed,20000-39999,active,1983-04-29,verified,low
+CUST-000266,individual,Palesa,Pillay,6412070266066,,South Africa,+27821000266,,1964-12-07,other,Western Cape,Cape Town,unemployed,80000+,active,1989-07-31,verified,low
+CUST-000267,individual,Thabo,Pillay,9501270267067,,South Africa,+27821000267,,1995-01-27,other,North West,Rustenburg,retired,5000-9999,active,2025-11-26,verified,medium
+CUST-000268,individual,Neo,Nkosi,5512070268068,,South Africa,+27821000268,,1955-12-07,female,Free State,Bethlehem,self_employed,5000-9999,active,2016-07-25,verified,low
+CUST-000269,individual,Sibusiso,Botha,7806200269069,,South Africa,+27821000269,,1978-06-20,other,Limpopo,Makhado,employed,40000-79999,inactive,2016-05-05,verified,low
+CUST-000270,individual,Sipho,Mahlangu,6510090270070,,South Africa,+27821000270,,1965-10-09,male,Free State,Kroonstad,employed,5000-9999,active,1986-09-18,verified,low
+,individual,Zanele,Mokoena,5406230271071,,South Africa,+27821000271,,1954-06-23,male,Gauteng,Soweto,self-employed,20000-39999,inactive,2013-06-04,pending,medium
+CUST-000272,vip_person,Nomsa,Mokoena,,P00000272,Botswana,+27821000272,,2004-10-20,unknown,KwaZulu-Natal,Newcastle,employed,5000-9999,active,2025-04-20,verified,low
+CUST-000273,individual,Mpho,Khumalo,0211060273073,,South Africa,+27821000273,,2026-08-05,male,Eastern Cape,East London,student,0-4999,active,2023-04-02,verified,low
+CUST-000274,individual,Nomsa,Mabena,7108020274074,,South Africa,+27821000274,,2011-07-06,unknown,Free State,Bethlehem,student,0-4999,active,2000-11-27,verified,low
+CUST-000275,individual,Kabelo,Molefe,5203020275075,,South Africa,+27821000275,,1952-03-02,other,Atlantis,Poseidon City,self-employed,10000-19999,active,2016-01-21,verified,low
+CUST-000276,individual,Zanele,Naidoo,7804250276076,,South Africa,+27821000276,,1978-04-25,male,,Umhlanga,retired,0-4999,inactive,2004-10-06,failed,high
+CUST-000277,individual,Kabelo,Nkosi,,P00000277,Mozambique,+27821000277,,1996-02-17,male,Free State,Sasolburg,retired,999999-1000000,active,2020-10-04,verified,low
+CUST-000278,individual,Mpho,Khumalo,9403100278078,,South Africa,+27821000278,,1994-03-10,other,Northern Cape,Springbok,retired,40000-79999,paused,2020-03-24,failed,high
+CUST-000279,individual,Kabelo,Molefe,6712070279079,,South Africa,+27821000279,,1967-12-07,other,Limpopo,Polokwane,unemployed,0-4999,active,2016-06-03,approved,medium
+CUST-000280,individual,Naledi,Mokoena,9309210280080,,South Africa,+27821000280,,1993-09-21,male,Western Cape,Paarl,self_employed,5000-9999,suspended,2012-12-03,verified,extreme
+CUST-000281,individual,Kabelo,Mabena,8204020281081,,South Africa,+27821000281,,1982-04-02,female,North West,Mahikeng,employed,20000-39999,active,2026-10-04,verified,medium
+CUST-000282,individual,Zanele,Pillay,7601180282082,,South Africa,+27821000282,,2001-07-06,unknown,KwaZulu-Natal,Umhlanga,unemployed,20000-39999,inactive,2016-07-06,verified,medium
+CUST-000283,individual,Thabo,Mabena,8511240283083,,South Africa,+27821000283,,,female,Gauteng,Centurion,retired,80000+,active,2004-02-08,verified,low
+CUST-000284,individual,Nomsa,Molefe,7310310284084,,South Africa,+27821000284,,1973-10-31,unknown,Limpopo,Makhado,retired,40000-79999,,2001-12-24,verified,low
+INVALID-ID-001,individual,Lindiwe,Dlamini,,P00000285,Botswana,+27821000285,,2005-01-04,male,Limpopo,Thohoyandou,unemployed,0-4999,suspended,2025-12-12,expired,medium
+CUST-000001,individual,Naledi,Mabena,7201010286086,,South Africa,+27821000286,,1972-01-01,other,KwaZulu-Natal,Pietermaritzburg,student,40000-79999,inactive,2000-01-24,verified,low
+CUST-000287,individual,Mpho,Nkosi,5511140287087,,South Africa,+27821000287,,1955-11-14,male,Western Cape,Cape Town,gig_worker,80000+,active,1978-03-04,verified,low
+CUST-000288,individual,Naledi,Mahlangu,0801220288088,,South Africa,+27821000288,,2008-01-22,robot,Free State,Sasolburg,student,80000+,active,2026-01-24,verified,low
+CUST-000289,individual,Kabelo,Nkosi,0612040289089,,South Africa,+27821000289,,2006-12-04,unknown,Free State,,self-employed,5000-9999,inactive,2025-04-03,verified,medium
+CUST-000290,individual,Palesa,Ndlovu,5501170290090,,South Africa,+27821000290,,not-a-date,unknown,North West,Mahikeng,self_employed,0-4999,active,2022-03-22,verified,low
+CUST-000291,individual,Lerato,Mahlangu,9706010291091,,South Africa,+27821000291,,1997-06-01,male,Western Cape,George,employed,10000-19999,active,not-a-date,verified,high
+CUST-ABCDEF,individual,Kabelo,Naidoo,,P00000292,Zimbabwe,+27821000292,,1983-10-29,unknown,Mpumalanga,Mbombela,student,10000-19999,active,2015-11-08,verified,low
+CUST-000293,individual,Lindiwe,Pillay,5911060293093,,South Africa,+27821000293,,1959-11-06,male,Limpopo,Tzaneen,employed,,active,2011-04-12,verified,low
+CUST-000294,individual,Lindiwe,Naidoo,5610080294094,,South Africa,+27821000294,,1956-10-08,female,Western Cape,Paarl,retired,80000+,suspended,1989-01-25,,high
+CUST-000295,individual,Sibusiso,Mahlangu,6303260295095,,South Africa,+27821000295,,1963-03-26,male,North West,Rustenburg,retired,10000-19999,suspended,2024-07-27,verified,
+CUST-000296,individual,,Mahlangu,9801290296096,,South Africa,+27821000296,,1998-01-29,female,Western Cape,Paarl,employed,80000+,active,2021-12-10,verified,low
+CUST-000297,individual,Thabo,,6508030297097,,South Africa,+27821000297,,1965-08-03,male,North West,Potchefstroom,student,80000+,suspended,2006-04-07,not_started,medium
+CUST-000298,individual,Kabelo,Ndlovu,,,Zimbabwe,+27821000298,,1985-06-24,unknown,Eastern Cape,Gqeberha,retired,80000+,active,2021-07-26,verified,low
+CUST-000299,individual,Palesa,Van Wyk,5302070299099,,South Africa,12345,,1953-02-07,male,Mpumalanga,Middelburg,retired,80000+,active,1980-04-23,verified,medium
+CUST-000300,individual,Sibusiso,Mabena,9206090300000,,,+27821000300,,1992-06-09,other,Limpopo,Polokwane,retired,20000-39999,inactive,2018-01-30,failed,medium

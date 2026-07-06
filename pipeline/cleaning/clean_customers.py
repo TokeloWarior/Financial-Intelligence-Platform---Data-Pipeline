@@ -113,6 +113,13 @@ def fetch_pending_raw_customers() -> list[dict]:
             source_row_number,
             source_customer_id,
             customer_type,
+            first_name,
+            last_name,
+            id_number,
+            passport_number,
+            country_of_birth,
+            primary_phone_number,
+            secondary_phone_number,
             date_of_birth,
             gender,
             region,
@@ -169,7 +176,28 @@ def find_duplicate_source_customer_ids(raw_customers: list[dict]) -> set[str]:
     }
 
 
-def insert_clean_customer(raw_customer: dict) -> None:
+def build_full_name(first_name: str | None, last_name: str | None) -> str:
+    """
+    Build a display name from first and last name parts.
+    """
+
+    name_parts = [part for part in [standardize_text(first_name), standardize_text(last_name)] if part]
+
+    return " ".join(name_parts)
+
+
+def determine_identity_document_type(raw_customer: dict) -> str:
+    """
+    Determine the profile identity document type from available source fields.
+    """
+
+    if standardize_text(raw_customer.get("passport_number")) is not None:
+        return "passport"
+
+    return "national_id"
+
+
+def insert_clean_customer(raw_customer: dict) -> int:
     """
     Insert or update a validated customer into clean.customers.
 
@@ -252,11 +280,12 @@ def insert_clean_customer(raw_customer: dict) -> None:
             source_system = EXCLUDED.source_system,
             last_seen_batch_id = EXCLUDED.last_seen_batch_id,
             updated_at = NOW();
+        RETURNING customer_id;
         """
     )
 
     with engine.begin() as connection:
-        connection.execute(
+        customer_id = connection.execute(
             query,
             {
                 "source_customer_id": source_customer_id,
@@ -273,6 +302,95 @@ def insert_clean_customer(raw_customer: dict) -> None:
                 "kyc_status": kyc_status,
                 "risk_rating": risk_rating,
                 "is_active": is_active,
+                "source_system": raw_customer["source_system"],
+                "first_seen_batch_id": raw_customer["ingestion_batch_id"],
+                "last_seen_batch_id": raw_customer["ingestion_batch_id"],
+            },
+        ).scalar_one()
+
+    return customer_id
+
+
+def insert_clean_customer_profile(raw_customer: dict, customer_id: int) -> None:
+    """
+    Insert or update the customer's profile row.
+    """
+
+    first_name = standardize_text(raw_customer.get("first_name"))
+    last_name = standardize_text(raw_customer.get("last_name"))
+    id_number = standardize_text(raw_customer.get("id_number"))
+    passport_number = standardize_text(raw_customer.get("passport_number"))
+    country_of_birth = standardize_text(raw_customer.get("country_of_birth"))
+    primary_phone_number = standardize_text(raw_customer.get("primary_phone_number"))
+    secondary_phone_number = standardize_text(raw_customer.get("secondary_phone_number"))
+
+    query = text(
+        """
+        INSERT INTO clean.customer_profiles (
+            customer_id,
+            first_name,
+            last_name,
+            full_name,
+            identity_document_type,
+            id_number,
+            passport_number,
+            country_of_birth,
+            primary_phone_number,
+            secondary_phone_number,
+            source_system,
+            first_seen_batch_id,
+            last_seen_batch_id,
+            created_at,
+            updated_at
+        )
+        VALUES (
+            :customer_id,
+            :first_name,
+            :last_name,
+            :full_name,
+            :identity_document_type,
+            :id_number,
+            :passport_number,
+            :country_of_birth,
+            :primary_phone_number,
+            :secondary_phone_number,
+            :source_system,
+            :first_seen_batch_id,
+            :last_seen_batch_id,
+            NOW(),
+            NOW()
+        )
+        ON CONFLICT (customer_id)
+        DO UPDATE SET
+            first_name = EXCLUDED.first_name,
+            last_name = EXCLUDED.last_name,
+            full_name = EXCLUDED.full_name,
+            identity_document_type = EXCLUDED.identity_document_type,
+            id_number = EXCLUDED.id_number,
+            passport_number = EXCLUDED.passport_number,
+            country_of_birth = EXCLUDED.country_of_birth,
+            primary_phone_number = EXCLUDED.primary_phone_number,
+            secondary_phone_number = EXCLUDED.secondary_phone_number,
+            source_system = EXCLUDED.source_system,
+            last_seen_batch_id = EXCLUDED.last_seen_batch_id,
+            updated_at = NOW();
+        """
+    )
+
+    with engine.begin() as connection:
+        connection.execute(
+            query,
+            {
+                "customer_id": customer_id,
+                "first_name": first_name,
+                "last_name": last_name,
+                "full_name": build_full_name(first_name, last_name),
+                "identity_document_type": determine_identity_document_type(raw_customer),
+                "id_number": id_number,
+                "passport_number": passport_number,
+                "country_of_birth": country_of_birth,
+                "primary_phone_number": primary_phone_number,
+                "secondary_phone_number": secondary_phone_number,
                 "source_system": raw_customer["source_system"],
                 "first_seen_batch_id": raw_customer["ingestion_batch_id"],
                 "last_seen_batch_id": raw_customer["ingestion_batch_id"],
@@ -441,7 +559,8 @@ def clean_customers() -> None:
             records_rejected += 1
             continue
 
-        insert_clean_customer(raw_customer)
+        customer_id = insert_clean_customer(raw_customer)
+        insert_clean_customer_profile(raw_customer, customer_id)
 
         update_raw_customer_status(
             raw_customer_id=raw_customer["raw_customer_id"],

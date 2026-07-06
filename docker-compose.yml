@@ -1,7 +1,7 @@
 services:
   postgres:
     image: postgres:17
-    container_name: ${CONTAINER_NAME}
+    container_name: ${CONTAINER_NAME:-fip_postgres}
     restart: unless-stopped
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
@@ -10,7 +10,8 @@ services:
     ports:
       - ${POSTGRES_PORT1}:${POSTGRES_PORT2}
     volumes:
-      - ${POSTGRES_VOLUMES}
+      - ./db/reset_customer_layer.sql:/docker-entrypoint-initdb.d/001_reset_customer_layer.sql:ro
+      - fip_postgres_data:/var/lib/postgresql/data
 
 volumes:
   fip_postgres_data:
