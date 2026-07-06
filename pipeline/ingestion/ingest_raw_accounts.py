@@ -16,12 +16,13 @@ SOURCE_SYSTEM = "synthetic_csv"
 SOURCE_ENTITY = "accounts"
 
 
-def blank_to_none(value: str | None) -> str | None:
+def blank_to_none(value):
     if value is None:
         return None
 
-    if value.strip() == "":
-        return None
+    if isinstance(value, str):
+        if value.strip() == "":
+            return None
 
     return value
 
@@ -38,11 +39,14 @@ def parse_date_safely(value: str | None):
         return None
 
 
-def parse_integer_safely(value: str | None):
+def parse_integer_safely(value):
     value = blank_to_none(value)
 
     if value is None:
         return None
+
+    if isinstance(value, int):
+        return value
 
     try:
         return int(value.strip())
