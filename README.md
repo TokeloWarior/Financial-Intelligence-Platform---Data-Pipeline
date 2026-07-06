@@ -187,13 +187,19 @@ python -m pipeline.ingestion.ingest_raw_accounts
 python -m pipeline.cleaning.clean_customers
 ```
 
-7. Run the customer data-quality checks
+7. Clean raw account records
+
+```bash
+python -m pipeline.cleaning.clean_accounts
+```
+
+8. Run the customer data-quality checks
 
 ```bash
 python -m pipeline.validation.customer_data_quality
 ```
 
-8. Run the validator smoke test if you want a quick rule check
+9. Run the validator smoke test if you want a quick rule check
 
 ```bash
 python -m pipeline.validation.customer_validators
