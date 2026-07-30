@@ -1,5 +1,5 @@
 # ===============================
-# 🔒 GENERAL
+# GENERAL
 # ===============================
 *.log
 *.tmp
@@ -9,7 +9,7 @@
 Thumbs.db
 
 # ===============================
-# 🐍 PYTHON
+# PYTHON
 # ===============================
 __pycache__/
 *.py[cod]
@@ -25,6 +25,7 @@ build/
 venv/
 ENV/
 env/
+.e*v
 
 # Python tooling
 .pytest_cache/
@@ -37,13 +38,13 @@ htmlcov/
 .ipynb_checkpoints/
 
 # ===============================
-# 📦 PIP / POETRY / UV
+# PIP / POETRY / UV
 # ===============================
 pip-log.txt
 pip-delete-this-directory.txt
 
 # ===============================
-# 🧠 MACHINE LEARNING
+# MACHINE LEARNING
 # ===============================
 mlruns/
 .mlflow/
@@ -53,7 +54,7 @@ artifacts/
 *.joblib
 
 # ===============================
-# 🗄️ DATABASE / POSTGRES
+# DATABASE / POSTGRES
 # ===============================
 #*.sql------------------------------enable
 *.dump
@@ -66,7 +67,7 @@ env.py
 *.db
 
 # ===============================
-# 🧱 FASTAPI / BACKEND
+# FASTAPI / BACKEND
 # ===============================
 .env
 .env.*
@@ -76,7 +77,7 @@ env.py
 .openapi.json
 
 # ===============================
-# ⚛️ FRONTEND (React + Vite)
+# FRONTEND (React + Vite)
 # ===============================
 node_modules/
 dist/
@@ -95,19 +96,19 @@ yarn-error.log*
 pnpm-debug.log*
 
 # ===============================
-# 🐳 DOCKER
+# DOCKER
 # ===============================
 docker-compose.override.yml
 *.pid
 
 # ===============================
-# 🧪 PREFECT (PIPELINE ORCHESTRATION)
+# PREFECT (PIPELINE ORCHESTRATION)
 # ===============================
 .prefect/
 .prefectignore
 
 # ===============================
-# 📊 DATA / PIPELINE OUTPUTS
+# DATA / PIPELINE OUTPUTS
 # ===============================
 # Raw / processed datasets (DO NOT COMMIT)
 data/raw/
@@ -123,7 +124,7 @@ logs/
 run_logs/
 
 # ===============================
-# 📂 PROJECT-SPECIFIC (YOUR ARCHITECTURE)
+# PROJECT-SPECIFIC (YOUR ARCHITECTURE)
 # ===============================
 # Sensitive or generated artifacts
 pipeline/artifacts/
@@ -132,7 +133,7 @@ fip/cache/
 fip/reports/
 
 # ===============================
-# 🔐 SECRETS / CREDENTIALS
+# SECRETS / CREDENTIALS
 # ===============================
 *.pem
 *.key
@@ -141,32 +142,32 @@ credentials.json
 service-account.json
 
 # ===============================
-# 🧑‍💻 IDE / EDITORS
+# IDE / EDITORS
 # ===============================
 .vscode/
 .idea/
 *.iml
 
 # ===============================
-# 🧪 TEST OUTPUTS
+# TEST OUTPUTS
 # ===============================
 pytest-report.xml
 coverage.xml
 
 # ===============================
-# 🧾 ENVIRONMENT / LOCAL DEV
+# ENVIRONMENT / LOCAL DEV
 # ===============================
 *.local
 .envrc
 
 # ===============================
-# 📦 OS / SYSTEM
+# OS / SYSTEM
 # ===============================
 .DS_Store
 ehthumbs.db
 
 # ===============================
-# 📡 EXTRAS (OPTIONAL BUT USEFUL)
+# EXTRAS (OPTIONAL BUT USEFUL)
 # ===============================
 # Profiling
 .prof
@@ -175,3 +176,10 @@ ehthumbs.db
 # Temporary files
 tmp/
 temp/
+*.mako
+
+# Local data artifacts
+d*ta/raw/
+data/processed/
+
+EOF
