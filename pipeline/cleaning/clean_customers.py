@@ -50,18 +50,18 @@ def derive_age_group(date_of_birth: date) -> str:
     return "65+"
 
 
-def standardize_text(value: str | None) -> str | None:
+def standardize_text(value: str | None) -> str:
     """
     Trim string values before loading into the clean layer.
     """
 
     if value is None:
-        return None
+        return ""
 
     value = value.strip()
 
     if value == "":
-        return None
+        return ""
 
     return value
 
