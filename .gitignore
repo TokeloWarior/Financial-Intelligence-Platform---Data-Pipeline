@@ -58,6 +58,8 @@ artifacts/
 #*.sql------------------------------enable
 *.dump
 *.backup
+*.ini
+env.py
 
 # Local DB files (if using SQLite for dev)
 *.sqlite3
