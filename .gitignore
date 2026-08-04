@@ -61,6 +61,7 @@ artifacts/
 *.backup
 *.ini
 env.py
+*.mako
 
 # Local DB files (if using SQLite for dev)
 *.sqlite3
