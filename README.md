@@ -11,6 +11,7 @@ The README is aligned to the platform plan in [documents/Financial_&_Mobility_In
 This codebase demonstrates how to design and implement a small but realistic data platform that:
 
 - generates synthetic customer data
+- generates synthetic account and transaction activity data
 - ingests raw records into a database-backed raw layer
 - validates records against business and data-quality rules
 - cleans and standardizes records into a curated layer
@@ -99,10 +100,20 @@ sequenceDiagram
 The current codebase includes the following runnable pieces:
 
 - synthetic customer generation in `pipeline/ingestion/generate_customers.py`
+- synthetic account generation in `pipeline/ingestion/generate_accounts.py`
+- synthetic transaction generation in `pipeline/ingestion/generate_transactions.py`
+- synthetic file upload to S3 in `pipeline/ingestion/upload_synthetic_to_s3.py`
 - raw ingestion into PostgreSQL in `pipeline/ingestion/ingest_raw_customers.py`
+- raw account ingestion into PostgreSQL in `pipeline/ingestion/ingest_raw_accounts.py`
+- raw transaction ingestion into PostgreSQL in `pipeline/ingestion/ingest_raw_transactions.py`
 - customer cleaning and validation in `pipeline/cleaning/clean_customers.py`
+- account cleaning in `pipeline/cleaning/clean_accounts.py`
+- transaction cleaning and validation in `pipeline/cleaning/clean_transactions.py`
 - data quality checks in `pipeline/validation/customer_data_quality.py`
 - validation rule smoke tests in `pipeline/validation/customer_validators.py`
+- transaction data-quality checks in `pipeline/validation/transaction_data_quality.py`
+- transaction validation smoke tests in `pipeline/validation/transaction_validators.py`
+- Prefect orchestration flow in `pipeline/flows/run_synthetic_ingestion_flow.py`
 - database connection smoke test in `pipeline/utils/db.py`
 
 ## Requirements
@@ -193,23 +204,66 @@ python -m pipeline.cleaning.clean_customers
 python -m pipeline.cleaning.clean_accounts
 ```
 
-8. Run the customer data-quality checks
+8. Generate synthetic transaction data
+
+```bash
+python -m pipeline.ingestion.generate_transactions
+```
+
+9. Upload generated synthetic files to S3
+
+```bash
+python -m pipeline.ingestion.upload_synthetic_to_s3
+```
+
+10. Ingest raw transaction records
+
+```bash
+python -m pipeline.ingestion.ingest_raw_transactions
+```
+
+11. Clean raw transaction records
+
+```bash
+python -m pipeline.cleaning.clean_transactions
+```
+
+12. Run the customer data-quality checks
 
 ```bash
 python -m pipeline.validation.customer_data_quality
 ```
 
-9. Run the validator smoke test if you want a quick rule check
+13. Run the customer validator smoke test if you want a quick rule check
 
 ```bash
 python -m pipeline.validation.customer_validators
+```
+
+14. Run the transaction data-quality checks
+
+```bash
+python -m pipeline.validation.transaction_data_quality
+```
+
+15. Run the transaction validator smoke test if you want a quick rule check
+
+```bash
+python -m pipeline.validation.transaction_validators
+```
+
+16. Run the automated synthetic orchestration flow
+
+```bash
+python -m pipeline.flows.run_synthetic_ingestion_flow
 ```
 
 ## Important Notes About Running The Pipeline
 
 - The scripts assume the database schema and tables already exist.
 - If the schema is not created yet, you will need to initialize it before running ingestion or cleaning.
-- The generated synthetic data is written to `data/synthetic/customers.csv`.
+- The generated synthetic data is written to `data/synthetic/customers.csv`, `data/synthetic/accounts.csv`, and `data/synthetic/transactions.csv`.
+- The automated flow uploads generated files to S3 and deletes local CSVs only after a successful end-to-end run.
 - The pipeline is designed to be re-runnable, but the database layer still needs valid schema and connection settings.
 
 ## Current Data Model And Layering

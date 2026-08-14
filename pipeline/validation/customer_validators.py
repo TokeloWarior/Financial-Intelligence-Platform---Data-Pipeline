@@ -514,6 +514,49 @@ def validate_identity_documents(raw_customer: dict, issues: list[ValidationIssue
         )
 
 
+def validate_passport_number_uniqueness(
+    raw_customer: dict,
+    duplicate_passport_numbers: set[str] | None = None,
+    existing_passport_numbers: set[str] | None = None,
+    issues: list[ValidationIssue] = None,
+) -> None:
+    """
+    Validate that non-empty passport_number values are unique.
+    
+    Blank passport_number values are allowed (when customer has id_number instead).
+    This only validates uniqueness for non-empty values.
+    """
+
+    if issues is None:
+        issues = []
+
+    passport_number = value_as_string(raw_customer.get("passport_number"))
+    
+    if is_blank(passport_number):
+        return
+
+    trimmed_passport = passport_number.strip()
+    
+    if trimmed_passport == "":
+        return
+
+    if duplicate_passport_numbers and trimmed_passport in duplicate_passport_numbers:
+        add_issue(
+            issues,
+            "CUSTOMER_PASSPORT_NUMBER_DUPLICATE_IN_BATCH",
+            "passport_number must be unique within the incoming batch.",
+            f"Duplicate passport_number found in batch: {trimmed_passport}.",
+        )
+
+    if existing_passport_numbers and trimmed_passport in existing_passport_numbers:
+        add_issue(
+            issues,
+            "CUSTOMER_PASSPORT_NUMBER_DUPLICATE_IN_DB",
+            "passport_number already exists in clean.customer_profiles (unique constraint violation).",
+            f"passport_number already exists in database: {trimmed_passport}.",
+        )
+
+
 def validate_region_and_city(raw_customer: dict, issues: list[ValidationIssue]) -> None:
     """
     Validate region and city as generic place names.
@@ -741,6 +784,8 @@ def validate_risk_rating(raw_customer: dict, issues: list[ValidationIssue]) -> N
 def validate_raw_customer(
     raw_customer: dict,
     duplicate_source_customer_ids: set[str] | None = None,
+    duplicate_passport_numbers: set[str] | None = None,
+    existing_passport_numbers: set[str] | None = None,
 ) -> list[ValidationIssue]:
     """
     Validate one raw customer record.
@@ -752,6 +797,14 @@ def validate_raw_customer(
         duplicate_source_customer_ids:
             Optional set of source_customer_id values that appear more than once
             in the current validation batch.
+
+        duplicate_passport_numbers:
+            Optional set of passport_number values that appear more than once
+            in the current validation batch.
+
+        existing_passport_numbers:
+            Optional set of passport_number values that already exist in
+            clean.customer_profiles.
 
     Returns:
         A list of validation issues.
@@ -771,6 +824,12 @@ def validate_raw_customer(
     validate_name_field(raw_customer, "last_name", issues)
     validate_country_of_birth(raw_customer, issues)
     validate_identity_documents(raw_customer, issues)
+    validate_passport_number_uniqueness(
+        raw_customer=raw_customer,
+        duplicate_passport_numbers=duplicate_passport_numbers,
+        existing_passport_numbers=existing_passport_numbers,
+        issues=issues,
+    )
     validate_primary_phone_number(raw_customer, issues)
     validate_secondary_phone_number(raw_customer, issues)
     validate_date_of_birth(raw_customer, issues)

@@ -176,6 +176,55 @@ def find_duplicate_source_customer_ids(raw_customers: list[dict]) -> set[str]:
     }
 
 
+def find_duplicate_passport_numbers(raw_customers: list[dict]) -> set[str]:
+    """
+    Find all passport_number values that appear more than once in the batch.
+    Only considers non-empty values.
+    """
+
+    counts: dict[str, int] = {}
+
+    for raw_customer in raw_customers:
+        passport_number = raw_customer.get("passport_number")
+
+        if passport_number is None:
+            continue
+
+        trimmed_passport = str(passport_number).strip()
+
+        if trimmed_passport == "":
+            continue
+
+        counts[trimmed_passport] = counts.get(trimmed_passport, 0) + 1
+
+    return {
+        passport_number
+        for passport_number, count in counts.items()
+        if count > 1
+    }
+
+
+def fetch_existing_passport_numbers() -> set[str]:
+    """
+    Fetch all non-empty passport_number values that already exist in clean.customer_profiles.
+    """
+
+    query = text(
+        """
+        SELECT DISTINCT passport_number
+        FROM clean.customer_profiles
+        WHERE passport_number IS NOT NULL
+        AND passport_number != '';
+        """
+    )
+
+    with engine.connect() as connection:
+        result = connection.execute(query)
+        rows = result.fetchall()
+
+    return {row[0] for row in rows if row[0]}
+
+
 def build_full_name(first_name: str | None, last_name: str | None) -> str:
     """
     Build a display name from first and last name parts.
@@ -318,11 +367,11 @@ def insert_clean_customer_profile(raw_customer: dict, customer_id: int) -> None:
 
     first_name = standardize_text(raw_customer.get("first_name"))
     last_name = standardize_text(raw_customer.get("last_name"))
-    id_number = standardize_text(raw_customer.get("id_number"))
-    passport_number = standardize_text(raw_customer.get("passport_number"))
+    id_number = standardize_text(raw_customer.get("id_number")) or None
+    passport_number = standardize_text(raw_customer.get("passport_number")) or None
     country_of_birth = standardize_text(raw_customer.get("country_of_birth"))
     primary_phone_number = standardize_text(raw_customer.get("primary_phone_number"))
-    secondary_phone_number = standardize_text(raw_customer.get("secondary_phone_number"))
+    secondary_phone_number = standardize_text(raw_customer.get("secondary_phone_number")) or None
 
     query = text(
         """
@@ -533,8 +582,12 @@ def clean_customers() -> None:
         return
 
     duplicate_source_customer_ids = find_duplicate_source_customer_ids(raw_customers)
+    duplicate_passport_numbers = find_duplicate_passport_numbers(raw_customers)
+    existing_passport_numbers = fetch_existing_passport_numbers()
 
     print(f"Duplicate source_customer_id values found: {len(duplicate_source_customer_ids)}")
+    print(f"Duplicate passport_number values in batch: {len(duplicate_passport_numbers)}")
+    print(f"Existing passport_number values in DB: {len(existing_passport_numbers)}")
 
     records_cleaned = 0
     records_rejected = 0
@@ -544,6 +597,8 @@ def clean_customers() -> None:
         validation_issues = validate_raw_customer(
             raw_customer=raw_customer,
             duplicate_source_customer_ids=duplicate_source_customer_ids,
+            duplicate_passport_numbers=duplicate_passport_numbers,
+            existing_passport_numbers=existing_passport_numbers,
         )
 
         if validation_issues:

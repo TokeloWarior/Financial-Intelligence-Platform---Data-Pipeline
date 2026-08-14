@@ -1,0 +1,322 @@
+# Prompt for Another AI: AWS S3 Pipeline Automation Context
+
+I am working on a project called the Financial Intelligence Platform. It is a Python/PostgreSQL data pipeline project with Alembic migrations, synthetic CSV generation, raw ingestion, validation, cleaning, and future reporting/model artifact storage.
+
+I want you to understand the exact architecture decisions and setup steps already completed before helping me continue.
+
+## 1. Current project structure
+
+The project currently has this general structure:
+
+financial-intelligence-platform/
+├── data/
+│   ├── processed/
+│   ├── raw/
+│   └── synthetic/
+│       ├── accounts.csv
+│       └── customers.csv
+├── database/
+│   ├── migrations/
+│   │   └── versions/
+│   │       ├── 0001_create_schemas.py
+│   │       ├── 0002_create_ops_tables.py
+│   │       ├── 0003_create_raw_tables.py
+│   │       └── 0004_create_clean_tables.py
+│   └── seeds/
+├── pipeline/
+│   ├── cleaning/
+│   │   ├── clean_accounts.py
+│   │   └── clean_customers.py
+│   ├── common/
+│   │   ├── database.py
+│   │   ├── s3_storage.py
+│   │   └── test_s3_connection.py
+│   ├── ingestion/
+│   │   ├── generate_accounts.py
+│   │   ├── generate_customers.py
+│   │   ├── ingest_raw_accounts.py
+│   │   └── ingest_raw_customers.py
+│   ├── validation/
+│   │   ├── customer_data_quality.py
+│   │   └── customer_validators.py
+│   └── flows/
+│       └── __init__.py
+├── docker-compose.yml
+├── requirements.txt
+└── alembic.ini
+
+## 2. Existing pipeline behavior before S3
+
+Before adding AWS S3, the flow was manual:
+
+1. Run synthetic data generation scripts.
+2. Scripts create local CSVs in data/synthetic/.
+3. Manually run ingestion scripts to insert CSV rows into PostgreSQL raw tables.
+4. Manually run validators.
+5. Manually run cleaning scripts.
+6. Cleaning scripts read raw data from PostgreSQL and write cleaned data into clean schema tables.
+
+The database already has operational schemas/tables such as:
+
+- ops.ingestion_batches
+- ops.rejected_records
+- ops.data_quality_results
+
+There may be more operational tables added later.
+
+The design goal is that PostgreSQL should store structured relational data and metadata only. It should not be used as file storage for CSVs, logs, reports, model artifacts, or other generated objects.
+
+## 3. Migration decision already clarified
+
+Alembic migration files that have already been applied should not be edited. If more clean tables are needed after 0004_create_clean_tables.py has already been applied, the correct approach is to create a new migration, such as:
+
+alembic revision -m "add more clean tables"
+alembic upgrade head
+
+The migration chain should grow forward rather than modifying already-applied history.
+
+## 4. Cloud storage decision
+
+We considered Azure Blob Storage and AWS S3. The final decision was to use AWS S3 instead of Azure.
+
+Reasoning:
+
+- S3 will store synthetic CSV files, raw files, processed files, pipeline logs, reports, and model artifacts.
+- PostgreSQL remains responsible for relational text/structured data and pipeline metadata.
+- This demonstrates understanding of object storage, retrieval, and cloud-ready data architecture.
+
+## 5. S3 bucket design chosen
+
+Instead of using one bucket with many prefixes, we chose multiple buckets from the start for cleaner architecture, access control, lifecycle rules, separation of concerns, and future deployability.
+
+The bucket strategy is one bucket per storage domain per environment.
+
+Current dev bucket pattern:
+
+- fip-dev-synthetic-data-...
+- fip-dev-raw-ingestion-...
+- fip-dev-processed-data-...
+- fip-dev-pipeline-logs-...
+- fip-dev-reports-...
+- fip-dev-model-artifacts-...
+
+Actual confirmed synthetic bucket:
+
+fip-dev-synthetic-data-tokelo-001-209479262490-af-south-1-an
+
+The AWS region is:
+
+af-south-1
+
+This is the Africa Cape Town region.
+
+## 6. IAM setup completed
+
+An IAM access setup was created for local development.
+
+Completed items:
+
+1. Custom IAM policy created for the pipeline.
+2. IAM user created for local pipeline access.
+3. Policy attached to the user.
+4. Access key and secret access key generated.
+5. Credentials stored locally in .env.
+
+The IAM policy grants limited S3 permissions to only the Financial Intelligence Platform dev buckets. It includes permissions such as:
+
+- s3:ListBucket
+- s3:GetObject
+- s3:PutObject
+- s3:DeleteObject
+- s3:GetObjectTagging
+- s3:PutObjectTagging
+
+The intent is least-privilege access only to the project buckets.
+
+## 7. Local .env setup completed
+
+A .env file was created at the project root with values similar to:
+
+AWS_ACCESS_KEY_ID=...
+AWS_SECRET_ACCESS_KEY=...
+AWS_DEFAULT_REGION=af-south-1
+
+FIP_ENV=dev
+
+S3_SYNTHETIC_DATA_BUCKET=fip-dev-synthetic-data-tokelo-001-209479262490-af-south-1-an
+S3_RAW_INGESTION_BUCKET=...
+S3_PROCESSED_DATA_BUCKET=...
+S3_PIPELINE_LOGS_BUCKET=...
+S3_REPORTS_BUCKET=...
+S3_MODEL_ARTIFACTS_BUCKET=...
+
+.env was added to .gitignore to avoid committing credentials.
+
+Important note: There was initially a trailing comma in one bucket name, which caused a ParamValidationError from botocore. This was fixed by removing the trailing comma.
+
+## 8. Python dependencies added
+
+The project installed the following packages:
+
+pip install boto3 python-dotenv
+
+These should also be included in requirements.txt.
+
+## 9. Reusable S3 client created
+
+A reusable S3 storage client was created at:
+
+pipeline/common/s3_storage.py
+
+It defines a class:
+
+S3StorageClient
+
+The class supports:
+
+- upload_file
+- download_file
+- get_object_bytes
+- get_object_text
+- read_csv_as_dataframe
+- read_csv_as_records
+- list_objects
+- object_exists
+- get_object_metadata
+- build_s3_uri
+- clean_env_value
+
+The important part is that it can read a CSV directly from S3 using boto3 get_object and pandas.read_csv(response["Body"]).
+
+This means ingestion scripts can read from S3 without permanently storing CSV files locally.
+
+## 10. S3 connection test completed successfully
+
+A test script was created at:
+
+pipeline/common/test_s3_connection.py
+
+It loads the synthetic bucket from .env, creates an S3StorageClient, and calls list_objects.
+
+This command was run:
+
+python -m pipeline.common.test_s3_connection
+
+Confirmed successful output:
+
+Testing S3 access for bucket: fip-dev-synthetic-data-tokelo-001-209479262490-af-south-1-an
+Connection successful.
+Objects found: 0
+
+This confirms:
+
+- boto3 can authenticate using the local credentials
+- the .env file is loading correctly
+- the IAM policy allows listing the synthetic data bucket
+- the S3 bucket name is correct
+- the reusable S3 client works
+
+## 11. Updated automation goal
+
+The main objective is no longer just manually uploading files to S3.
+
+The new objective is to start automating the pipeline.
+
+Desired automated flow:
+
+1. Generate synthetic CSV files.
+2. Automatically upload generated CSV files to S3.
+3. Ingestion scripts retrieve/read the CSVs from S3.
+4. Ingestion inserts records into PostgreSQL raw tables.
+5. Pipeline records metadata in operational tables such as ingestion_batches.
+6. Validators run and write rejected records/data quality results.
+7. Cleaning scripts run and load clean tables.
+8. Local CSV files should not remain after ingestion succeeds.
+
+The target behavior is:
+
+S3 = persistent object/file storage
+PostgreSQL = relational data + operational metadata
+Local filesystem = temporary generation workspace only
+
+## 12. Read from S3 vs download decision
+
+Preference is to read CSV files directly from S3 during ingestion, instead of downloading them permanently.
+
+Preferred pattern:
+
+storage = S3StorageClient()
+df = storage.read_csv_as_dataframe(bucket_name, object_key)
+
+Fallback allowed later:
+
+Download temporarily to a temp directory, ingest, then delete immediately.
+
+But the preferred demonstration is direct S3 read because it better shows cloud storage retrieval.
+
+## 13. Next step to continue from
+
+We are currently about to start:
+
+Step 4B: Create pipeline/ingestion/upload_synthetic_to_s3.py
+
+This script should:
+
+1. Look for generated local files:
+   - data/synthetic/customers.csv
+   - data/synthetic/accounts.csv
+
+2. Upload them to the S3 synthetic-data bucket using date-based object keys, for example:
+   - customers/year=2026/month=08/day=05/customers.csv
+   - accounts/year=2026/month=08/day=05/accounts.csv
+
+3. Return structured metadata for each upload:
+   - entity
+   - local_path
+   - bucket
+   - object_key
+   - s3_uri
+   - uploaded_at
+
+4. Not delete local CSVs yet until the later full flow uploads and ingests successfully.
+
+After upload_synthetic_to_s3.py, the next steps should likely be:
+
+Step 4C: Modify ingest_raw_customers.py and ingest_raw_accounts.py to accept S3 bucket/object_key input and read directly from S3.
+Step 4D: Create pipeline/flows/run_synthetic_ingestion_flow.py to orchestrate generation, upload, S3 ingestion, validation, and cleanup.
+Step 4E: Delete local CSVs only after successful S3 upload and database ingestion.
+
+## 14. Important architectural guidance
+
+Please keep scripts separated by responsibility:
+
+generate_customers.py / generate_accounts.py
+    Only generate synthetic data.
+
+upload_synthetic_to_s3.py
+    Only upload generated files to S3 and return metadata.
+
+ingest_raw_customers.py / ingest_raw_accounts.py
+    Only ingest records into PostgreSQL, ideally from S3 input.
+
+run_synthetic_ingestion_flow.py
+    Orchestrates the end-to-end pipeline.
+
+Do not make generation scripts responsible for S3 upload unless there is a very strong reason.
+
+Also avoid storing CSV content in PostgreSQL. Store only metadata like:
+
+storage_provider = aws_s3
+bucket_name = ...
+object_key = ...
+s3_uri = s3://bucket/key
+record_count = ...
+status = ...
+
+## 15. What I want help with next
+
+Please continue from Step 4B and guide me step by step. Be informative and explain what each part is doing.
+
+After each major step, ask whether to proceed to the next step.
+
+then after these steps we move to setting up log generation per important script.

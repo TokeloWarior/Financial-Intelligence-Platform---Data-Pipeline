@@ -3,11 +3,13 @@ import hashlib
 import json
 from datetime import datetime
 from decimal import Decimal, InvalidOperation
+from io import StringIO
 from pathlib import Path
 
 from sqlalchemy import text
 
 from pipeline.common.database import engine
+from pipeline.common.s3_storage import S3StorageClient
 
 
 ACCOUNTS_FILE_PATH = Path("data/synthetic/accounts.csv")
@@ -103,7 +105,19 @@ def read_account_csv(file_path: Path) -> list[dict]:
         return list(reader)
 
 
-def start_ingestion_batch(records_expected: int) -> int:
+def read_account_csv_from_s3(bucket_name: str, object_key: str) -> list[dict]:
+    storage = S3StorageClient()
+    csv_text = storage.get_object_text(bucket_name=bucket_name, object_key=object_key)
+    reader = csv.DictReader(StringIO(csv_text))
+    return list(reader)
+
+
+def start_ingestion_batch(
+    records_expected: int,
+    source_file_name: str,
+    source_file_path: str,
+    metadata_overrides: dict | None = None,
+) -> int:
     query = text(
         """
         INSERT INTO ops.ingestion_batches (
@@ -142,6 +156,9 @@ def start_ingestion_batch(records_expected: int) -> int:
         "linked_to_customer_profiles": True,
     }
 
+    if metadata_overrides:
+        metadata.update(metadata_overrides)
+
     with engine.begin() as connection:
         batch_id = connection.execute(
             query,
@@ -149,8 +166,8 @@ def start_ingestion_batch(records_expected: int) -> int:
                 "pipeline_name": PIPELINE_NAME,
                 "source_system": SOURCE_SYSTEM,
                 "source_entity": SOURCE_ENTITY,
-                "source_file_name": ACCOUNTS_FILE_PATH.name,
-                "source_file_path": str(ACCOUNTS_FILE_PATH),
+                "source_file_name": source_file_name,
+                "source_file_path": source_file_path,
                 "records_expected": records_expected,
                 "metadata": json.dumps(metadata),
             },
@@ -192,7 +209,11 @@ def finish_ingestion_batch(
         )
 
 
-def insert_raw_account(batch_id: int, source_row_number: int, record: dict) -> None:
+def insert_raw_account(
+    batch_id: int,
+    record: dict,
+    source_file_name: str,
+) -> None:
     query = text(
         """
         INSERT INTO raw.raw_accounts (
@@ -266,7 +287,7 @@ def insert_raw_account(batch_id: int, source_row_number: int, record: dict) -> N
     parameters = {
         "ingestion_batch_id": batch_id,
         "source_system": SOURCE_SYSTEM,
-        "source_file_name": ACCOUNTS_FILE_PATH.name,
+        "source_file_name": source_file_name,
         "source_row_number": parse_integer_safely(record.get("source_row_number")),
         "source_account_id": blank_to_none(record.get("source_account_id")),
         "source_customer_id": blank_to_none(record.get("source_customer_id")),
@@ -297,11 +318,41 @@ def insert_raw_account(batch_id: int, source_row_number: int, record: dict) -> N
         connection.execute(query, parameters)
 
 
-def ingest_raw_accounts() -> None:
-    account_records = read_account_csv(ACCOUNTS_FILE_PATH)
+def ingest_raw_accounts(
+    file_path: Path | str | None = None,
+    bucket_name: str | None = None,
+    object_key: str | None = None,
+) -> None:
+    if bucket_name is not None or object_key is not None:
+        if not bucket_name or not object_key:
+            raise ValueError("Both bucket_name and object_key are required for S3 ingestion.")
+
+        account_records = read_account_csv_from_s3(bucket_name=bucket_name, object_key=object_key)
+        source_file_name = Path(object_key).name
+        source_file_path = S3StorageClient.build_s3_uri(bucket_name, object_key)
+        metadata_overrides = {
+            "storage_provider": "aws_s3",
+            "bucket_name": bucket_name,
+            "object_key": object_key,
+            "s3_uri": source_file_path,
+        }
+    else:
+        resolved_file_path = Path(file_path) if file_path is not None else ACCOUNTS_FILE_PATH
+        account_records = read_account_csv(resolved_file_path)
+        source_file_name = resolved_file_path.name
+        source_file_path = str(resolved_file_path)
+        metadata_overrides = {
+            "storage_provider": "local_filesystem",
+        }
+
     records_expected = len(account_records)
 
-    batch_id = start_ingestion_batch(records_expected)
+    batch_id = start_ingestion_batch(
+        records_expected=records_expected,
+        source_file_name=source_file_name,
+        source_file_path=source_file_path,
+        metadata_overrides=metadata_overrides,
+    )
 
     print(f"Started account ingestion batch: {batch_id}")
     print(f"Records expected: {records_expected}")
@@ -314,7 +365,11 @@ def ingest_raw_accounts() -> None:
                 **record,
                 "source_row_number": source_row_number,
             }
-            insert_raw_account(batch_id, source_row_number, record)
+            insert_raw_account(
+                batch_id=batch_id,
+                record=record,
+                source_file_name=source_file_name,
+            )
             records_inserted += 1
 
         finish_ingestion_batch(
