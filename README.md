@@ -163,14 +163,14 @@ The code loads environment variables through `python-dotenv`. Create a `.env` fi
 
 ```env
 # PostgreSQL
-DATABASE_URL=postgresql+psycopg://fip_user:fip_password@localhost:5432/fip_db
-POSTGRES_USER=fip_user
-POSTGRES_PASSWORD=fip_password
-POSTGRES_DB=fip_db
+DATABASE_URL=postgresql+psycopg://postgress_user:your_password@localhost:5432/your_db
+POSTGRES_USER=your_user
+POSTGRES_PASSWORD=your_password
+POSTGRES_DB=your_db
 POSTGRES_HOST=localhost
 POSTGRES_PORT1=5432
 POSTGRES_PORT2=5432
-CONTAINER_NAME=fip_postgres
+CONTAINER_NAME=your_postgres_container
 
 # AWS
 AWS_ACCESS_KEY_ID=your_key
