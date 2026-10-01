@@ -6,6 +6,7 @@ import os
 from datetime import datetime, timezone
 from pathlib import Path
 
+from pipeline.common.pipeline_logging import logger
 from pipeline.common.s3_storage import S3StorageClient
 from pipeline.common.synthetic_pipeline_registry import (
     SyntheticDatasetDefinition,
@@ -38,6 +39,7 @@ def upload_synthetic_file(
     storage: S3StorageClient | None = None,
     uploaded_at: datetime | None = None,
 ) -> dict:
+    logger.info("Starting synthetic file upload: entity=%s", definition.entity)
     storage = storage or S3StorageClient()
     uploaded_at = uploaded_at or datetime.now(timezone.utc)
 
@@ -68,7 +70,7 @@ def upload_synthetic_file(
         object_key=object_key,
     )
 
-    return {
+    result = {
         "entity": definition.entity,
         "local_path": str(local_path),
         "bucket": bucket_name,
@@ -77,6 +79,13 @@ def upload_synthetic_file(
         "uploaded_at": uploaded_at.isoformat(),
         "record_count": count_csv_records(local_path),
     }
+    logger.info(
+        "Completed synthetic file upload: entity=%s records=%s s3_uri=%s",
+        definition.entity,
+        result["record_count"],
+        result["s3_uri"],
+    )
+    return result
 
 
 def upload_synthetic_files(entities: list[str] | None = None) -> list[dict]:

@@ -4,6 +4,7 @@ from datetime import date, datetime
 from sqlalchemy import text
 
 from pipeline.common.database import engine
+from pipeline.common.pipeline_logging import logger
 from pipeline.validation.customer_validators import validate_raw_customer
 
 
@@ -573,12 +574,14 @@ def clean_customers() -> None:
     Validate raw customers and load valid records into clean.customers.
     """
 
+    logger.info("Starting customer cleaning")
     raw_customers = fetch_pending_raw_customers()
 
     print(f"Pending raw customers found: {len(raw_customers)}")
 
     if not raw_customers:
         print("No pending customer records to process")
+        logger.info("Customer cleaning skipped: no pending records")
         return
 
     duplicate_source_customer_ids = find_duplicate_source_customer_ids(raw_customers)
@@ -630,6 +633,12 @@ def clean_customers() -> None:
     print(f"Records cleaned/upserted: {records_cleaned}")
     print(f"Records rejected: {records_rejected}")
     print(f"Validation issues written: {validation_issues_written}")
+    logger.info(
+        "Completed customer cleaning: records_cleaned=%s records_rejected=%s validation_issues=%s",
+        records_cleaned,
+        records_rejected,
+        validation_issues_written,
+    )
 
 
 if __name__ == "__main__":

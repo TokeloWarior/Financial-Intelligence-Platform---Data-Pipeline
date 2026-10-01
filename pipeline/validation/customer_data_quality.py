@@ -4,6 +4,7 @@ from typing import Any
 from sqlalchemy import text
 
 from pipeline.common.database import engine
+from pipeline.common.pipeline_logging import logger
 
 
 ENTITY_NAME = "customers"
@@ -448,10 +449,12 @@ def run_customer_data_quality_checks() -> None:
     Run customer data quality checks and write results to ops.data_quality_results.
     """
 
+    logger.info("Starting customer data quality checks")
     batch_id = fetch_latest_customer_batch_id()
 
     if batch_id is None:
         print("No customer ingestion batch found. Nothing to check.")
+        logger.info("Customer data quality skipped: no ingestion batch")
         return
 
     print(f"Latest customer batch id: {batch_id}")
@@ -493,6 +496,13 @@ def run_customer_data_quality_checks() -> None:
     print(f"Checks run: {len(checks)}")
     print(f"Checks passed: {passed_checks}")
     print(f"Checks failed: {failed_checks}")
+    logger.info(
+        "Completed customer data quality checks: batch_id=%s checks=%s passed=%s failed=%s",
+        batch_id,
+        len(checks),
+        passed_checks,
+        failed_checks,
+    )
 
 
 if __name__ == "__main__":

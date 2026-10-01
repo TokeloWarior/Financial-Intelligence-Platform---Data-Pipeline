@@ -211,6 +211,10 @@ python -m pipeline.flows.run_synthetic_ingestion_flow
 
 This generates data, uploads to S3, ingests, cleans, and runs DQ checks for customers, accounts, and transactions automatically. Local CSV files are deleted after a successful run.
 
+Each pipeline stage also writes operational logs to `logs/pipeline.log` and to
+the console. The file is rotated after 10 MB, with five backups retained. Set
+`PIPELINE_LOG_DIR` to choose a different log directory.
+
 ### Option B — Manual Step-by-Step
 
 Run each step individually in this order:

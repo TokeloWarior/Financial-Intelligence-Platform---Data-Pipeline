@@ -9,6 +9,7 @@ from pathlib import Path
 from sqlalchemy import text
 
 from pipeline.common.database import engine
+from pipeline.common.pipeline_logging import logger
 from pipeline.common.s3_storage import S3StorageClient
 
 
@@ -296,6 +297,7 @@ def ingest_raw_transactions(
     bucket_name: str | None = None,
     object_key: str | None = None,
 ) -> None:
+    logger.info("Starting transaction raw ingestion")
     if bucket_name is not None or object_key is not None:
         if not bucket_name or not object_key:
             raise ValueError("Both bucket_name and object_key are required for S3 ingestion.")
@@ -332,6 +334,12 @@ def ingest_raw_transactions(
 
     print(f"Started transaction ingestion batch: {batch_id}")
     print(f"Records expected: {records_expected}")
+    logger.info(
+        "Transaction ingestion batch started: batch_id=%s records_expected=%s source=%s",
+        batch_id,
+        records_expected,
+        source_file_path,
+    )
 
     records_inserted = 0
 
@@ -355,6 +363,11 @@ def ingest_raw_transactions(
         print("Raw transaction ingestion finished")
         print(f"Batch id: {batch_id}")
         print(f"Records inserted: {records_inserted}")
+        logger.info(
+            "Completed transaction raw ingestion: batch_id=%s records_inserted=%s",
+            batch_id,
+            records_inserted,
+        )
 
     except Exception as error:
         finish_ingestion_batch(
@@ -369,6 +382,11 @@ def ingest_raw_transactions(
         print(f"Batch id: {batch_id}")
         print(f"Records inserted before failure: {records_inserted}")
         print(f"Error: {error}")
+        logger.exception(
+            "Transaction raw ingestion failed: batch_id=%s records_inserted=%s",
+            batch_id,
+            records_inserted,
+        )
 
         raise
 

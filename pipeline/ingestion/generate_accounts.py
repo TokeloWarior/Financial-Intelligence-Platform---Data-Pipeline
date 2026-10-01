@@ -3,6 +3,8 @@ import random
 from datetime import date, timedelta
 from pathlib import Path
 
+from pipeline.common.pipeline_logging import logger
+
 
 INPUT_CUSTOMERS_FILE_PATH = Path("data/synthetic/customers.csv")
 OUTPUT_ACCOUNTS_FILE_PATH = Path("data/synthetic/accounts.csv")
@@ -344,11 +346,17 @@ def write_accounts_to_csv(accounts: list[dict]) -> None:
 
 
 def main() -> None:
+    logger.info("Starting account generation")
     accounts = generate_accounts()
     write_accounts_to_csv(accounts)
 
     print(f"Generated accounts: {len(accounts)}")
     print(f"Output file: {OUTPUT_ACCOUNTS_FILE_PATH}")
+    logger.info(
+        "Completed account generation: records=%s output=%s",
+        len(accounts),
+        OUTPUT_ACCOUNTS_FILE_PATH,
+    )
 
 
 if __name__ == "__main__":

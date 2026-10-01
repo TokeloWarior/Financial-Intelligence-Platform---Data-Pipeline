@@ -4,6 +4,7 @@ from typing import Any
 from sqlalchemy import text
 
 from pipeline.common.database import engine
+from pipeline.common.pipeline_logging import logger
 
 
 ENTITY_NAME = "transactions"
@@ -346,10 +347,12 @@ def check_validation_issue_volume(batch_id: int) -> dict:
 
 
 def run_transaction_data_quality_checks() -> None:
+    logger.info("Starting transaction data quality checks")
     batch_id = fetch_latest_transaction_batch_id()
 
     if batch_id is None:
         print("No transaction ingestion batch found. Nothing to check.")
+        logger.info("Transaction data quality skipped: no ingestion batch")
         return
 
     print(f"Latest transaction batch id: {batch_id}")
@@ -390,6 +393,13 @@ def run_transaction_data_quality_checks() -> None:
     print(f"Checks run: {len(checks)}")
     print(f"Checks passed: {passed_checks}")
     print(f"Checks failed: {failed_checks}")
+    logger.info(
+        "Completed transaction data quality checks: batch_id=%s checks=%s passed=%s failed=%s",
+        batch_id,
+        len(checks),
+        passed_checks,
+        failed_checks,
+    )
 
 
 if __name__ == "__main__":

@@ -4,6 +4,7 @@ from datetime import date
 from sqlalchemy import text
 
 from pipeline.common.database import engine
+from pipeline.common.pipeline_logging import logger
 
 
 def standardize_text(value: str | None) -> str | None:
@@ -366,12 +367,14 @@ def update_batch_validation_summary() -> None:
 
 
 def clean_accounts() -> None:
+    logger.info("Starting account cleaning")
     raw_accounts = fetch_pending_raw_accounts()
 
     print(f"Pending raw accounts found: {len(raw_accounts)}")
 
     if not raw_accounts:
         print("No pending account records to process")
+        logger.info("Account cleaning skipped: no pending records")
         return
 
     duplicate_customer_link_keys = find_duplicate_customer_link_keys(raw_accounts)
@@ -431,6 +434,12 @@ def clean_accounts() -> None:
     print(f"Records cleaned/upserted: {records_cleaned}")
     print(f"Records rejected: {records_rejected}")
     print(f"Validation issues written: {validation_issues_written}")
+    logger.info(
+        "Completed account cleaning: records_cleaned=%s records_rejected=%s validation_issues=%s",
+        records_cleaned,
+        records_rejected,
+        validation_issues_written,
+    )
 
 
 if __name__ == "__main__":

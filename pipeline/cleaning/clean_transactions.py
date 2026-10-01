@@ -3,6 +3,7 @@ import json
 from sqlalchemy import text
 
 from pipeline.common.database import engine
+from pipeline.common.pipeline_logging import logger
 from pipeline.validation.transaction_validators import ValidationIssue, validate_raw_transaction
 
 
@@ -350,12 +351,14 @@ def update_batch_validation_summary() -> None:
 
 
 def clean_transactions() -> None:
+    logger.info("Starting transaction cleaning")
     raw_transactions = fetch_pending_raw_transactions()
 
     print(f"Pending raw transactions found: {len(raw_transactions)}")
 
     if not raw_transactions:
         print("No pending transaction records to process")
+        logger.info("Transaction cleaning skipped: no pending records")
         return
 
     duplicate_source_transaction_ids = find_duplicate_source_transaction_ids(raw_transactions)
@@ -417,6 +420,12 @@ def clean_transactions() -> None:
     print(f"Records cleaned/upserted: {records_cleaned}")
     print(f"Records rejected: {records_rejected}")
     print(f"Validation issues written: {validation_issues_written}")
+    logger.info(
+        "Completed transaction cleaning: records_cleaned=%s records_rejected=%s validation_issues=%s",
+        records_cleaned,
+        records_rejected,
+        validation_issues_written,
+    )
 
 
 if __name__ == "__main__":

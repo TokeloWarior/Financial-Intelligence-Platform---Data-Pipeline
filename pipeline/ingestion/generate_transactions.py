@@ -4,6 +4,8 @@ from datetime import datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
 
+from pipeline.common.pipeline_logging import logger
+
 
 INPUT_ACCOUNTS_FILE_PATH = Path("data/synthetic/accounts.csv")
 OUTPUT_TRANSACTIONS_FILE_PATH = Path("data/synthetic/transactions.csv")
@@ -399,12 +401,19 @@ def write_transactions_to_csv(transactions: list[dict]) -> None:
 
 
 def main() -> None:
+    logger.info("Starting transaction generation")
     transactions = generate_transactions()
     write_transactions_to_csv(transactions)
 
     print(f"Generated transactions: {len(transactions)}")
     print(f"Deliberately invalid transactions: {INVALID_TRANSACTION_COUNT}")
     print(f"Output file: {OUTPUT_TRANSACTIONS_FILE_PATH}")
+    logger.info(
+        "Completed transaction generation: records=%s invalid_records=%s output=%s",
+        len(transactions),
+        INVALID_TRANSACTION_COUNT,
+        OUTPUT_TRANSACTIONS_FILE_PATH,
+    )
 
 
 if __name__ == "__main__":

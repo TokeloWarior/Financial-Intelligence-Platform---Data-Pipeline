@@ -3,6 +3,8 @@ import random
 from datetime import date, timedelta
 from pathlib import Path
 
+from pipeline.common.pipeline_logging import logger
+
 
 OUTPUT_PATH = Path("data/synthetic/customers.csv")
 CUSTOMER_COUNT = 300
@@ -433,6 +435,7 @@ def write_customers_to_csv(customers: list[dict]) -> None:
 
 
 def main() -> None:
+    logger.info("Starting customer generation")
     customers = generate_customers()
     write_customers_to_csv(customers)
 
@@ -442,6 +445,12 @@ def main() -> None:
     print(f"Expected mostly valid customers: {valid_customer_count}")
     print(f"Deliberately invalid customers: {INVALID_CUSTOMER_COUNT}")
     print(f"Output file: {OUTPUT_PATH}")
+    logger.info(
+        "Completed customer generation: records=%s invalid_records=%s output=%s",
+        len(customers),
+        INVALID_CUSTOMER_COUNT,
+        OUTPUT_PATH,
+    )
 
 
 if __name__ == "__main__":
