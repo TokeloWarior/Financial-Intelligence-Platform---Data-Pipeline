@@ -214,7 +214,7 @@ def insert_raw_account(
     batch_id: int,
     record: dict,
     source_file_name: str,
-) -> None:
+) -> bool:
     query = text(
         """
         INSERT INTO raw.raw_accounts (
@@ -278,7 +278,8 @@ def insert_raw_account(
             :source_record_hash,
             'pending',
             NOW()
-        );
+        )
+        ON CONFLICT DO NOTHING;
         """
     )
 
@@ -316,7 +317,9 @@ def insert_raw_account(
     }
 
     with engine.begin() as connection:
-        connection.execute(query, parameters)
+        result = connection.execute(query, parameters)
+
+    return result.rowcount == 1
 
 
 def ingest_raw_accounts(
@@ -373,12 +376,12 @@ def ingest_raw_accounts(
                 **record,
                 "source_row_number": source_row_number,
             }
-            insert_raw_account(
+            inserted = insert_raw_account(
                 batch_id=batch_id,
                 record=record,
                 source_file_name=source_file_name,
             )
-            records_inserted += 1
+            records_inserted += int(inserted)
 
         finish_ingestion_batch(
             batch_id=batch_id,
@@ -391,9 +394,10 @@ def ingest_raw_accounts(
         print(f"Batch id: {batch_id}")
         print(f"Records inserted: {records_inserted}")
         logger.info(
-            "Completed account raw ingestion: batch_id=%s records_inserted=%s",
+            "Completed account raw ingestion: batch_id=%s records_inserted=%s records_skipped=%s",
             batch_id,
             records_inserted,
+            records_expected - records_inserted,
         )
 
     except Exception as error:

@@ -199,7 +199,7 @@ def insert_raw_customer(
     source_row_number: int,
     record: dict,
     source_file_name: str,
-) -> None:
+) -> bool:
     """
     Insert one raw customer record.
 
@@ -315,7 +315,24 @@ def insert_raw_customer(
     }
 
     with engine.begin() as connection:
+        existing_record = connection.execute(
+            text(
+                """
+                SELECT 1
+                FROM raw.raw_customers
+                WHERE source_record_hash = :source_record_hash
+                LIMIT 1;
+                """
+            ),
+            {"source_record_hash": source_record_hash},
+        ).first()
+
+        if existing_record is not None:
+            return False
+
         connection.execute(query, parameters)
+
+    return True
 
 
 def ingest_raw_customers(
@@ -373,13 +390,13 @@ def ingest_raw_customers(
 
     try:
         for source_row_number, record in enumerate(customer_records, start=1):
-            insert_raw_customer(
+            inserted = insert_raw_customer(
                 batch_id=batch_id,
                 source_row_number=source_row_number,
                 record=record,
                 source_file_name=source_file_name,
             )
-            records_inserted += 1
+            records_inserted += int(inserted)
 
         finish_ingestion_batch(
             batch_id=batch_id,
@@ -392,9 +409,10 @@ def ingest_raw_customers(
         print(f"Batch id: {batch_id}")
         print(f"Records inserted: {records_inserted}")
         logger.info(
-            "Completed customer raw ingestion: batch_id=%s records_inserted=%s",
+            "Completed customer raw ingestion: batch_id=%s records_inserted=%s records_skipped=%s",
             batch_id,
             records_inserted,
+            records_expected - records_inserted,
         )
 
     except Exception as error:
