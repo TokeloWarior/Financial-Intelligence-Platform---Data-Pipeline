@@ -254,39 +254,63 @@ Download temporarily to a temp directory, ingest, then delete immediately.
 
 But the preferred demonstration is direct S3 read because it better shows cloud storage retrieval.
 
-## 13. Next step to continue from
+## 13. Current verified implementation status
 
-We are currently about to start:
+The S3 automation work described above is complete.
 
-Step 4B: Create pipeline/ingestion/upload_synthetic_to_s3.py
+The registered datasets are:
 
-This script should:
+- customers
+- accounts
+- transactions
 
-1. Look for generated local files:
-   - data/synthetic/customers.csv
-   - data/synthetic/accounts.csv
+The automated Prefect flow is:
 
-2. Upload them to the S3 synthetic-data bucket using date-based object keys, for example:
-   - customers/year=2026/month=08/day=05/customers.csv
-   - accounts/year=2026/month=08/day=05/accounts.csv
+```text
+generate -> upload to S3 -> ingest from S3 -> clean -> DQ checks -> cleanup local files
+```
 
-3. Return structured metadata for each upload:
-   - entity
-   - local_path
-   - bucket
-   - object_key
-   - s3_uri
-   - uploaded_at
+The main entry point is:
 
-4. Not delete local CSVs yet until the later full flow uploads and ingests successfully.
+```bash
+python -m pipeline.flows.run_synthetic_ingestion_flow
+```
 
-After upload_synthetic_to_s3.py, the next steps should likely be:
+The flow has been run successfully against the configured PostgreSQL database and S3 bucket. Customer and transaction data-quality checks completed successfully in the verified run. Account data does not currently have a registered DQ function.
 
-Step 4C: Modify ingest_raw_customers.py and ingest_raw_accounts.py to accept S3 bucket/object_key input and read directly from S3.
-Step 4D: Create pipeline/flows/run_synthetic_ingestion_flow.py to orchestrate generation, upload, S3 ingestion, validation, and cleanup.
-Step 4E: Delete local CSVs only after successful S3 upload and database ingestion.
+## 14. Idempotent ingestion behavior
 
-## 14. Important architectural guidance
+Synthetic generators intentionally use deterministic source identifiers, so the flow must support reruns.
+
+Raw ingestion is idempotent:
+
+- Customer records are skipped when their `source_record_hash` already exists.
+- Account and transaction inserts use PostgreSQL `ON CONFLICT DO NOTHING`.
+- `records_inserted` counts only records newly written to the raw table.
+- Operational logs report `records_skipped` for duplicate records.
+- Existing uniqueness constraints are preserved.
+
+Do not solve rerun failures by dropping tables or weakening unique constraints. Preserve prior ingestion batches for audit history and let a new rerun create a new batch with zero or more newly inserted records.
+
+## 15. Operational logging
+
+Operational logging is implemented in:
+
+```text
+pipeline/common/pipeline_logging.py
+```
+
+Pipeline scripts and the Prefect flow log lifecycle events, counts, S3 URIs, batch IDs, skipped records, DQ results, and exceptions.
+
+Logs are written to:
+
+```text
+logs/pipeline.log
+```
+
+The log file is rotated at 10 MB with five backups retained. Set `PIPELINE_LOG_DIR` to use another directory. Local log files are ignored by Git. PostgreSQL remains the source of truth for structured ingestion, rejection, and DQ audit records; log files are operational diagnostics rather than relational data storage.
+
+## 16. Important architectural guidance
 
 Please keep scripts separated by responsibility:
 
@@ -300,7 +324,7 @@ ingest_raw_customers.py / ingest_raw_accounts.py
     Only ingest records into PostgreSQL, ideally from S3 input.
 
 run_synthetic_ingestion_flow.py
-    Orchestrates the end-to-end pipeline.
+    Orchestrates the end-to-end pipeline and emits operational logs.
 
 Do not make generation scripts responsible for S3 upload unless there is a very strong reason.
 
@@ -313,10 +337,17 @@ s3_uri = s3://bucket/key
 record_count = ...
 status = ...
 
-## 15. What I want help with next
+## 17. What to do next
 
-Please continue from Step 4B and guide me step by step. Be informative and explain what each part is doing.
+The next phase is to review and improve operational log quality, not to rebuild the S3 flow.
 
-After each major step, ask whether to proceed to the next step.
+Recommended order:
+
+1. Review a successful rerun and confirm that logs clearly distinguish inserted and skipped records for every entity.
+2. Decide whether operational logs should also be uploaded to the dedicated S3 pipeline-logs bucket after a run.
+3. If durable searchable audit data is needed, add a forward-only Alembic migration for an `ops.pipeline_logs` table rather than storing log text in existing raw or clean tables.
+4. Add focused tests for duplicate ingestion, failed batches, and log file creation.
+
+Continue step by step, preserve existing migration history, and ask before introducing a new storage destination or schema.
 
 then after these steps we move to setting up log generation per important script.
