@@ -370,8 +370,12 @@ def ingest_raw_accounts(
 
     records_inserted = 0
 
+    records_processed = 0
+    record_in_progress = False
+
     try:
         for source_row_number, record in enumerate(account_records, start=1):
+            record_in_progress = True
             record = {
                 **record,
                 "source_row_number": source_row_number,
@@ -382,6 +386,8 @@ def ingest_raw_accounts(
                 source_file_name=source_file_name,
             )
             records_inserted += int(inserted)
+            records_processed += 1
+            record_in_progress = False
 
         finish_ingestion_batch(
             batch_id=batch_id,
@@ -401,10 +407,14 @@ def ingest_raw_accounts(
         )
 
     except Exception as error:
+        records_skipped = records_processed - records_inserted
+        records_failed = int(record_in_progress)
+        records_unprocessed = records_expected - records_processed - records_failed
+
         finish_ingestion_batch(
             batch_id=batch_id,
             records_inserted=records_inserted,
-            records_rejected=records_expected - records_inserted,
+            records_rejected=0,
             status="failed",
             error_message=str(error),
         )
@@ -414,9 +424,15 @@ def ingest_raw_accounts(
         print(f"Records inserted before failure: {records_inserted}")
         print(f"Error: {error}")
         logger.exception(
-            "Account raw ingestion failed: batch_id=%s records_inserted=%s",
+            "Account raw ingestion failed: batch_id=%s records_expected=%s "
+            "records_inserted=%s records_skipped=%s records_failed=%s "
+            "records_unprocessed=%s",
             batch_id,
+            records_expected,
             records_inserted,
+            records_skipped,
+            records_failed,
+            records_unprocessed,
         )
 
         raise
