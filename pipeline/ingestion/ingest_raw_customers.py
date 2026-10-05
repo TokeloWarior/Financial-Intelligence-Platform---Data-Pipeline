@@ -281,6 +281,7 @@ def insert_raw_customer(
 
     raw_payload = dict(record)
     source_record_hash = calculate_source_record_hash(raw_payload)
+    source_customer_id = blank_to_none(record.get("source_customer_id"))
 
     parameters = {
         "ingestion_batch_id": batch_id,
@@ -288,7 +289,7 @@ def insert_raw_customer(
         "source_file_name": source_file_name,
         "source_row_number": source_row_number,
 
-        "source_customer_id": blank_to_none(record.get("source_customer_id")),
+        "source_customer_id": source_customer_id,
         "customer_type": blank_to_none(record.get("customer_type")),
 
         "first_name": blank_to_none(record.get("first_name")),
@@ -315,17 +316,38 @@ def insert_raw_customer(
     }
 
     with engine.begin() as connection:
-        existing_record = connection.execute(
-            text(
-                """
-                SELECT 1
-                FROM raw.raw_customers
-                WHERE source_record_hash = :source_record_hash
-                LIMIT 1;
-                """
-            ),
-            {"source_record_hash": source_record_hash},
-        ).first()
+        if source_customer_id and source_customer_id.strip():
+            existing_record = connection.execute(
+                text(
+                    """
+                    SELECT 1
+                    FROM raw.raw_customers
+                    WHERE ingestion_batch_id <> :batch_id
+                      AND BTRIM(source_customer_id) = :source_customer_id
+                    LIMIT 1;
+                    """
+                ),
+                {
+                    "batch_id": batch_id,
+                    "source_customer_id": source_customer_id.strip(),
+                },
+            ).first()
+        else:
+            existing_record = connection.execute(
+                text(
+                    """
+                    SELECT 1
+                    FROM raw.raw_customers
+                    WHERE ingestion_batch_id <> :batch_id
+                      AND source_record_hash = :source_record_hash
+                    LIMIT 1;
+                    """
+                ),
+                {
+                    "batch_id": batch_id,
+                    "source_record_hash": source_record_hash,
+                },
+            ).first()
 
         if existing_record is not None:
             return False

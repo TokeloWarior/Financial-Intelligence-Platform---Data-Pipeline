@@ -262,13 +262,14 @@ def insert_raw_transaction(
 
     raw_payload = dict(record)
     source_record_hash = calculate_source_record_hash(raw_payload)
+    source_transaction_id = blank_to_none(record.get("source_transaction_id"))
 
     parameters = {
         "ingestion_batch_id": batch_id,
         "source_system": SOURCE_SYSTEM,
         "source_file_name": source_file_name,
         "source_row_number": source_row_number,
-        "source_transaction_id": blank_to_none(record.get("source_transaction_id")),
+        "source_transaction_id": source_transaction_id,
         "source_account_id": blank_to_none(record.get("source_account_id")),
         "account_number": blank_to_none(record.get("account_number")),
         "transaction_timestamp": parse_timestamp_safely(record.get("transaction_timestamp")),
@@ -290,6 +291,46 @@ def insert_raw_transaction(
     }
 
     with engine.begin() as connection:
+        normalized_transaction_id = (
+            source_transaction_id.strip() if source_transaction_id else None
+        )
+
+        if normalized_transaction_id:
+            existing_record = connection.execute(
+                text(
+                    """
+                    SELECT 1
+                    FROM raw.raw_transactions
+                    WHERE ingestion_batch_id <> :batch_id
+                      AND BTRIM(source_transaction_id) = :source_transaction_id
+                    LIMIT 1;
+                    """
+                ),
+                {
+                    "batch_id": batch_id,
+                    "source_transaction_id": normalized_transaction_id,
+                },
+            ).first()
+        else:
+            existing_record = connection.execute(
+                text(
+                    """
+                    SELECT 1
+                    FROM raw.raw_transactions
+                    WHERE ingestion_batch_id <> :batch_id
+                      AND source_record_hash = :source_record_hash
+                    LIMIT 1;
+                    """
+                ),
+                {
+                    "batch_id": batch_id,
+                    "source_record_hash": source_record_hash,
+                },
+            ).first()
+
+        if existing_record is not None:
+            return False
+
         result = connection.execute(query, parameters)
 
     return result.rowcount == 1
